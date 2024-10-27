@@ -1,0 +1,168 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "username": "JuanPérez",
+      "password": "adminPass123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "MaríaGonzález",
+      "password": "basicPass456",
+      "role": "basic"
+    },
+    {
+      "id": "3",
+      "username": "CarlosLopez",
+      "password": "premiumPass789",
+      "role": "premium"
+    },
+    {
+      "id": "4",
+      "username": "LauraMartínez",
+      "password": "basicPass012",
+      "role": "basic"
+    },
+    {
+      "id": "5",
+      "username": "PedroSánchez",
+      "password": "premiumPass345",
+      "role": "premium"
+    },
+    {
+      "id": "6",
+      "username": "AnaGarcía",
+      "password": "adminPass678",
+      "role": "admin"
+    },
+    {
+      "id": "7",
+      "username": "LuisRodríguez",
+      "password": "basicPass901",
+      "role": "basic"
+    },
+    {
+      "id": "8",
+      "username": "SofíaHernández",
+      "password": "premiumPass234",
+      "role": "premium"
+    },
+    {
+      "id": "9",
+      "username": "DiegoRamírez",
+      "password": "basicPass567",
+      "role": "basic"
+    },
+    {
+      "id": "10",
+      "username": "GabrielaCruz",
+      "password": "premiumPass890",
+      "role": "premium"
+    },
+    {
+      "id": "11",
+      "username": "dewd",
+      "password": "1234",
+      "role": "basic"
+    },
+    {
+      "id": "3595",
+      "username": "agustin",
+      "password": "1234",
+      "role": "premium"
+    },
+    {
+      "id": "4279",
+      "username": "agustin",
+      "password": "12345",
+      "role": "admin"
+    },
+    {
+      "id": "dbb8",
+      "username": "tomas",
+      "password": "123",
+      "role": "basic"
+    },
+    {
+      "id": "1ab5",
+      "username": "rvee",
+      "password": "123",
+      "role": "basic"
+    },
+    {
+      "id": "47eb",
+      "username": "ewcw",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "70e6",
+      "username": "wqdqw",
+      "password": "2134",
+      "role": "basic"
+    },
+    {
+      "id": "cf14",
+      "username": "cwcew",
+      "password": "123",
+      "role": "basic"
+    },
+    {
+      "id": "33f5",
+      "username": "frefe",
+      "password": "123",
+      "role": "basic"
+    },
+    {
+      "id": "4a9f",
+      "username": "vre",
+      "password": "1234",
+      "role": "basic"
+    },
+    {
+      "id": "5fb9",
+      "username": "agustin",
+      "password": "cerino",
+      "role": "basic"
+    },
+    {
+      "id": "1d82",
+      "username": "dcs",
+      "password": "123",
+      "role": "basic"
+    }
+  ],
+  "rutinas": [
+    {
+      "id": "1",
+      "nombre": "Rutina de Brazos",
+      "descripcion": "Ejercicios centrados en fortalecer bíceps, tríceps y antebrazos.",
+      "url": "https://mi-servidor.com/videos/rutina_brazos.mp4"
+    },
+    {
+      "id": "2",
+      "nombre": "Rutina de Piernas",
+      "descripcion": "Entrenamiento para tonificar y fortalecer cuádriceps, femorales y gemelos.",
+      "url": "https://mi-servidor.com/videos/rutina_piernas.mp4"
+    },
+    {
+      "id": "3",
+      "nombre": "Rutina de Pecho",
+      "descripcion": "Serie de ejercicios para desarrollar los músculos pectorales.",
+      "url": "https://mi-servidor.com/videos/rutina_pecho.mp4"
+    },
+    {
+      "id": "4",
+      "nombre": "Rutina de Glúteos",
+      "descripcion": "Rutina para tonificar y fortalecer los glúteos.",
+      "url": "https://mi-servidor.com/videos/rutina_gluteos.mp4"
+    },
+    {
+      "id": "5",
+      "nombre": "Rutina de Espalda",
+      "descripcion": "Ejercicios para fortalecer la espalda y mejorar la postura.",
+      "url": "https://mi-servidor.com/videos/rutina_espalda.mp4"
+    }
+  ]
+}
