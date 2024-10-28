@@ -1,6 +1,6 @@
 .editar-boton {
   padding: 10px;
-  background-color: #06080a;
+  background-color: #3d3d3d;
   color: white;
   border: none;
   border-radius: 4px;
@@ -9,16 +9,17 @@
 }
 
 .editar-boton:hover {
-  background-color: #400912bd;
+  background-color: #c90526bd;
 }
 
 .modificar-usuario {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #560404;
   border-radius: 8px;
-  background-color: #9f0606ec;
+  background-color: #e63946;
+  background: linear-gradient(#e63946, rgb(0, 0, 0)95%);
+
 }
 
 .perfil {

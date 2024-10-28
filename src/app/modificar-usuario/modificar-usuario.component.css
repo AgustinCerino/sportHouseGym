@@ -5,10 +5,12 @@
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #560404;
   border-radius: 8px;
-  background-color: #9f0606ec;
+  background-color: #e63946;
+   background: linear-gradient(#e63946, rgb(0, 0, 0)95%);
 }
+
+
 
 .perfil {
   display: flex;
@@ -18,8 +20,8 @@
 
 .foto-perfil {
   width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  height: 85px;
+  border-radius: 100%;
   margin-right: 20px;
   border: 1px solid #000000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -49,7 +51,7 @@ input, select {
 
 button {
   padding: 10px;
-  background-color: #000000;
+  background-color: #2f2d2d;
   color: white;
   border: none;
   border-radius: 4px;
