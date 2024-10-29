@@ -1,4 +1,5 @@
 <div class="container">
+  <h2 class=" titulo"> Login</h2>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div>
       <label for="username">Username:</label>
@@ -15,7 +16,9 @@
         <small>Password is required.</small>
       }
   </div>
+  <div class="botonLog">
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </div>
 
-  <button type="submit" [disabled]="loginForm.invalid">Login</button>
 </form>
 </div>

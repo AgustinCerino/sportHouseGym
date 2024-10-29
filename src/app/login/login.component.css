@@ -1,12 +1,44 @@
-ESTILOS LOGIN
 .container {
-    border: none; 
-    width: 500px; 
-    padding: 40px; 
-    position: absolute; 
-    top:60%; 
-    left:50%; 
-    transform:translate(-50%, -50%);
-    background-color: hsla(205, 46%, 30%, 1);
-    background: linear-gradient(hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1)100%);
+  border: none;
+  width: 500px;
+  padding: 40px;
+  margin-top: 30px;
+  margin-bottom: 220px;
+  top: 60%;
+  left: 50%;
+  border-radius: 3%;
+  background-color: #e63946;
+  background: linear-gradient(#e63946, rgb(0, 0, 0) 95%);
+}
+.botonLog {
+  text-align: center;
+}
+.titulo {
+  color: black;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgb(255, 255, 255);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: none;
+  margin-bottom: 15px;
+}
+
+small {
+  color: #ffcc00;
+}
+
+button
+{
+  border-radius: 10px;
+
+
 }

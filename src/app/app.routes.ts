@@ -9,6 +9,7 @@ import { VerPerfilComponent } from './ver-perfil/ver-perfil.component';
 import { ModificarUsuarioComponent } from './modificar-usuario/modificar-usuario.component';
 import { RoutineListComponent } from './routine-list/routine-list.component';
 import { RegisterComponent } from './register/register.component';
+import { RoutineDetailsComponent } from './routine-details/routine-details.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'premium-client', component: PremiumPageComponent},
   { path: 'rutinas',component: RoutineListComponent},
   { path: 'register',component: RegisterComponent},
+  { path: 'details/:id',component:RoutineDetailsComponent},
   { path: '', redirectTo: 'home', pathMatch:'full' } // Redirecciona a la página de login si la ruta no se encuentra
 ];
 

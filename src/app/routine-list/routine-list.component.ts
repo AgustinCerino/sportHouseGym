@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RoutineService } from '../services/rutine.service'; // Corregido: 'rutine' a 'routine'
 import { Rutina } from '../interfaces/routine.interface'; // Asegúrate de tener esta interfaz
 
@@ -13,7 +14,7 @@ import { Rutina } from '../interfaces/routine.interface'; // Asegúrate de tener
 export class RoutineListComponent implements OnInit {
   routines: Rutina[] = []; // Define el tipo correcto si tienes la interfaz Rutina
 
-  constructor(private routineService: RoutineService) {} // Corregido: 'rutineService' a 'routineService'
+  constructor(private routineService: RoutineService, private router: Router) {} // Corregido: 'rutineService' a 'routineService'
 
   ngOnInit(): void {
     this.getRutinas();
@@ -26,7 +27,12 @@ export class RoutineListComponent implements OnInit {
       this.routines = data; // Asigna los datos a 'routines'
     });
   }
+
+  verDetalles(id:string)
+  {
+    this.router.navigate(['/details',id]);
+  }
 }
-  
+
 
 

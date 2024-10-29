@@ -1,0 +1,19 @@
+<fieldset class="borde">
+  <div class="video-container" *ngIf="rutina">
+    <h2>{{ rutina.nombre }}</h2>
+    <p>{{ rutina.descripcion }}</p>
+    <iframe
+
+    width="600"
+    height="400"
+    [src]="sanitizer.bypassSecurityTrustResourceUrl(rutina.url)"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+  </div>
+</fieldset>
+
+
+<div *ngIf="!rutina">
+  <p>Cargando detalles de la rutina...</p>
+</div>

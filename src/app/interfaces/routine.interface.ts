@@ -1,5 +1,5 @@
 export interface Rutina {
-    id: number;
+    id: string;
     nombre: string;
     descripcion: string;
     url: string;

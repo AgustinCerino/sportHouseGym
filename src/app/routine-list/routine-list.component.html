@@ -4,7 +4,7 @@
       <li *ngFor="let routine of routines">
         <h3>{{ routine.nombre }}</h3>
         <p>{{ routine.descripcion }}</p>
-        <button>Ver Detalles</button>
+        <button (click)="verDetalles(routine.id)">Ver Detalles</button>
       </li>
     </ul>
   </section>

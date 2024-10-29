@@ -16,7 +16,7 @@ export class RoutineService {
   }
 
   // Obtener una rutina por su ID
-  getRutinaById(id: number): Observable<any> {
+  getRutinaById(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 

@@ -1,0 +1,10 @@
+.video-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.video-container iframe {
+  max-width: 100%;
+  border: 1px solid #ccc;
+}
+
