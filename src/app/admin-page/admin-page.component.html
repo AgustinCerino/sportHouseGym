@@ -17,11 +17,18 @@
         (input)="filtrarUsuarios()" 
     />
 
+
     <!-- Sección para mostrar la lista de usuarios -->
     <div *ngIf="mostrarUsuarios" class="usuarios-lista">
-        <h2>Lista de Usuarios</h2>
-        <div *ngFor="let usuario of usuariosFiltrados" class="usuario-item">
-            <p class="usuario-nombre">{{ usuario.username }}</p>
+      <h2>Lista de Usuarios</h2>
+      <div *ngFor="let usuario of usuariosFiltrados" class="usuario-item">
+          <p class="usuario-nombre">{{ usuario.username}}</p>
+          <p>Email: {{ usuario.Email}}</p>
+          <p>Peso: {{ usuario.Peso }} </p>
+          <p>Altura: {{ usuario.Altura }} </p>
+          <p>Proceso: {{ usuario.Proceso }} </p>
+          <p>Nutrición: {{ usuario.Nutricion }}</p>
+      
         </div>
-    </div>
-</div>
+        
+  </div>

@@ -10,7 +10,7 @@
       "Peso": "75 kg",
       "Altura": "180 cm",
       "Proceso": "Volumen",
-      "Nutrición": "Alta en Proteína"
+      "Nutricion": "Alta en Proteína"
     },
     {
       "id": "23456789", 
@@ -22,7 +22,7 @@
       "Peso": "68 kg",
       "Altura": "165 cm",
       "Proceso": "Definición",
-      "Nutrición": "Equilibrada"
+      "Nutricion": "Equilibrada"
     },
     {
       "id": "34567890", 
@@ -34,7 +34,7 @@
       "Peso": "82 kg",
       "Altura": "175 cm",
       "Proceso": "Mantenimiento",
-      "Nutrición": "Alta en Carbohidratos"
+      "Nutricion": "Alta en Carbohidratos"
     },
     {
       "id": "45678901", 
@@ -46,7 +46,7 @@
       "Peso": "60 kg",
       "Altura": "170 cm",
       "Proceso": "Definición",
-      "Nutrición": "Alta en Fibra"
+      "Nutricion": "Alta en Fibra"
     },
     {
       "id": "56789012", 
@@ -58,7 +58,7 @@
       "Peso": "90 kg",
       "Altura": "185 cm",
       "Proceso": "Volumen",
-      "Nutrición": "Alta en Proteína"
+      "Nutricion": "Alta en Proteína"
     },
     {
       "id": "67890123", 
@@ -70,7 +70,7 @@
       "Peso": "55 kg",
       "Altura": "160 cm",
       "Proceso": "Definición",
-      "Nutrición": "Baja en Carbohidratos"
+      "Nutricion": "Baja en Carbohidratos"
     },
     {
       "id": "78901234", 
@@ -82,7 +82,7 @@
       "Peso": "80 kg",
       "Altura": "177 cm",
       "Proceso": "Mantenimiento",
-      "Nutrición": "Equilibrada"
+      "Nutricion": "Equilibrada"
     },
     {
       "id": "89012345", 
@@ -94,7 +94,7 @@
       "Peso": "65 kg",
       "Altura": "165 cm",
       "Proceso": "Definición",
-      "Nutrición": "Alta en Fibra"
+      "Nutricion": "Alta en Fibra"
     },
     {
       "id": "90123456", 
@@ -106,7 +106,7 @@
       "Peso": "78 kg",
       "Altura": "172 cm",
       "Proceso": "Volumen",
-      "Nutrición": "Alta en Proteína"
+      "Nutricion": "Alta en Proteína"
     },
     {
       "id": "01234567", 
@@ -118,7 +118,7 @@
       "Peso": "70 kg",
       "Altura": "168 cm",
       "Proceso": "Mantenimiento",
-      "Nutrición": "Equilibrada"
+      "Nutricion": "Equilibrada"
     }
   ]
   ,

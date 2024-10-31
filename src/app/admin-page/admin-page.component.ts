@@ -23,7 +23,8 @@ export class AdminPageComponent implements OnInit {
 
   // Método para obtener los usuarios y mostrarlos
   obtenerUsuarios(): void {
-    this.userService.getUsuarios().subscribe((usuarios: Usuario[]) => {
+    this.userService.getUsuarios().subscribe(
+      (usuarios: Usuario[]) => {
       this.usuarios = usuarios;
       this.usuariosFiltrados = usuarios; // Inicializa con todos los usuarios
       this.mostrarUsuarios = true;

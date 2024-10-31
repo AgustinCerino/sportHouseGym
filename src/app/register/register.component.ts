@@ -44,12 +44,12 @@ export class RegisterComponent {
         username: formValues.username,
         password: formValues.password,
         role: formValues.role,
-        nombre: formValues.nombre,
-        email: formValues.email,
-        peso: formValues.formValues.peso,
-        altura: formValues.altura,
-        proceso: formValues.proceso,
-        nutricion: formValues.nutricion
+        Nombre: formValues.nombre,
+        Email: formValues.email,
+        Peso: formValues.formValues.peso,
+        Altura: formValues.altura,
+        Proceso: formValues.proceso,
+        Nutricion: formValues.nutricion
       };
 
       console.log(usuario);
