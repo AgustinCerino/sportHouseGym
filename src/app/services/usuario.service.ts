@@ -8,7 +8,7 @@ import { Usuario } from '../interfaces/users.interface'; // Asegúrate de que la
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = 'http://localhost:3000/clientes'; 
+  private apiUrl = 'http://localhost:3000/usuarios'; 
 
   constructor(private http: HttpClient) {}
 

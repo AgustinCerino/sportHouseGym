@@ -1,1 +1,27 @@
-<p>admin-page works!</p>
+<div class="home">
+    <h1>Bienvenido a nuestra página</h1>
+    <div class="dropdown">
+      <button class="dropbtn">Menú</button>
+      <div class="dropdown-content">
+        <a href="javascript:void(0)" (click)="obtenerUsuarios()">Usuarios</a>
+        <a href="#rutinas">Rutinas</a>
+      </div>
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <input 
+        type="text" 
+        [(ngModel)]="filtro" 
+        placeholder="Buscar usuarios..." 
+        class="busqueda" 
+        (input)="filtrarUsuarios()" 
+    />
+
+    <!-- Sección para mostrar la lista de usuarios -->
+    <div *ngIf="mostrarUsuarios" class="usuarios-lista">
+        <h2>Lista de Usuarios</h2>
+        <div *ngFor="let usuario of usuariosFiltrados" class="usuario-item">
+            <p class="usuario-nombre">{{ usuario.username }}</p>
+        </div>
+    </div>
+</div>

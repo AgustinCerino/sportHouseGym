@@ -1,0 +1,106 @@
+.home {
+    text-align: center;
+    padding: 50px 20px;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.home img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.background {
+    background-image: url('/assets/images/home.png');
+    height: 100vh; /* Altura completa de la ventana */
+    background-size: cover; /* Ajustar la imagen para cubrir el div */
+    background-position: center; /* Centrar la imagen */
+    display: flex; /* Para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    color: white; /* Color del texto */
+}
+
+/* Estilos para el desplegable */
+.dropdown {
+    position: absolute; /* Cambiado a absolute para posicionar en el margen izquierdo */
+    left: 20px; /* Espacio desde el margen izquierdo */
+    top: 90px; /* Espacio desde la parte superior */
+}
+
+.dropbtn {
+    background-color: #e63946; /* Rojo */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Fondo blanco */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.dropdown-content a {
+    color: #1d3557; /* Negro */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.dropdown-content a:hover {
+    background-color: #e63946; /* Color de fondo al pasar el mouse */
+    color: #fff; /* Texto blanco al pasar el mouse */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #c98f94; /* Negro al pasar el mouse */
+}
+
+.usuarios-lista {
+    background-color: #000000; /* Negro */
+    padding: 20px; /* Espacio adicional */
+    border-radius: 10px; /* Bordes redondeados */
+    color: #f1faee; /* Blanco */
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.usuario-item {
+    border-bottom: 1px solid #e63946; /* Rojo */
+    padding: 12px; /* Espacio adicional */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.usuario-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el mouse */
+}
+
+.usuario-nombre {
+    font-weight: bold;
+    color: #e63946; /* Rojo */
+    font-size: 18px; /* Tamaño de fuente */
+}
+
+/* Estilo para detalles adicionales */
+.usuario-detalles {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    color: #f1faee; /* Blanco */
+    margin-top: 5px; /* Espacio superior */
+}

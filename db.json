@@ -1,138 +1,127 @@
 {
-  "clientes": [
+  "usuarios": [
     {
-      "id": "1",
+      "id": "12345678", 
       "username": "JuanPérez",
       "password": "adminPass123",
-      "role": "admin"
+      "role": "admin",
+      "Nombre": "Juan Pérez",
+      "Email": "juan@example.com",
+      "Peso": "75 kg",
+      "Altura": "180 cm",
+      "Proceso": "Volumen",
+      "Nutrición": "Alta en Proteína"
     },
     {
-      "id": "2",
+      "id": "23456789", 
       "username": "MaríaGonzález",
       "password": "basicPass456",
-      "role": "basic"
+      "role": "basic",
+      "Nombre": "María González",
+      "Email": "maria@example.com",
+      "Peso": "68 kg",
+      "Altura": "165 cm",
+      "Proceso": "Definición",
+      "Nutrición": "Equilibrada"
     },
     {
-      "id": "3",
+      "id": "34567890", 
       "username": "CarlosLopez",
       "password": "premiumPass789",
-      "role": "premium"
+      "role": "premium",
+      "Nombre": "Carlos López",
+      "Email": "carlos@example.com",
+      "Peso": "82 kg",
+      "Altura": "175 cm",
+      "Proceso": "Mantenimiento",
+      "Nutrición": "Alta en Carbohidratos"
     },
     {
-      "id": "4",
+      "id": "45678901", 
       "username": "LauraMartínez",
       "password": "basicPass012",
-      "role": "basic"
+      "role": "basic",
+      "Nombre": "Laura Martínez",
+      "Email": "laura@example.com",
+      "Peso": "60 kg",
+      "Altura": "170 cm",
+      "Proceso": "Definición",
+      "Nutrición": "Alta en Fibra"
     },
     {
-      "id": "5",
+      "id": "56789012", 
       "username": "PedroSánchez",
       "password": "premiumPass345",
-      "role": "premium"
+      "role": "premium",
+      "Nombre": "Pedro Sánchez",
+      "Email": "pedro@example.com",
+      "Peso": "90 kg",
+      "Altura": "185 cm",
+      "Proceso": "Volumen",
+      "Nutrición": "Alta en Proteína"
     },
     {
-      "id": "6",
+      "id": "67890123", 
       "username": "AnaGarcía",
       "password": "adminPass678",
-      "role": "admin"
+      "role": "admin",
+      "Nombre": "Ana García",
+      "Email": "ana@example.com",
+      "Peso": "55 kg",
+      "Altura": "160 cm",
+      "Proceso": "Definición",
+      "Nutrición": "Baja en Carbohidratos"
     },
     {
-      "id": "7",
+      "id": "78901234", 
       "username": "LuisRodríguez",
       "password": "basicPass901",
-      "role": "basic"
+      "role": "basic",
+      "Nombre": "Luis Rodríguez",
+      "Email": "luis@example.com",
+      "Peso": "80 kg",
+      "Altura": "177 cm",
+      "Proceso": "Mantenimiento",
+      "Nutrición": "Equilibrada"
     },
     {
-      "id": "8",
+      "id": "89012345", 
       "username": "SofíaHernández",
       "password": "premiumPass234",
-      "role": "premium"
+      "role": "premium",
+      "Nombre": "Sofía Hernández",
+      "Email": "sofia@example.com",
+      "Peso": "65 kg",
+      "Altura": "165 cm",
+      "Proceso": "Definición",
+      "Nutrición": "Alta en Fibra"
     },
     {
-      "id": "9",
+      "id": "90123456", 
       "username": "DiegoRamírez",
       "password": "basicPass567",
-      "role": "basic"
+      "role": "basic",
+      "Nombre": "Diego Ramírez",
+      "Email": "diego@example.com",
+      "Peso": "78 kg",
+      "Altura": "172 cm",
+      "Proceso": "Volumen",
+      "Nutrición": "Alta en Proteína"
     },
     {
-      "id": "10",
+      "id": "01234567", 
       "username": "GabrielaCruz",
       "password": "premiumPass890",
-      "role": "premium"
-    },
-    {
-      "id": "11",
-      "username": "dewd",
-      "password": "1234",
-      "role": "basic"
-    },
-    {
-      "id": "3595",
-      "username": "agustin",
-      "password": "1234",
-      "role": "premium"
-    },
-    {
-      "id": "4279",
-      "username": "agustin",
-      "password": "12345",
-      "role": "admin"
-    },
-    {
-      "id": "dbb8",
-      "username": "tomas",
-      "password": "123",
-      "role": "basic"
-    },
-    {
-      "id": "1ab5",
-      "username": "rvee",
-      "password": "123",
-      "role": "basic"
-    },
-    {
-      "id": "47eb",
-      "username": "ewcw",
-      "password": "123",
-      "role": "admin"
-    },
-    {
-      "id": "70e6",
-      "username": "wqdqw",
-      "password": "2134",
-      "role": "basic"
-    },
-    {
-      "id": "cf14",
-      "username": "cwcew",
-      "password": "123",
-      "role": "basic"
-    },
-    {
-      "id": "33f5",
-      "username": "frefe",
-      "password": "123",
-      "role": "basic"
-    },
-    {
-      "id": "4a9f",
-      "username": "vre",
-      "password": "1234",
-      "role": "basic"
-    },
-    {
-      "id": "5fb9",
-      "username": "agustin",
-      "password": "cerino",
-      "role": "basic"
-    },
-    {
-      "id": "1d82",
-      "username": "dcs",
-      "password": "123",
-      "role": "basic"
+      "role": "premium",
+      "Nombre": "Gabriela Cruz",
+      "Email": "gabriela@example.com",
+      "Peso": "70 kg",
+      "Altura": "168 cm",
+      "Proceso": "Mantenimiento",
+      "Nutrición": "Equilibrada"
     }
-  ],
+  ]
+  ,
   "rutinas": [
     {
       "id": "1",
@@ -144,7 +133,7 @@
       "id": "2",
       "nombre": "Rutina de Piernas",
       "descripcion": "Entrenamiento para tonificar y fortalecer cuádriceps, femorales y gemelos.",
-      "url": "https://mi-servidor.com/videos/rutina_piernas.mp4"
+      "url": "https://www.youtube.com/embed/In58AKwTero"
     },
     {
       "id": "3",
