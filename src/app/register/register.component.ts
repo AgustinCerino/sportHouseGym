@@ -43,7 +43,13 @@ export class RegisterComponent {
       const usuario: Omit<Usuario, 'id'> = {
         username: formValues.username,
         password: formValues.password,
-        role: formValues.role
+        role: formValues.role,
+        nombre: formValues.nombre,
+        email: formValues.email,
+        peso: formValues.formValues.peso,
+        altura: formValues.altura,
+        proceso: formValues.proceso,
+        nutricion: formValues.nutricion
       };
 
       console.log(usuario);
