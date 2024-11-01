@@ -14,12 +14,12 @@ import { RoutineDetailsComponent } from './routine-details/routine-details.compo
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent},
-  { path: 'ver-perfil', component: VerPerfilComponent},
-  { path: 'modificar-usuario', component: ModificarUsuarioComponent},
+  { path: 'view-user', component: VerPerfilComponent},
+  { path: 'modify-user', component: ModificarUsuarioComponent},
   { path: 'admin', component: AdminPageComponent },
   { path: 'basic-client', component: BasicPageComponent },
   { path: 'premium-client', component: PremiumPageComponent},
-  { path: 'rutinas',component: RoutineListComponent},
+  { path: 'routines',component: RoutineListComponent},
   { path: 'register',component: RegisterComponent},
   { path: 'details/:id',component:RoutineDetailsComponent},
   { path: '', redirectTo: 'home', pathMatch:'full' } // Redirecciona a la página de login si la ruta no se encuentra
