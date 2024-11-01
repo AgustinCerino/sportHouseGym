@@ -13,40 +13,40 @@ import { filter } from 'rxjs';
 export class HeaderComponent {
 
   showDashboardNavbar: boolean = false;
-    
+
 
 
   constructor(private router: Router) {
-    
+
     this.navBarSelector();
   }
 
 
 
   navigateToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/log']);
   }
   navigateToRoutines() {
-    this.router.navigate(['/rutinas']);
+    this.router.navigate(['/routines']);
   }
   navigateToHome() {
     this.router.navigate(['/home']);
   }
   navigateToRegister() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['log/register']);
   }
 
   navigateToVerPerfil() {
-    this.router.navigate(['/ver-perfil']);
+    this.router.navigate(['/profile']);
   }
 
   navBarSelector() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd) // Filtra solo los eventos de navegación finalizados
     ).subscribe(() => {
-      this.showDashboardNavbar = 
-      this.router.url === '/home' || 
-      this.router.url === '/register' || 
+      this.showDashboardNavbar =
+      this.router.url === '/home' ||
+      this.router.url === '/register' ||
       this.router.url === '/login';
     });
   }

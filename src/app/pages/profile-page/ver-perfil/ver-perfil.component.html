@@ -1,14 +1,13 @@
-<p>ver-perfil works!</p>
 <div class="modificar-usuario">
   <h2>Perfil de Usuario</h2>
 
-  <div class="perfil">
+  <div class="perfil" *ngIf="usuario">
     <img src="assets/images/perfil-placeholder.png" alt="Foto de Perfil" class="foto-perfil">
     <div>
       <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
       <p><strong>Email:</strong> {{ usuario.email }}</p>
-      <p><strong>Peso:</strong> {{ usuario.peso }} kg</p>
-      <p><strong>Altura:</strong> {{ usuario.altura }} cm</p>
+      <p><strong>Peso:</strong> {{ usuario.peso }} </p>
+      <p><strong>Altura:</strong> {{ usuario.altura }} </p>
       <p><strong>Proceso:</strong>
         <span *ngIf="usuario.proceso.volumen">Volumen </span>
         <span *ngIf="usuario.proceso.perdida">Pérdida de Peso </span>

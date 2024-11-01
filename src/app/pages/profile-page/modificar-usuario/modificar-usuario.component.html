@@ -1,4 +1,3 @@
-<p>modificar-usuario works!</p>
 <div class="modificar-usuario">
   <h2>Modificar Usuario</h2>
 
@@ -9,12 +8,12 @@
   </div>
 
   <h3>Información Deportiva</h3>
-  <form>
+  <form (ngSubmit)="onSubmit()"> <!-- Vincula el evento de envío -->
     <label for="peso">Peso (kg):</label>
     <input type="number" id="peso" [(ngModel)]="usuario.peso" name="peso">
 
     <label for="altura">Altura (cm):</label>
-    <input type="text" id="altura" [(ngModel)]="usuario.altura" name="altura">
+    <input type="number" id="altura" [(ngModel)]="usuario.altura" name="altura">
 
     <label>Proceso:</label>
     <div>
@@ -22,7 +21,7 @@
         <input type="checkbox" [(ngModel)]="usuario.proceso.volumen" name="volumen"> Volumen
       </label>
       <label>
-        <input type="checkbox" [(ngModel)]="usuario.proceso.perdida" name="pérdida"> Pérdida de Peso
+        <input type="checkbox" [(ngModel)]="usuario.proceso.perdida" name="perdida"> Pérdida de Peso
       </label>
       <label>
         <input type="checkbox" [(ngModel)]="usuario.proceso.mantenimiento" name="mantenimiento"> Mantenimiento
@@ -41,4 +40,3 @@
     <button type="submit">Guardar Cambios</button>
   </form>
 </div>
-

@@ -4,10 +4,10 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 
 @Component({
     selector: 'app-login',
-    standalone: true, // Marca el componente como standalone
+    standalone: true,
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
-    imports: [ReactiveFormsModule] // Importa ReactiveFormsModule aquí
+    imports: [ReactiveFormsModule]
 })
 export class LoginComponent {
     loginForm: FormGroup;
@@ -15,8 +15,8 @@ export class LoginComponent {
     constructor(private formBuilder: FormBuilder) {
         // Inicializa el formulario reactivo
         this.loginForm = this.formBuilder.group({
-            username: ['', Validators.required], // Campo requerido
-            password: ['', Validators.required]  // Campo requerido
+            username: ['', Validators.required],
+            password: ['', Validators.required]
         });
     }
 
@@ -24,14 +24,13 @@ export class LoginComponent {
         if (this.loginForm.valid) {
             const formValues = this.loginForm.value;
             console.log('Form Values:', formValues);
-            // Aquí puedes manejar el envío del formulario
         } else {
             console.error('Formulario inválido');
         }
     }
 }
 
- 
+
 
 
 
@@ -73,11 +72,11 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;  // Extraemos los valores del formulario
-  
+
       this.usuarioService.getUsuarios().pipe(
         tap((usuarios: Usuario[]) => {
           const user = usuarios.find(u => u.username === username && u.password === password);
-  
+
           if (user) {
             if (user.role === 'admin') {
               this.router.navigate(['/admin-dashboard']);
@@ -95,7 +94,7 @@ export class LoginComponent implements OnInit {
       this.errorMessage = 'Por favor, complete todos los campos';
     }
   }
-  
+
 
   onSubmit(): void {
     this.usuarioService.getUsuarios().pipe(
@@ -115,6 +114,6 @@ export class LoginComponent implements OnInit {
         }
       })
     ).subscribe();
-  }   
+  }
 }
 */

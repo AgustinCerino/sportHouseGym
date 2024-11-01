@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UsuarioService } from '../services/usuario.service';
-import { Usuario } from '../interfaces/users.interface';
+import { UsuarioService } from '../../../services/usuario.service';
+import { Usuario } from '../../../interfaces/users.interface';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -24,7 +24,7 @@ export class RegisterComponent {
       username: ['', Validators.required],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-      role: ['', Validators.required]  
+      role: ['', Validators.required]
     },
     {
       validator: this.passwordMatchValidator
@@ -44,12 +44,12 @@ export class RegisterComponent {
         username: formValues.username,
         password: formValues.password,
         role: formValues.role,
-        Nombre: formValues.nombre,
-        Email: formValues.email,
-        Peso: formValues.formValues.peso,
-        Altura: formValues.altura,
-        Proceso: formValues.proceso,
-        Nutricion: formValues.nutricion
+        nombre: formValues.nombre,
+        email: formValues.email,
+        peso: formValues.peso,
+        altura: formValues.altura,
+        proceso: formValues.proceso,
+        nutricion: formValues.nutricion
       };
 
       console.log(usuario);
@@ -58,7 +58,7 @@ export class RegisterComponent {
         next: (response) => {
           console.log('Usuario agregado:', response);
           alert('Usuario registrado con éxito');
-          
+
           // Redirección según el rol del usuario
           if (response.role === 'basic') {
             this.router.navigate(['/basic-client']);

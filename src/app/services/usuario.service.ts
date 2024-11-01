@@ -8,7 +8,7 @@ import { Usuario } from '../interfaces/users.interface'; // Asegúrate de que la
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = 'http://localhost:3000/usuarios'; 
+  private apiUrl = 'http://localhost:3000/usuarios';
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +18,7 @@ export class UsuarioService {
   }
 
   // Método para obtener un usuario por ID
-  getUsuarioById(id: number): Observable<Usuario> {
+  getUserById(id: string): Observable<Usuario> {
     return this.http.get<Usuario>(`${this.apiUrl}/${id}`);
   }
 
@@ -26,13 +26,17 @@ export class UsuarioService {
     return this.http.post<Usuario>(this.apiUrl, usuario);
   }
 
+  updateUser(id: string, usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>(`${this.apiUrl}/${id}`, usuario);
+  }
+
 
   authenticate(username: string, password: string): Observable<Usuario | undefined> {
     return this.http.get<Usuario[]>(this.apiUrl).pipe(
-      map((usuarios: Usuario[]) => 
+      map((usuarios: Usuario[]) =>
         usuarios.find(u => u.username === username && u.password === password)
     ));
   }
 
-  
+
 }

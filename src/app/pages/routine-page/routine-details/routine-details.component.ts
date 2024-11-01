@@ -1,8 +1,8 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RoutineService } from '../services/rutine.service';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
+import { RoutineService } from '../../../services/rutine.service';
 
 @Component({
   selector: 'app-routine-details',
@@ -13,7 +13,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class RoutineDetailsComponent implements OnInit {
 rutina: any;
-constructor (private route:ActivatedRoute,private rutinaService: RoutineService,public sanitizer: DomSanitizer ){}
+private rutinaService = inject(RoutineService);
+
+constructor (private route:ActivatedRoute,public sanitizer: DomSanitizer ){}
 ngOnInit() {
   const id=this.route.snapshot.paramMap.get('id');
   if(id)
