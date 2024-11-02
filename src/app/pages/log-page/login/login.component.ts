@@ -1,5 +1,80 @@
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+import { Usuario } from '../../../interfaces/users.interface';
+import { UsuarioService } from '../../../services/usuario.service';
 
-import { Component } from '@angular/core';
+@Component({
+  selector: 'app-login',
+  standalone: true,
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
+  imports: [ReactiveFormsModule]
+})
+export class LoginComponent {
+
+  @Output()
+  emitirUsuario = new EventEmitter<Usuario>(); 
+
+  loginForm: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {
+    // Inicializa el formulario reactivo
+    this.loginForm = this.formBuilder.nonNullable.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  usuarioService = inject(UsuarioService);
+  
+  IniciarSesion() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+  
+    const { username, password } = this.loginForm.value;
+    this.usuarioService.authenticate(username, password).subscribe({
+      next: (usuario) => {
+        if (usuario) {
+          console.log('Usuario autenticado:', usuario);
+          this.Redireccion(usuario); // Redirige según el rol
+        } else {
+          console.log("Credenciales incorrectas");
+        }
+      },
+      error: (error) => {
+        console.error('Error en la autenticación:', error);
+      }
+    });
+  }
+
+  Redireccion(usuario: Usuario) {  
+    // Redirección según el rol del usuario
+    if (usuario.role === 'basic') {
+      this.router.navigate(['/user/basic']);
+    } else if (usuario.role === 'premium') {
+      this.router.navigate(['/user/premium']);
+    } else if (usuario.role === 'admin') {
+      this.router.navigate(['/user/admin']);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+/// COMENTO ESTO PARA PEGAR CODIGO lOGiN DE SANTI-------------------------------------------------------------
+/*import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -28,12 +103,10 @@ export class LoginComponent {
             console.error('Formulario inválido');
         }
     }
-}
+} */
 
 
-
-
-
+///ESTO YA ESTABA ACA -------------------------------------------------------------------------
 /*import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';

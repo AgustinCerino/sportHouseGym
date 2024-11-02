@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Usuario } from '../interfaces/users.interface'; // Asegúrate de que la ruta sea correcta
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class UsuarioService {
   private apiUrl = 'http://localhost:3000/usuarios';
+  private usuarioActual: Usuario | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -35,8 +38,29 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.apiUrl).pipe(
       map((usuarios: Usuario[]) =>
         usuarios.find(u => u.username === username && u.password === password)
-    ));
+      ),
+      tap(usuario => {
+        if (usuario) {
+          this.usuarioActual = usuario;
+          localStorage.setItem('usuarioActual', JSON.stringify(usuario)); // Guardar en localStorage
+        }
+      })
+    );
   }
 
+  getUsuarioActual(): Usuario | null {
+    if (!this.usuarioActual) {
+      const usuarioData = localStorage.getItem('usuarioActual');
+      if (usuarioData) {
+        this.usuarioActual = JSON.parse(usuarioData);
+      }
+    }
+    return this.usuarioActual;
+  }
 
+  cerrarSesion(): void {
+    this.usuarioActual = null;
+    localStorage.removeItem('usuarioActual');
+  }
 }
+

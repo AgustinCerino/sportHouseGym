@@ -123,6 +123,37 @@
       "Altura": "168 cm",
       "Proceso": "Mantenimiento",
       "Nutricion": "Equilibrada"
+    },
+    {
+      "id": "f128",
+      "username": "reve",
+      "password": "1234",
+      "role": "basic",
+      "email": "erverv"
+    },
+    {
+      "id": "714e",
+      "username": "cewwc",
+      "password": "123",
+      "role": "basic",
+      "nombre": "cewcw",
+      "email": "cwecw",
+      "peso": "213",
+      "altura": "2131",
+      "proceso": "Ganancia de masa",
+      "nutricion": "Alta en proteínas"
+    },
+    {
+      "id": "b38a",
+      "username": "veww",
+      "password": "123",
+      "role": "basic",
+      "nombre": "cscd",
+      "email": "vvw",
+      "peso": "231",
+      "altura": "231",
+      "proceso": "Ganancia de masa",
+      "nutricion": "Alta en proteínas"
     }
   ],
   "rutinas": [

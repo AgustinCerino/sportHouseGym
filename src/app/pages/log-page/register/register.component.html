@@ -47,7 +47,56 @@
             <small>Role is required.</small>
           }  
     </div>
-    
+
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre y Apellido</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre">
+      @if(registerForm.controls['nombre'].getError('required') && registerForm.controls['nombre'].touched) {
+        <small>Nombre y Apellido is required.</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="peso" class="form-label">Peso (kg)</label>
+      <input type="text" class="form-control" id="peso" formControlName="peso">
+      @if(registerForm.controls['peso'].getError('required') && registerForm.controls['peso'].touched) {
+        <small>Peso is required.</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="altura" class="form-label">Altura (cm)</label>
+      <input type="text" class="form-control" id="altura" formControlName="altura">
+      @if(registerForm.controls['altura'].getError('required') && registerForm.controls['altura'].touched) {
+        <small>Altura is required.</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="proceso" class="form-label">Proceso</label>
+      <select class="form-control" id="proceso" formControlName="proceso">
+        <option value="Ganancia de masa">Ganancia de masa</option>
+        <option value="Pérdida de peso">Pérdida de peso</option>
+        <option value="Mantenimiento">Mantenimiento</option>
+      </select>
+      @if(registerForm.controls['proceso'].getError('required') && registerForm.controls['proceso'].touched) {
+        <small>Proceso is required.</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="nutricion" class="form-label">Nutrición</label>
+      <select class="form-control" id="nutricion" formControlName="nutricion">
+        <option value="Equilibrada">Equilibrada</option>
+        <option value="Alta en proteínas">Alta en proteínas</option>
+        <option value="Baja en carbohidratos">Baja en carbohidratos</option>
+        <option value="Vegetariana">Vegetariana</option>
+      </select>
+      @if(registerForm.controls['nutricion'].getError('required') && registerForm.controls['nutricion'].touched) {
+        <small>Nutrición is required.</small>
+      }
+    </div>
+
     <button type="submit" class="btn btn-primary">Registrarme</button>
   </form>
 
