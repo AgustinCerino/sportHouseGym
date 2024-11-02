@@ -9,12 +9,12 @@
     </div>
 
     <!-- Barra de búsqueda -->
-    <input 
-        type="text" 
-        [(ngModel)]="filtro" 
-        placeholder="Buscar usuarios..." 
-        class="busqueda" 
-        (input)="filtrarUsuarios()" 
+    <input
+        type="text"
+        [(ngModel)]="filtro"
+        placeholder="Buscar usuarios..."
+        class="busqueda"
+        (input)="filtrarUsuarios()"
     />
 
 
@@ -23,12 +23,12 @@
       <h2>Lista de Usuarios</h2>
       <div *ngFor="let usuario of usuariosFiltrados" class="usuario-item">
           <p class="usuario-nombre">{{ usuario.username}}</p>
-          <p>Email: {{ usuario.Email}}</p>
-          <p>Peso: {{ usuario.Peso }} </p>
-          <p>Altura: {{ usuario.Altura }} </p>
-          <p>Proceso: {{ usuario.Proceso }} </p>
-          <p>Nutrición: {{ usuario.Nutricion }}</p>
-      
+          <p>Email: {{ usuario.email}}</p>
+          <p>Peso: {{ usuario.peso }} </p>
+          <p>Altura: {{ usuario.altura }} </p>
+          <p>Proceso: {{ usuario.proceso }} </p>
+          <p>Nutrición: {{ usuario.nutricion }}</p>
+
         </div>
-        
+
   </div>
