@@ -1,0 +1,60 @@
+.calendar-container {
+  padding: 20px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #4e4b4b, #000);
+  color: #fff;
+  max-width: 700px; /* Ajustar el ancho máximo */
+  width: 100%; /* Asegurar que ocupe el 100% de su contenedor padre */
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #333;
+  padding: 10px;
+  border: 1px solid #444;
+}
+
+td {
+  width: 14.28%; /* Mantener el ancho para 7 días */
+  height: 60px; /* Ajustar altura de las celdas */
+  border: 1px solid #444;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+td:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Efecto hover */
+}
+
+td:empty {
+  background-color: transparent; /* Celdas vacías sin fondo */
+}
+
+td.selected {
+  background-color: #a82525; /* Color que desees para el día seleccionado */
+  color: white; /* Cambia el color del texto si es necesario */
+}
+
+.selected {
+  background-color: lightblue; /* Cambia el color de fondo cuando se selecciona */
+}
+
+.activity {
+  font-weight: bold; /* Destaca el texto si hay una actividad */
+  color: green; /* Cambia el color del texto */
+}
