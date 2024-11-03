@@ -12,10 +12,10 @@ nav {
 .logo{
   cursor: pointer;
 }
-.logo img {
-  width: 100px;
+.logo  {
+  width: 60px;
   height: auto;
-  max-height: 80px;
+  max-height: 40px;
   border-radius: 8px;
 
 }

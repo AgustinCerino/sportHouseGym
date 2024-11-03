@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ContactComponent {
   private phoneNumber: string = '542235999999';
   public whatsappLink: string = '';
-  private instaUser: string ='quimey_dagos';
+  private instaUser: string ='sporthousegym.mdp';
   public instagramLink: string = '';
 
   public base64Image: string = '';
