@@ -15,7 +15,7 @@ import { UsuarioService } from '../../../services/usuario.service';
 export class LoginComponent {
 
   @Output()
-  emitirUsuario = new EventEmitter<Usuario>(); 
+  emitirUsuario = new EventEmitter<Usuario>();
 
   loginForm: FormGroup;
 
@@ -31,12 +31,12 @@ export class LoginComponent {
   }
 
   usuarioService = inject(UsuarioService);
-  
+
   IniciarSesion() {
     if (this.loginForm.invalid) {
       return;
     }
-  
+
     const { username, password } = this.loginForm.value;
     this.usuarioService.authenticate(username, password).subscribe({
       next: (usuario) => {
@@ -53,7 +53,7 @@ export class LoginComponent {
     });
   }
 
-  Redireccion(usuario: Usuario) {  
+  Redireccion(usuario: Usuario) {
     // Redirección según el rol del usuario
     if (usuario.role === 'basic') {
       this.router.navigate(['/user/basic']);
@@ -62,6 +62,11 @@ export class LoginComponent {
     } else if (usuario.role === 'admin') {
       this.router.navigate(['/user/admin']);
     }
+  }
+
+  toRegister()
+  {
+    this.router.navigate(['log/register']);
   }
 }
 

@@ -31,26 +31,33 @@ export class ModificarUsuarioComponent implements OnInit {
 
   private userService = inject(UsuarioService);
   private router = inject(Router);
-  private route = inject(ActivatedRoute);
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.userService.getUserById(id).subscribe(data => {
-        this.usuario = data;
-      });
+    const fetchedUsuario = this.userService.getUsuarioActual();
+    if (fetchedUsuario) {
+      this.usuario = fetchedUsuario; // Asigna solo si fetchedUsuario no es null
+    } else {
+      this.router.navigate(['/log']);
     }
   }
 
+
   onSubmit() {
-    this.userService.updateUser(this.usuario.id.toString(), this.usuario).subscribe(
-      response => {
-        console.log('Usuario actualizado:', response);
-        this.router.navigate(['/profile', this.usuario.id]); // Redirige a ver perfil después de la actualización
+   if (this.usuario)
+   {
+    this.userService.updateUser(this.usuario.id,this.usuario).subscribe(
+      response =>{
+        console.log('Usuario actualizado',response);
+
+        localStorage.setItem('usuarioActual',JSON.stringify(this.usuario));
+
+        this.router.navigate(['/profile']);
       },
-      error => {
-        console.error('Error al actualizar el usuario:', error);
+      error=>
+      {
+        console.error('Error al acrualizar');
       }
-    );
+    )
+   }
   }
 }

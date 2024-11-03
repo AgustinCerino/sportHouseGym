@@ -167,17 +167,15 @@
       "role": "basic",
       "nombre": "Lucas Sette",
       "email": "tetete@example.com",
-      "peso": "77 kg",
+      "peso": 76,
       "altura": "177 cm",
       "proceso": {
-        "volumen": false,
+        "volumen": true,
         "perdida": false,
-        "mantenimiento": true
+        "mantenimiento": false
       },
       "nutricion": "Equilibrada"
-
     }
-
   ],
   "rutinas": [
     {

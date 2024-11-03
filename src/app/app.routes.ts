@@ -24,7 +24,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent},
   ///Rutas de perfil
       { path: 'profile', component: ProfilePageComponent, children: [
-        { path: ':id', component: VerPerfilComponent },
+        { path: '', component: VerPerfilComponent },
         { path: 'modify-user/:id', component: ModificarUsuarioComponent}
       ]},
   /// Rutas de logeo
