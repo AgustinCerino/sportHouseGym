@@ -63,6 +63,11 @@ export class HeaderComponent implements OnDestroy {
     this.router.navigate(['/profile']);
   }
 
+  navigateToContact()
+  {
+    this.router.navigate(['/contact']);
+  }
+
   navigateToCerrarSesion() {
     this.usuarioService.cerrarSesion();
     this.router.navigate(['/home']);

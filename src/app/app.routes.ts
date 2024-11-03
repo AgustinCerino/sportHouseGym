@@ -20,6 +20,8 @@ import { AdminPageComponent } from './pages/user-page/admin-user/admin-page.comp
 import { BasicPageComponent } from './pages/user-page/basic-user/basic-page.component';
 import { PremiumPageComponent } from './pages/user-page/premium-user/premium-page.component';
 
+import { ContactComponent } from './contact/contact.component';
+
 export const routes: Routes = [
   { path: 'home', component: HomeComponent},
   ///Rutas de perfil
@@ -43,6 +45,7 @@ export const routes: Routes = [
         {path:'basic', component: BasicPageComponent},
         {path:'premium', component: PremiumPageComponent}
       ]},
+      { path:'contact',component: ContactComponent},
 
   { path: '', redirectTo: 'home', pathMatch:'full' } // Redirecciona a la página de login si la ruta no se encuentra
 ];
