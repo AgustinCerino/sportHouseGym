@@ -1,39 +1,60 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { filter, Subscription } from 'rxjs';
 import { UsuarioService } from '../services/usuario.service';
-
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
-
+export class HeaderComponent implements OnDestroy {
   showDashboardNavbar: boolean = false;
+  private authSubscription!: Subscription;
 
-
-
-  constructor(private router: Router) {
-
+  constructor(private router: Router, private usuarioService: UsuarioService) {
     this.navBarSelector();
+
+
+    this.authSubscription = this.usuarioService.loggedIn$.subscribe(loggedIn => {
+      this.updateNavBar(loggedIn);
+    });
   }
 
+  ngOnDestroy() {
 
-  usuarioService = inject(UsuarioService);
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe();
+    }
+  }
+
+  private navBarSelector() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.router.url === '/home' ||
+      this.router.url === '/register' ||
+      this.router.url === '/login';
+    });
+  }
+
+  private updateNavBar(loggedIn: boolean) {
+    this.showDashboardNavbar = !loggedIn;
+  }
 
   navigateToLogin() {
     this.router.navigate(['/log']);
   }
+
   navigateToRoutines() {
     this.router.navigate(['/routines']);
   }
+
   navigateToHome() {
     this.router.navigate(['/home']);
   }
+
   navigateToRegister() {
     this.router.navigate(['log/register']);
   }
@@ -43,19 +64,7 @@ export class HeaderComponent {
   }
 
   navigateToCerrarSesion() {
-    this.usuarioService.cerrarSesion()
+    this.usuarioService.cerrarSesion();
     this.router.navigate(['/home']);
   }
-
-  navBarSelector() {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd) // Filtra solo los eventos de navegación finalizados
-    ).subscribe(() => {
-      this.showDashboardNavbar =
-      this.router.url === '/home' ||
-      this.router.url === '/register' ||
-      this.router.url === '/login';
-    });
-  }
-
 }

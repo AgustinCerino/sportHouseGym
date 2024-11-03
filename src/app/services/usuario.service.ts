@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject} from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { Usuario } from '../interfaces/users.interface'; // Asegúrate de que la ruta sea correcta
+import { Usuario } from '../interfaces/users.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,12 @@ import { Usuario } from '../interfaces/users.interface'; // Asegúrate de que la
 export class UsuarioService {
   private apiUrl = 'http://localhost:3000/usuarios';
   private usuarioActual: Usuario | null = null;
+  private loggedInSubject = new BehaviorSubject<boolean>(false);
+  public loggedIn$ = this.loggedInSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.checkLocalStorage();
+  }
 
   // Método para obtener todos los usuarios
   getUsuarios(): Observable<Usuario[]> {
@@ -33,6 +37,13 @@ export class UsuarioService {
     return this.http.put<Usuario>(`${this.apiUrl}/${id}`, usuario);
   }
 
+  private checkLocalStorage() {
+    const usuarioData = localStorage.getItem('usuarioActual');
+    if (usuarioData) {
+      this.usuarioActual = JSON.parse(usuarioData);
+      this.loggedInSubject.next(true); // Usuario está logueado
+    }
+  }
 
   authenticate(username: string, password: string): Observable<Usuario | undefined> {
     return this.http.get<Usuario[]>(this.apiUrl).pipe(
@@ -42,7 +53,8 @@ export class UsuarioService {
       tap(usuario => {
         if (usuario) {
           this.usuarioActual = usuario;
-          localStorage.setItem('usuarioActual', JSON.stringify(usuario)); // Guardar en localStorage
+          this.loggedInSubject.next(true);
+          localStorage.setItem('usuarioActual', JSON.stringify(usuario));
         }
       })
     );
@@ -60,6 +72,7 @@ export class UsuarioService {
 
   cerrarSesion(): void {
     this.usuarioActual = null;
+    this.loggedInSubject.next(false);
     localStorage.removeItem('usuarioActual');
   }
 }

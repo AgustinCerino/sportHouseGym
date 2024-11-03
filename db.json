@@ -167,8 +167,8 @@
       "role": "basic",
       "nombre": "Lucas Sette",
       "email": "tetete@example.com",
-      "peso": 76,
-      "altura": "177 cm",
+      "peso": 77,
+      "altura": 177,
       "proceso": {
         "volumen": true,
         "perdida": false,
