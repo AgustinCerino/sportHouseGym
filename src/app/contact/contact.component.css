@@ -12,24 +12,55 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.whatsapp-link {
-  display: inline-flex;
+.button-container {
+  display: flex;
+  flex-direction: column; /* Coloca los botones en columna */
+  gap: 10px; /* Espacio uniforme entre los botones */
+}
+.gmail-link,
+.whatsapp-link,
+.instagram-link {
+  display: flex;
   align-items: center;
-  margin-top: 10px;
+  justify-content: center; /* Centra el contenido dentro del botón */
   padding: 10px;
-  background-color: #25D366;
-  color: white;
-  text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+  width: 100%; /* Asegura que ambos botones ocupen el ancho completo */
+  margin-top: 10px; /* Espacio entre los botones */
+  text-decoration: none;
+  color: white;
+}
+
+.gmail-icon,
+.whatsapp-icon,
+.instagram-icon {
+  width: 24px; /* Ajusta el tamaño del icono */
+  height: 24px; /* Ajusta el tamaño del icono */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.whatsapp-link {
+  background-color: #25D366;
+}
+.instagram-link {
+  border: 1px solid #000000;
+  background: linear-gradient(135deg, #F58529, #F77737, #FBC02D, #EB4A1D, #DA1A57, #A519D4, #7D1F8B);
+}
+
+.gmail-link {
+  background-color: #DB4437; /* Color de fondo de Gmail */
+}
+
+.instagram-link:hover {
+  background: linear-gradient(135deg, #C66B22, #C05327, #D49A1C, #C03A15, #9F1533, #7F0F8E, #590F5B); /* Tonalidades más oscuras */
+}
+
+.gmail-link:hover {
+  background-color: #C13529; /* Color más oscuro para el hover */
 }
 
 .whatsapp-link:hover {
   background-color: #128C7E;
 }
 
-.whatsapp-icon {
-  width: 24px; /* Ajusta el tamaño del icono */
-  height: 24px; /* Ajusta el tamaño del icono */
-  margin-right: 8px; /* Espacio entre el icono y el texto */
-}
