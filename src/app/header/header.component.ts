@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { UsuarioService } from '../services/usuario.service';
 
 
 @Component({
@@ -22,6 +23,7 @@ export class HeaderComponent {
   }
 
 
+  usuarioService = inject(UsuarioService);
 
   navigateToLogin() {
     this.router.navigate(['/log']);
@@ -38,6 +40,11 @@ export class HeaderComponent {
 
   navigateToVerPerfil() {
     this.router.navigate(['/profile']);
+  }
+
+  navigateToCerrarSesion() {
+    this.usuarioService.cerrarSesion()
+    this.router.navigate(['/home']);
   }
 
   navBarSelector() {

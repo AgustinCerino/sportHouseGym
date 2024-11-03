@@ -24,7 +24,12 @@ export class RegisterComponent {
       username: ['', Validators.required],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-      role: ['', Validators.required]
+      role: ['', Validators.required],
+      nombre: ['', Validators.required],
+      peso: ['', Validators.required],
+      altura: ['', Validators.required],
+      proceso: ['', Validators.required],
+      nutricion: ['', Validators.required]
     },
     {
       validator: this.passwordMatchValidator
@@ -61,11 +66,11 @@ export class RegisterComponent {
 
           // Redirección según el rol del usuario
           if (response.role === 'basic') {
-            this.router.navigate(['/basic-client']);
+            this.router.navigate(['/user/basic']);
           } else if (response.role === 'premium') {
-            this.router.navigate(['/premium-client']);
+            this.router.navigate(['/user/premium']);
           } else if (response.role === 'admin') {
-            this.router.navigate(['/admin']);
+            this.router.navigate(['/user/admin']);
           }
         },
         error: (error) => {
