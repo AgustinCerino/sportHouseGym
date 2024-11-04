@@ -19,6 +19,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
 import { AdminPageComponent } from './pages/user-page/admin-user/admin-page.component';
 import { BasicPageComponent } from './pages/user-page/basic-user/basic-page.component';
 import { PremiumPageComponent } from './pages/user-page/premium-user/premium-page.component';
+import { CalendarComponent } from './pages/user-page/calendar/calendar.component';
 
 import { ContactComponent } from './contact/contact.component';
 
@@ -43,7 +44,8 @@ export const routes: Routes = [
       {path:'user',component: UserPageComponent, children :[
         {path:'admin',component: AdminPageComponent},
         {path:'basic', component: BasicPageComponent},
-        {path:'premium', component: PremiumPageComponent}
+        {path:'premium', component: PremiumPageComponent},
+        {path:'calendar', component: CalendarComponent}
       ]},
       { path:'contact',component: ContactComponent},
 
