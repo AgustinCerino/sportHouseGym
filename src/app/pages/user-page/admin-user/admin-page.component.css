@@ -28,7 +28,7 @@
 .dropdown {
     position: absolute; /* Cambiado a absolute para posicionar en el margen izquierdo */
     left: 20px; /* Espacio desde el margen izquierdo */
-    top: 90px; /* Espacio desde la parte superior */
+    top: 100px; /* Espacio desde la parte superior */
 }
 
 .dropbtn {
@@ -98,9 +98,60 @@
     font-size: 18px; /* Tamaño de fuente */
 }
 
-/* Estilo para detalles adicionales */
+.flecha {
+    font-size: 0.8em; /* Tamaño de flecha más pequeño */
+    color: #666; /* Gris para la flecha */
+}
+
 .usuario-detalles {
-    font-size: 14px; /* Tamaño de fuente más pequeño */
-    color: #f1faee; /* Blanco */
-    margin-top: 5px; /* Espacio superior */
+    font-size: 14px;
+    color: #f1faee;
+    margin-top: 5px;
+    padding-left: 10px; /* Indentación para los detalles */
+}
+.input-busqueda {
+    width: 1000px;                /* Anchura más larga */
+    padding: 10px 35px 10px 15px; /* Espaciado interno */
+    border-radius: 5px;           /* Bordes redondeados */
+    border: 1px solid #ccc;       /* Borde ligero */
+    background-color: #f0f0f02f;    /* Fondo gris claro */
+    color: #aaa;                  /* Texto gris claro */
+    font-size: 16px;              /* Tamaño de fuente */
+    outline: none;
+  }
+
+  .botones-acciones {
+    position: absolute; 
+    right: 0; 
+    display: flex;
+    gap: 5px; 
+}
+
+  .btn-modificar, .btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e63946;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+  
+  .btn-modificar:hover {
+    color: #c98f94; /* Color al pasar el mouse */
+}
+
+.btn-eliminar:hover .icono-basura {
+    color: #e63946; /* Cambia el color del ícono al pasar el mouse */
+}
+
+.icono-basura {
+    font-size: 18px;
+}
+.usuario-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Espacio entre nombre y botones */
+    position: relative;
 }

@@ -1,33 +1,68 @@
 <div class="home">
-    <h1>Bienvenido a nuestra página</h1>
-    <div class="dropdown">
-      <button class="dropbtn">Menú</button>
-      <div class="dropdown-content">
-        <a href="javascript:void(0)" (click)="obtenerUsuarios()">Usuarios</a>
-        <a href="#rutinas">Rutinas</a>
+  <h1>Bienvenido a nuestra página</h1>
+  <div class="dropdown">
+    <button class="dropbtn">Gestión</button>
+    <div class="dropdown-content">
+      <a href="javascript:void(0)" (click)="obtenerUsuarios()">Usuarios</a>
+      <a href="#rutinas">Rutinas</a>
+    </div>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <input *ngIf="mostrarUsuarios" type="text" [(ngModel)]="filtro" placeholder="Buscar usuarios..."
+    class="busqueda input-busqueda" (input)="filtrarUsuarios()" />
+
+
+  <!-- Lista de usuarios -->
+  <div *ngIf="mostrarUsuarios" class="usuarios-lista">
+
+    <h2>Lista de Usuarios</h2>
+    <div *ngFor="let usuario of usuariosFiltrados; let i = index" class="usuario-item">
+      <!-- Nombre de usuario con flecha desplegable -->
+
+      <div class="usuario-header">
+        <p (click)="toggleDetalles(i)" class="usuario-nombre">
+          {{ usuario.username }}
+          <span class="flecha">{{ detallesVisible === i ? '▲' : '▼' }}</span>
+        </p>
+
+        <div class="botones-acciones">
+          <button class="btn-modificar" (click)="modificarUsuario(usuario)">✏️</button>
+          <button class="btn-eliminar" (click)="eliminarUsuario(usuario)">🗑️</button>
+      </div>
+  </div>
+   
+
+
+      <!-- Detalles del usuario que se muestran solo si detallesVisible coincide con el índice actual -->
+      <div *ngIf="detallesVisible === i" class="usuario-detalles">
+        <p>Email: {{ usuario.email }}</p>
+        <p>Peso: {{ usuario.peso }}</p>
+        <p>Altura: {{ usuario.altura }}</p>
+        <p>Nutrición: {{ usuario.nutricion }}</p>
       </div>
     </div>
-
-    <!-- Barra de búsqueda -->
-    <input
-        type="text"
-        [(ngModel)]="filtro"
-        placeholder="Buscar usuarios..."
-        class="busqueda"
-        (input)="filtrarUsuarios()"
-    />
-
-
-    <!-- Sección para mostrar la lista de usuarios -->
-    <div *ngIf="mostrarUsuarios" class="usuarios-lista">
-      <h2>Lista de Usuarios</h2>
-      <div *ngFor="let usuario of usuariosFiltrados" class="usuario-item">
-          <p class="usuario-nombre">{{ usuario.username}}</p>
-          <p>Email: {{ usuario.email}}</p>
-          <p>Peso: {{ usuario.peso }} </p>
-          <p>Altura: {{ usuario.altura }} </p>
-          <p>Proceso: {{ usuario.proceso }} </p>
-          <p>Nutrición: {{ usuario.nutricion }}</p>
-        </div>
-
   </div>
+
+      <!-- Formulario de edición que solo se muestra en modo edición -->
+      <div *ngIf="editMode" class="editar-usuario-form">
+        <h3>Editar Usuario</h3>
+        <form [formGroup]="editForm" (ngSubmit)="actualizarUsuario()">
+            <label>Email:
+                <input formControlName="email" type="email" />
+            </label>
+            <label>Peso:
+                <input formControlName="peso" type="number" />
+            </label>
+            <label>Altura:
+                <input formControlName="altura" type="number" />
+            </label>
+            <label>Nutrición:
+                <input formControlName="nutricion" type="text" />
+            </label>
+            <button type="submit">Guardar Cambios</button>
+            <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+        </form>
+    </div>
+
+</div>
