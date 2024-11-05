@@ -155,3 +155,65 @@
     justify-content: center; /* Espacio entre nombre y botones */
     position: relative;
 }
+
+
+.editar-usuario-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(#e63946, #000000 95%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+  }
+  
+  .editar-usuario-form h3 {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .editar-usuario-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .editar-usuario-form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #f7efef;
+  }
+  
+  .editar-usuario-form input {
+    background-color: #2e0e0e;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f7efef;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .editar-usuario-form button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #2f2d2d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .editar-usuario-form button[type="submit"] {
+    background-color: #e63946;
+  }
+  
+  .editar-usuario-form button:hover {
+    background-color: #48535f;
+  }
+  
+  .editar-usuario-form button[type="submit"]:hover {
+    background-color: #ff4c5b;
+  }
