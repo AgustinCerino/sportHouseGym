@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+
 //imports de material icons
 @Component({
   selector: 'app-contact',
+  standalone: true,
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
