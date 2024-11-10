@@ -4,9 +4,12 @@
     <button class="dropbtn">Gestión</button>
     <div class="dropdown-content">
       <a href="javascript:void(0)" (click)="obtenerUsuarios()">Usuarios</a>
-      <a href="#rutinas">Rutinas</a>
+      <a href="javascript:void(0)" (click)="obtenerRutinas()">Rutinas</a>
     </div>
   </div>
+
+
+        <!------------------------------------------USER ABM---------------------------------------------------->
 
   <!-- Barra de búsqueda -->
   <input *ngIf="mostrarUsuarios" type="text" [(ngModel)]="filtro" placeholder="Buscar usuarios..."
@@ -64,5 +67,54 @@
             <button type="button" (click)="cancelarEdicion()">Cancelar</button>
         </form>
     </div>
+
+      <!------------------------------------------RUTINAS ABM---------------------------------------------------->
+
+      <!-- Barra de búsqueda para rutinas -->
+  <input *ngIf="mostrarRutinas" type="text" [(ngModel)]="filtroRutina" placeholder="Buscar rutinas..."
+  class="busqueda input-busqueda" (input)="filtrarRutinas()" />
+
+<!-- Lista de rutinas -->
+<div *ngIf="mostrarRutinas" class="usuarios-lista">
+  <h2>Lista de Rutinas</h2>
+  <div *ngFor="let rutina of rutinasFiltradas; let i = index" class="usuario-item">
+    <!-- Nombre de la rutina con flecha desplegable -->
+    <div class="usuario-header">
+      <p (click)="toggleDetallesRutina(i)" class="usuario-nombre">
+        {{ rutina.nombre }}
+        <span class="flecha">{{ detallesRutinaVisible === i ? '▲' : '▼' }}</span>
+      </p>
+      <div class="botones-acciones">
+        <button class="btn-modificar" (click)="modificarRutina(rutina)">✏️</button>
+        <button class="btn-eliminar" (click)="eliminarRutina(rutina)">🗑️</button>
+      </div>
+    </div>
+
+    <!-- Detalles de la rutina que se muestran solo si detallesRutinaVisible coincide con el índice actual -->
+    <div *ngIf="detallesRutinaVisible === i" class="usuario-detalles">
+      <p>Descripción: {{ rutina.descripcion }}</p>
+      <p>URL del video: <a [href]="rutina.url" target="_blank">Ver Video</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- Formulario de edición que solo se muestra en modo edición de rutinas -->
+<div *ngIf="editModeRutina" class="editar-usuario-form">
+  <h3>Editar Rutina</h3>
+  <form [formGroup]="editFormRutina" (ngSubmit)="actualizarRutina()">
+    <label>Nombre:
+      <input formControlName="nombre" type="text" />
+    </label>
+    <label>Descripción:
+      <input formControlName="descripcion" type="text" />
+    </label>
+    <label>URL del Video:
+      <input formControlName="url" type="url" />
+    </label>
+    <button type="submit">Guardar Cambios</button>
+    <button type="button" (click)="cancelarEdicionRutina()">Cancelar</button>
+  </form>
+</div>
+
 
 </div>

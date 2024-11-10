@@ -3,6 +3,8 @@ import { Usuario} from '../../../interfaces/users.interface';
 import { UsuarioService } from '../../../services/usuario.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { Rutina } from '../../../interfaces/routine.interface';
+import { RoutineService } from '../../../services/rutine.service';
 
 @Component({
   selector: 'app-admin-page',
@@ -20,18 +22,38 @@ export class AdminPageComponent implements OnInit {
   editMode: boolean = false;
   editForm: FormGroup;
   usuarioSeleccionado: Usuario | null = null; 
-  constructor(private userService: UsuarioService, private fb: FormBuilder) {
-    this.editForm = this.fb.group({
+
+  rutinas: Rutina[] = []; // Array para almacenar las rutinas
+  rutinasFiltradas: Rutina[] = []; // Array para almacenar las rutinas filtradas
+  mostrarRutinas: boolean = false; // Controla si mostrar o no las rutinas
+  filtroRutina: string = ''; // Variable para almacenar el texto de búsqueda
+  detallesRutinaVisible: number | null = null; // Variable para mostrar detalles de una rutina
+  editModeRutina: boolean = false;
+  editFormRutina: FormGroup;
+  rutinaSeleccionada: Rutina | null = null; 
+  
+  
+  
+  constructor(private userService: UsuarioService, private fbUser: FormBuilder, private rutinaService: RoutineService, private fbRutina: FormBuilder) {
+    this.editForm = this.fbUser.group({
       email: [''],
       peso: [''],
       altura: [''],
       nutricion: ['']
     });
+
+    this.editFormRutina = this.fbRutina.group({
+      nombre: [''],
+      descripcion: [''],
+      url: ['']
+    });
+
   }
 
   
-
   ngOnInit(): void {}
+
+  //-----------------------USER AMB----------------------------------------------
 
   // Método para obtener los usuarios y mostrarlos
   obtenerUsuarios(): void {
@@ -106,6 +128,98 @@ cancelarEdicion(): void {
   this.editMode = false; // Desactiva el modo de edición
   this.usuarioSeleccionado = null;
 }
+
+// --------------------------------------RUTINAS ABM-----------------------------------
+
+ // Método para obtener las rutinas y mostrarlas
+ obtenerRutinas(): void {
+  this.rutinaService.getRutinas().subscribe(
+    (rutinas: Rutina[]) => {
+      this.rutinas = rutinas;
+      this.rutinasFiltradas = rutinas; // Inicializa con todas las rutinas
+      this.mostrarRutinas = true;
+    }
+  );
+}
+
+eliminarRutina(rutina: Rutina): void {
+  if (!rutina) {
+    console.warn("Rutina inválida para eliminar");
+    return;
+  }
+
+  this.rutinaService.deleteRutina(rutina.id).subscribe(
+    () => {
+      // Remueve la rutina eliminada de la lista local de rutinas
+      this.rutinas = this.rutinas.filter(r => r.id !== rutina.id);
+      this.rutinasFiltradas = this.rutinasFiltradas.filter(r => r.id !== rutina.id);
+      
+      console.log("Rutina eliminada:", rutina);
+    },
+    (error) => {
+      console.error("Error al eliminar la rutina:", error);
+    }
+  );
+}
+
+// Método para filtrar rutinas según el texto de búsqueda
+filtrarRutinas(): void {
+  this.rutinasFiltradas = this.rutinas.filter(rutina =>
+    rutina.nombre.toLowerCase().includes(this.filtroRutina.toLowerCase())
+  );
+}
+
+toggleDetallesRutina(index: number): void {
+  this.detallesRutinaVisible = this.detallesRutinaVisible === index ? null : index; 
+}
+
+modificarRutina(rutina: Rutina): void {
+  this.editModeRutina = true; // Activa el modo de edición
+  this.rutinaSeleccionada = rutina; // Almacena la rutina seleccionada
+  // Rellena el formulario con los datos actuales de la rutina
+  this.editFormRutina.patchValue({
+    nombre: rutina.nombre,
+    descripcion: rutina.descripcion,
+    url: rutina.url
+  });
+}
+
+actualizarRutina(): void {
+  // Verifica si hay una rutina seleccionada y si el formulario es válido
+  if (this.rutinaSeleccionada && this.editFormRutina.valid) {
+    // Combina los datos de la rutina seleccionada con los valores del formulario
+    const updatedData = { ...this.rutinaSeleccionada, ...this.editFormRutina.value };
+
+    // Llama al servicio para actualizar la rutina
+    this.rutinaService.updateRutina(this.rutinaSeleccionada.id, updatedData).subscribe(
+      (updatedRutina) => {
+        // Actualiza la lista de rutinas localmente para reflejar los cambios
+        const index = this.rutinas.findIndex(r => r.id === updatedRutina.id);
+        if (index !== -1) {
+          this.rutinas[index] = updatedRutina; // Actualiza la rutina en la lista original
+          this.rutinasFiltradas[index] = updatedRutina; // Actualiza la rutina en la lista filtrada
+        }
+
+        // Restablece el estado del formulario y la rutina seleccionada
+        this.editModeRutina = false; // Desactiva el modo de edición
+        this.rutinaSeleccionada = null;
+        this.editFormRutina.reset(); // Opcional: restablece el formulario
+      },
+      (error) => {
+        console.error('Error al actualizar rutina', error);
+      }
+    );
+  } else {
+    console.warn('No hay rutina seleccionada o el formulario no es válido');
+  }
+}
+
+cancelarEdicionRutina(): void {
+  this.editModeRutina = false; // Desactiva el modo de edición
+  this.rutinaSeleccionada = null;
+}
+
+
 }
 
 

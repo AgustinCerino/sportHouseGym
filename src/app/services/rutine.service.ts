@@ -26,12 +26,12 @@ export class RoutineService {
   }
 
   // Editar una rutina existente
-  updateRutina(id: number, rutina: any): Observable<any> {
+  updateRutina(id: string, rutina: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, rutina);
   }
 
   // Eliminar una rutina por su ID
-  deleteRutina(id: number): Observable<any> {
+  deleteRutina(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
