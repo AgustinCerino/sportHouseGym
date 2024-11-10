@@ -1,3 +1,5 @@
+//protector de rutas
+import { AuthGuard } from './guard/authGuard';
 
 import { Routes } from '@angular/router';
 
@@ -29,7 +31,8 @@ export const routes: Routes = [
       { path: 'profile', component: ProfilePageComponent, children: [
         { path: '', component: VerPerfilComponent },
         { path: 'modify-user/:id', component: ModificarUsuarioComponent}
-      ]},
+      ],
+      canActivate: [AuthGuard]},
   /// Rutas de logeo
       {path: 'log',component: LogPageComponent, children:[
         {path:'',component: LoginComponent},
@@ -39,16 +42,17 @@ export const routes: Routes = [
       {path:'routines',component:RoutinePageComponent, children :[
         { path: '',component: RoutineListComponent},
         { path: 'details/:id',component:RoutineDetailsComponent}
-      ]},
+      ],canActivate: [AuthGuard]},
   /// Rutas de Usuarios
       {path:'user',component: UserPageComponent, children :[
-        {path:'admin',component: AdminPageComponent},
-        {path:'basic', component: BasicPageComponent},
-        {path:'premium', component: PremiumPageComponent},
-        {path:'calendar', component: CalendarComponent}
+        { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
+        { path: 'basic', component: BasicPageComponent, canActivate: [AuthGuard], data: { role: 'basic' } },
+        { path: 'premium', component: PremiumPageComponent, canActivate: [AuthGuard], data: { role: 'premium' } },
+        { path: 'calendar', component: CalendarComponent, canActivate: [AuthGuard] }
       ]},
-      { path:'contact',component: ContactComponent},
 
+  //otras rutas
+  { path:'contact',component: ContactComponent},
   { path: '', redirectTo: 'home', pathMatch:'full' } // Redirecciona a la página de login si la ruta no se encuentra
 ];
 
