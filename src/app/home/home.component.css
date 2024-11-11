@@ -208,3 +208,46 @@ h1, h2, h3 {
   transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
   transition: transform 0.3s ease; /* Transición suave */
 }
+
+
+
+/*/////////////////*/
+
+/* home.component.css */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+/* Clases para aplicar animaciones de aparición/desaparición */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Clases para mostrar secciones */
+.visible {
+  animation: fadeInUp 1s forwards;
+}
+
+.hidden {
+  animation: fadeOutDown 1s forwards;
+}
