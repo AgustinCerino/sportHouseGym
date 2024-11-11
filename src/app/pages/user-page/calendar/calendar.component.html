@@ -11,10 +11,12 @@
     <tr *ngFor="let week of calendarGrid">
       <td *ngFor="let day of week"
           (click)="day !== null ? onDayClick(day) : null"
-          [ngClass]="{'selected': day !== null && isSelected(day)}">
+          [ngClass]="{'selected': day !== null && activities[getActivityKey(day)]}">
         <div>
           {{ day !== null ? day : '' }}
-          <select *ngIf="day !== null" [(ngModel)]="activities[day]" (change)="updateSelectedActivity()">
+
+          <!-- Aquí se mantiene el valor previamente seleccionado al recargar la página -->
+          <select *ngIf="day !== null" [(ngModel)]="activities[getActivityKey(day)]" (change)="updateSelectedActivity(day)">
             <option value="">Act</option>
             <option value="Piernas">Piernas</option>
             <option value="Brazos">Brazos</option>
@@ -27,4 +29,3 @@
     </tr>
   </table>
 </div>
-

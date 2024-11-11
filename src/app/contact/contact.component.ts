@@ -21,7 +21,13 @@ export class ContactComponent implements OnInit {
   srv = inject(UsuarioService);
 
   ngOnInit(): void {
-    this.usuario=this.srv.getUsuarioActual()!;
+    this.srv.getUsuarioActual().subscribe({
+      next: (fetchedUsuario) => {
+        if (fetchedUsuario) {
+          this.usuario = fetchedUsuario; // Asigna el usuario si se recibe correctamente
+        }
+     }
+     });
   }
 
   constructor() {

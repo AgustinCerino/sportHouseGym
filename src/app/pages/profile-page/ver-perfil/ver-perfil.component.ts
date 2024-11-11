@@ -18,13 +18,22 @@ export class VerPerfilComponent implements OnInit {
   private router = inject(Router);
 
 
-  ngOnInit() {
-   this.usuario =this.userService.getUsuarioActual();
-   if (!this.usuario)
-   {
-    this.router.navigate(['/log']);
-   }
+  ngOnInit(): void {
+    this.userService.getUsuarioActual().subscribe({
+      next: (usuario) => {
+        if (!usuario) {
+          this.router.navigate(['/log']); // Redirige si no hay usuario
+        } else {
+          this.usuario = usuario; // Asigna el usuario si es encontrado
+        }
+      },
+      error: (err) => {
+        console.error('Error al obtener el usuario:', err);
+        this.router.navigate(['/log']); // Redirige en caso de error
+      }
+    });
   }
+
 
   editarPerfil() {
     if (this.usuario) {

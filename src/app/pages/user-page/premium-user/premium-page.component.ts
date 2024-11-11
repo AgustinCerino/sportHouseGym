@@ -14,16 +14,21 @@ import { UsuarioService } from '../../../services/usuario.service';
 export class PremiumPageComponent {
 
   nombreUsuario: string | null = null;
- 
+
 
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit(): void {
-
-    const usuario = this.usuarioService.getUsuarioActual();
-    this.nombreUsuario = usuario ? usuario.nombre : 'Usuario'; 
-
-
+    this.usuarioService.getUsuarioActual().subscribe({
+      next: (usuario) => {
+        this.nombreUsuario = usuario ? usuario.nombre : 'Usuario'; // Asignar nombre del usuario
+      },
+      error: (err) => {
+        console.error('Error al obtener el usuario:', err);
+        this.nombreUsuario = 'Usuario'; // Valor por defecto si ocurre un error
+      }
+    });
   }
+
 
 }

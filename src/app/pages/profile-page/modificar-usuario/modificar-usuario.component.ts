@@ -26,20 +26,29 @@ export class ModificarUsuarioComponent implements OnInit {
       perdida: false,
       mantenimiento: false
     },
-    nutricion: 'alta-proteina'
+    nutricion: 'alta-proteina',
+    actividades:null
   };
 
   private userService = inject(UsuarioService);
   private router = inject(Router);
 
-  ngOnInit() {
-    const fetchedUsuario = this.userService.getUsuarioActual();
-    if (fetchedUsuario) {
-      this.usuario = fetchedUsuario; // Asigna solo si fetchedUsuario no es null
-    } else {
-      this.router.navigate(['/log']);
-    }
+  ngOnInit(): void {
+    this.userService.getUsuarioActual().subscribe({
+      next: (fetchedUsuario) => {
+        if (fetchedUsuario) {
+          this.usuario = fetchedUsuario; // Asigna el usuario si se recibe correctamente
+        } else {
+          this.router.navigate(['/log']); // Redirige si no se encuentra el usuario
+        }
+      },
+      error: (err) => {
+        console.error('Error al obtener el usuario:', err);
+        this.router.navigate(['/log']); // Redirige en caso de error
+      }
+    });
   }
+
 
 
   onSubmit() {

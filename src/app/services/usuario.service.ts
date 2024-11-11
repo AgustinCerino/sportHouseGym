@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject} from 'rxjs';
+import { Observable, BehaviorSubject,of,throwError} from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Usuario } from '../interfaces/users.interface';
 
@@ -63,20 +63,25 @@ export class UsuarioService {
     );
   }
 
-  getUsuarioActual(): Usuario | null {
-    if (!this.usuarioActual) {
-      const usuarioData = localStorage.getItem('usuarioActual');
-      if (usuarioData) {
-        this.usuarioActual = JSON.parse(usuarioData);
-      }
+  getUsuarioActual(): Observable<Usuario> {
+    const usuarioData = localStorage.getItem('usuarioActual');
+    if (usuarioData) {
+      return of(JSON.parse(usuarioData)); // `of` crea un Observable con el valor del usuario
+    } else {
+      return throwError(() => new Error('Usuario no encontrado')); // Devolver un error si no se encuentra el usuario
     }
-    return this.usuarioActual;
   }
+
 
   cerrarSesion(): void {
     this.usuarioActual = null;
     this.loggedInSubject.next(false);
     localStorage.removeItem('usuarioActual');
   }
+
+  updateActividadesUsuario(id: number, actividades: { [key: number]: string }) {
+    return this.http.patch(`${this.apiUrl}/${id}`, { actividades });
+  }
+
 }
 

@@ -37,13 +37,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .custom-snackbar.mat-snack-bar-container {
-  background-color: #000 !important; /* Fondo negro */
-  color: #fff; /* Texto blanco */
+  background-color: #000 !important;
+  color: #fff;
   font-size: 16px;
   text-align: center;
   border-radius: 4px;
 }
 
 .custom-snackbar .mat-button-wrapper {
-  color: #fff; /* Botón de "Cerrar" en blanco */
+  color: #fff;
 }

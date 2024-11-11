@@ -16,6 +16,7 @@ export interface Usuario {
         mantenimiento: boolean;
     };
     nutricion: string;
+    actividades: { [key: string]: string }|null;
 }
 
 
