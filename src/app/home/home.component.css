@@ -1,26 +1,203 @@
 .home {
-    text-align: center;
-    padding: 50px 20px;
-    
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-  }
-  
-  .home img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to bottom, #e63946, #000000); /* Gradiente suave */
+  color: #fff;
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* Fuente moderna */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  min-height: 100vh; /* Asegura que el contenido ocupe al menos la altura de la pantalla */
+  padding-bottom: 80px; /* Deja espacio para el footer */
+}
 
-  .background {
-    background-image: url('/assets/images/home.png');
-    height: 100vh; /* Altura completa de la ventana */
-    background-size: cover; /* Ajustar la imagen para cubrir el div */
-    background-position: center; /* Centrar la imagen */
-    display: flex; /* Para centrar el contenido */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    color: white; /* Color del texto */
+.home h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra en el texto */
+  color: rgb(255, 255, 255);
+  margin-top: 40px;
+}
+
+.home p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-family: 'Lora', serif;
+}
+
+/* Galería de imágenes con bordes redondeados y sombra */
+.image-gallery {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  height: 300px;
+  margin-top: 20px;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra de la galería */
+}
+
+.image-gallery img {
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+  width: 0;
+}
+
+.image-gallery img:hover {
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Sección de misión y visión */
+.mision-vision {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  font-family: 'Lora', serif; /* Fuente con más carácter */
+}
+
+.mision, .vision {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+  padding: 30px;
+  border-radius: 15px;
+  width: 45%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+  transition: transform 0.3s ease; /* Transición para el hover */
+}
+
+.mision h2, .vision h2 {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.mision p, .vision p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Efecto hover para misión y visión */
+.mision:hover, .vision:hover {
+  transform: scale(1.05); /* Escala al hacer hover */
+}
+
+/* Agregar borde en las secciones de misión y visión */
+
+/* Rutinas destacadas */
+.featured-routines {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.routine-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.routine-card h3 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.routine-card p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.routine-card:hover {
+  transform: scale(1.05); /* Efecto hover */
+}
+
+/* Consejos de salud */
+.health-tips {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 900px;
+  text-align: left;
+  
+}
+
+/* Preguntas frecuentes */
+.faq {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.faq-item {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.faq-item h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+
+h1, h2, h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra en los títulos */
+
+}
+
+/* Estilo específico para el h2 de "Rutinas Destacadas" */
+.featured-routines h2 {
+  font-size: 2.5em; /* Hacerlo un poco más grande */
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Sombra más fuerte para destacar */
+}
+
+.health-tips ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0;
+}
+
+.health-tips li {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1.2em;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra en los elementos */
+  margin-bottom: 20px; /* Espacio entre los ítems */
+  
+  
+}
+
+.health-tips li strong {
+  font-weight: bold;
+  color: #ff4b2b; /* Color resaltado para los nombres de los consejos */
+}
+
+.health-tips li:hover {
+  transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+  transition: transform 0.3s ease; /* Transición suave */
 }

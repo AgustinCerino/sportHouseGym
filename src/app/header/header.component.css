@@ -1,25 +1,33 @@
 header {
-  background-color: #e63946;
-  padding: 30px;
-
+  background: linear-gradient(135deg,#e63946, #000000); /* Gradiente suave, similar al del home */
+  padding: 20px 40px; /* Ajuste de padding */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+ 
 }
 
+/* Estilo para la navegación */
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Roboto', sans-serif; /* Fuente moderna */
 }
-.logo{
+
+/* Estilo para el logo */
+.logo {
   cursor: pointer;
-}
-.logo  {
   width: 60px;
   height: auto;
   max-height: 40px;
   border-radius: 8px;
-
+  transition: transform 0.3s ease; /* Efecto de hover */
 }
 
+.logo:hover {
+  transform: scale(1.1); /* Efecto de aumento */
+}
+
+/* Estilo para los elementos de la lista de navegación */
 nav ul {
   list-style: none;
   display: flex;
@@ -28,17 +36,27 @@ nav ul {
   padding: 0;
 }
 
+/* Estilo para cada elemento de la lista */
 nav li {
-  margin: 0 15px;
+  margin: 0 20px;
   cursor: pointer;
+  transition: color 0.3s ease; /* Transición suave para el color */
 }
 
+nav li:hover {
+  color: #ff4b2b; /* Cambia de color al pasar el mouse */
+}
+
+/* Estilo para los enlaces */
 nav a {
   color: white;
   font-weight: bold;
+  font-size: 1.2em;
   text-decoration: none;
+  transition: color 0.3s ease; /* Transición suave para el color */
 }
 
 nav a:hover {
   text-decoration: underline;
+  color: #ff4b2b; /* Cambia el color al pasar el mouse */
 }
