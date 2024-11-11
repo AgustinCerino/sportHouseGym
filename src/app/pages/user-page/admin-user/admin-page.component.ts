@@ -89,7 +89,7 @@ modificarUsuario(usuario: Usuario): void {
     email: usuario.email,
     peso: usuario.peso,
     altura: usuario.altura,
-    nutricion: usuario.nutricion
+    role: usuario.role
   });
 }
 
@@ -218,7 +218,6 @@ cancelarEdicionRutina(): void {
   this.editModeRutina = false; // Desactiva el modo de edición
   this.rutinaSeleccionada = null;
 }
-
 
 }
 

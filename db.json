@@ -30,7 +30,7 @@
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": "Equilibrada"
+      "nutricion": null
     },
     {
       "id": "34567890",
@@ -46,7 +46,7 @@
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": "Alta en Carbohidratos"
+      "nutricion": ""
     },
     {
       "id": "45678901",
@@ -84,7 +84,7 @@
       "id": "67890123",
       "username": "AnaGarcía",
       "password": "adminPass678",
-      "role": "admin",
+      "role": "basic",
       "nombre": "Ana García",
       "email": "ana@example.com",
       "peso": "55 kg",
@@ -110,7 +110,7 @@
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": "Equilibrada"
+      "nutricion": ""
     },
     {
       "id": "89012345",
@@ -119,14 +119,14 @@
       "role": "premium",
       "nombre": "Sofía Hernández",
       "email": "sofia@example.com",
-      "peso": "65 kg",
-      "altura": "165 cm",
+      "peso": 66,
+      "altura": 155,
       "proceso": {
         "volumen": false,
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": "Alta en Fibra"
+      "nutricion": ""
     },
     {
       "id": "90123456",
@@ -135,14 +135,14 @@
       "role": "basic",
       "nombre": "Diego Ramírez",
       "email": "diego@example.com",
-      "peso": "78 kg",
-      "altura": "172 cm",
+      "peso": 79,
+      "altura": 173,
       "proceso": {
         "volumen": false,
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": "Alta en Proteína"
+      "nutricion": null
     },
     {
       "id": "01234567",

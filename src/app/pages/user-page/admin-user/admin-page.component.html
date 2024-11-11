@@ -40,33 +40,43 @@
       <!-- Detalles del usuario que se muestran solo si detallesVisible coincide con el índice actual -->
       <div *ngIf="detallesVisible === i" class="usuario-detalles">
         <p>Email: {{ usuario.email }}</p>
-        <p>Peso: {{ usuario.peso }}kg</p>
+        <p>Peso: {{ usuario.peso }}</p>
         <p>Altura: {{ usuario.altura }}</p>
-        <p>Nutrición: {{ usuario.nutricion }}</p>
+        <p>Rol: {{usuario.role}}</p>
       </div>
     </div>
   </div>
 
-      <!-- Formulario de edición que solo se muestra en modo edición -->
-      <div *ngIf="editMode" class="editar-usuario-form">
-        <h3>Editar Usuario</h3>
-        <form [formGroup]="editForm" (ngSubmit)="actualizarUsuario()">
-            <label>Email:
-                <input formControlName="email" type="email" />
-            </label>
-            <label>Peso:
-                <input formControlName="peso" type="number" />
-            </label>
-            <label>Altura:
-                <input formControlName="altura" type="number" />
-            </label>
-            <label>Nutrición:
-                <input formControlName="nutricion" type="text" />
-            </label>
-            <button type="submit">Guardar Cambios</button>
-            <button type="button" (click)="cancelarEdicion()">Cancelar</button>
-        </form>
-    </div>
+  <div *ngIf="editMode" class="editar-usuario-form">
+    <h3>Editar Usuario</h3>
+    <form [formGroup]="editForm" (ngSubmit)="actualizarUsuario()">
+      <!-- Campo para Email -->
+      <label>Email:
+        <input formControlName="email" type="email" />
+      </label>
+  
+      <!-- Campo para Peso -->
+      <label>Peso:
+        <input formControlName="peso" type="number" />
+      </label>
+  
+      <!-- Campo para Altura -->
+      <label>Altura:
+        <input formControlName="altura" type="number" />
+      </label>
+  
+      <label>Rol:</label>
+      <select formControlName="role">
+        <option value="basic">Basic</option>
+        <option value="premium">Premium</option>
+      </select>
+  
+  
+      <!-- Botones -->
+      <button type="submit">Guardar Cambios</button>
+      <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+    </form>
+  </div>
 
       <!------------------------------------------RUTINAS ABM---------------------------------------------------->
 

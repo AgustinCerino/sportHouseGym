@@ -157,63 +157,107 @@
 }
 
 
+
 .editar-usuario-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 8px;
-    background: linear-gradient(#e63946, #000000 95%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-  }
-  
-  .editar-usuario-form h3 {
-    color: #ffffff;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .editar-usuario-form form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .editar-usuario-form label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-    color: #f7efef;
-  }
-  
-  .editar-usuario-form input {
-    background-color: #2e0e0e;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #f7efef;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 16px;
-  }
-  
-  .editar-usuario-form button {
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #2f2d2d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .editar-usuario-form button[type="submit"] {
-    background-color: #e63946;
-  }
-  
-  .editar-usuario-form button:hover {
-    background-color: #48535f;
-  }
-  
-  .editar-usuario-form button[type="submit"]:hover {
-    background-color: #ff4c5b;
-  }
+  max-width: 400px; /* Reducir el ancho del formulario */
+  margin: 20px auto; /* Centrar el formulario horizontalmente */
+  padding: 15px;
+  border-radius: 8px;
+  background: linear-gradient(#e63946, #000000 95%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: center; /* Centrar los elementos dentro del formulario */
+}
+
+.editar-usuario-form h3 {
+  color: #ffffff;
+  font-size: 20px; /* Reducir tamaño del título */
+  margin-bottom: 15px; /* Menor espacio debajo del título */
+}
+
+.editar-usuario-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinear todos los elementos al centro */
+}
+
+.editar-usuario-form label {
+  margin: 5px 0;  /* Reducir el margen entre las etiquetas y los campos */
+  font-weight: bold;
+  color: #f7efef;
+  font-size: 14px; /* Reducir el tamaño de la fuente de las etiquetas */
+}
+
+.editar-usuario-form input,
+.editar-usuario-form select {
+  background-color: #2e0e0e;
+  padding: 6px;  /* Reducir padding */
+  margin-bottom: 10px;  /* Reducir margen entre los campos */
+  border: 1px solid #f7efef;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 14px;  /* Reducir el tamaño de la fuente de los campos */
+  width: 90%;  /* Reducir el ancho de los campos */
+  box-sizing: border-box;
+}
+
+.editar-usuario-form .role-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Centrar los checkboxes */
+  gap: 10px;  /* Reducir espacio entre los checkboxes */
+  margin-bottom: 10px; /* Reducir margen */
+}
+
+.editar-usuario-form .role-group input {
+  margin-right: 5px; /* Reducir margen entre checkbox y label */
+}
+
+.editar-usuario-form button {
+  padding: 6px 12px;  /* Reducir el padding de los botones */
+  margin-top: 10px;
+  background-color: #2f2d2d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editar-usuario-form button[type="submit"] {
+  background-color: #e63946;
+}
+
+.editar-usuario-form button:hover {
+  background-color: #48535f;
+}
+
+.editar-usuario-form button[type="submit"]:hover {
+  background-color: #ff4c5b;
+}
+
+.role-group {
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 15px; /* Espacio entre los radio buttons */
+  margin-top: 10px;
+}
+
+/* Estilo de los labels dentro del role-group */
+.role-group label {
+  font-weight: normal;
+  color: #f7efef;
+  font-size: 16px;
+}
+
+/* Asegura que los radio buttons estén alineados correctamente */
+.role-group input[type="radio"] {
+  margin-right: 5px;
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño del radio button */
+  accent-color: #e63946; /* Cambia el color del radio button */
+}
+
+/* Estilo al pasar el mouse sobre los radio buttons */
+.role-group input[type="radio"]:hover {
+  cursor: pointer;
+}
