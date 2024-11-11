@@ -1,19 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Usuario } from '../interfaces/users.interface';
+import { UsuarioService } from '../services/usuario.service';
+import { CommonModule } from '@angular/common';
 
 //imports de material icons
 @Component({
   selector: 'app-contact',
   standalone: true,
+  imports:[CommonModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   private phoneNumber: string = '542235999999';
   public whatsappLink: string = '';
   private instaUser: string ='sporthousegym.mdp';
   public instagramLink: string = '';
-
+  public usuario !:Usuario
   public base64Image: string = '';
+  srv = inject(UsuarioService);
+
+  ngOnInit(): void {
+    this.usuario=this.srv.getUsuarioActual()!;
+  }
 
   constructor() {
     this.generateWhatsAppLink();
