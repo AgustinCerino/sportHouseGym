@@ -31,8 +31,6 @@
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": null
-=======
       "nutricion": "Equilibrada",
       "actividades": null
     },
@@ -50,8 +48,6 @@
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": ""
-=======
       "nutricion": "Alta en Carbohidratos",
       "actividades": null
     },
@@ -120,7 +116,6 @@
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": ""
       "nutricion": "Equilibrada",
       "actividades": null
     },
@@ -138,8 +133,6 @@
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": ""
-=======
       "nutricion": "Alta en Fibra",
       "actividades": null
     },
@@ -157,8 +150,6 @@
         "perdida": false,
         "mantenimiento": true
       },
-      "nutricion": null
-=======
       "nutricion": "Alta en Proteína",
       "actividades": null
     },
