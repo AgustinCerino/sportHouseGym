@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+  currentStep = 1;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -90,6 +91,22 @@ export class RegisterComponent {
     return password === confirmPassword ? null : { errorConfirmPassword: true };
   }
 
+  isStep1Valid(): boolean {
+    const step1Controls = ['email', 'username', 'password', 'confirmPassword', 'role', 'nombre'];
+    return step1Controls.every(control => 
+      this.registerForm.get(control)?.valid && !this.registerForm.hasError('errorConfirmPassword')
+    );
+  }
+
+  nextStep() {
+    if (this.isStep1Valid()) {
+      this.currentStep = 2;
+    }
+  }
+
+  previousStep() {
+    this.currentStep = 1;
+  }
 
 }
 

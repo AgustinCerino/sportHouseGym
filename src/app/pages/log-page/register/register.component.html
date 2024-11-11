@@ -1,103 +1,123 @@
+
 <div class="container">
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    
-    <div class="mb-3">
-      <label for="email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="email" formControlName="email" >
-      @if(registerForm.controls['email'].getError('required')&&registerForm.controls['email'].touched){
-        <small>Email is required.</small>
-      }
-    </div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <!-- Step 1: Datos Personales -->
+    @if(currentStep === 1) {
+      <div class="step-1">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+          @if(registerForm.controls['email'].getError('required')&&registerForm.controls['email'].touched){
+            <small>Email is required.</small>
+          }
+        </div>
 
-    <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input type="username" class="form-control" id="username" formControlName="username">
-        @if(registerForm.controls['username'].getError('required')&&registerForm.controls['username'].touched){
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="username" class="form-control" id="username" formControlName="username">
+          @if(registerForm.controls['username'].getError('required')&&registerForm.controls['username'].touched){
             <small>Username is required.</small>
-          }  
-    </div>
+          }
+        </div>
 
-    <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password" formControlName="password" >
-      @if(registerForm.controls['password'].getError('required')&&registerForm.controls['password'].touched){
-        <small>Password is required.</small>
-      }
-    </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+          @if(registerForm.controls['password'].getError('required')&&registerForm.controls['password'].touched){
+            <small>Password is required.</small>
+          }
+        </div>
 
-    <div class="mb-3">
-        <label for="confirmPassword" class="form-label">Confirma la Password</label>
-        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" >
-        @if(registerForm.controls['confirmPassword'].getError('required')&&registerForm.controls['confirmPassword'].touched){
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirma la Password</label>
+          <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+          @if(registerForm.controls['confirmPassword'].getError('required')&&registerForm.controls['confirmPassword'].touched){
             <small>Password Confirmation is required.</small>
           }
-        @if(this.registerForm.hasError('errorConfirmPassword')&&registerForm.controls['confirmPassword'].touched){
-              <small style="color: red;">Passwords do not match.</small>
+          @if(this.registerForm.hasError('errorConfirmPassword')&&registerForm.controls['confirmPassword'].touched){
+            <small style="color: red;">Passwords do not match.</small>
           }
-    </div>
+        </div>
 
-    <div class="mb-3">
-        <label for="role" class="form-label">Role</label>
-        <select class="form-control" id="role" formControlName="role">
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <select class="form-control" id="role" formControlName="role">
             <option value="admin">Admin</option>
             <option value="basic">Basic</option>
             <option value="premium">Premium</option>
-        </select>
-        @if(registerForm.controls['role'].getError('required')&&registerForm.controls['role'].touched){
+          </select>
+          @if(registerForm.controls['role'].getError('required')&&registerForm.controls['role'].touched){
             <small>Role is required.</small>
-          }  
-    </div>
+          }
+        </div>
 
-    <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre y Apellido</label>
-      <input type="text" class="form-control" id="nombre" formControlName="nombre">
-      @if(registerForm.controls['nombre'].getError('required') && registerForm.controls['nombre'].touched) {
-        <small>Nombre y Apellido is required.</small>
-      }
-    </div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre y Apellido</label>
+          <input type="text" class="form-control" id="nombre" formControlName="nombre">
+          @if(registerForm.controls['nombre'].getError('required') && registerForm.controls['nombre'].touched) {
+            <small>Nombre y Apellido is required.</small>
+          }
+        </div>
 
-    <div class="mb-3">
-      <label for="peso" class="form-label">Peso (kg)</label>
-      <input type="text" class="form-control" id="peso" formControlName="peso">
-      @if(registerForm.controls['peso'].getError('required') && registerForm.controls['peso'].touched) {
-        <small>Peso is required.</small>
-      }
-    </div>
+        <button type="button" class="btn btn-primary" (click)="nextStep()" [disabled]="!isStep1Valid()">
+          Siguiente
+        </button>
+      </div>
+    }
 
-    <div class="mb-3">
-      <label for="altura" class="form-label">Altura (cm)</label>
-      <input type="text" class="form-control" id="altura" formControlName="altura">
-      @if(registerForm.controls['altura'].getError('required') && registerForm.controls['altura'].touched) {
-        <small>Altura is required.</small>
-      }
-    </div>
+    <!-- Step 2: Datos Físicos -->
+    @if(currentStep === 2) {
+      <div class="step-2">
+        <div class="mb-3">
+          <label for="peso" class="form-label">Peso (kg)</label>
+          <input type="text" class="form-control" id="peso" formControlName="peso">
+          @if(registerForm.controls['peso'].getError('required') && registerForm.controls['peso'].touched) {
+            <small>Peso is required.</small>
+          }
+        </div>
 
-    <div class="mb-3">
-      <label for="proceso" class="form-label">Proceso</label>
-      <select class="form-control" id="proceso" formControlName="proceso">
-        <option value="Ganancia de masa">Ganancia de masa</option>
-        <option value="Pérdida de peso">Pérdida de peso</option>
-        <option value="Mantenimiento">Mantenimiento</option>
-      </select>
-      @if(registerForm.controls['proceso'].getError('required') && registerForm.controls['proceso'].touched) {
-        <small>Proceso is required.</small>
-      }
-    </div>
+        <div class="mb-3">
+          <label for="altura" class="form-label">Altura (cm)</label>
+          <input type="text" class="form-control" id="altura" formControlName="altura">
+          @if(registerForm.controls['altura'].getError('required') && registerForm.controls['altura'].touched) {
+            <small>Altura is required.</small>
+          }
+        </div>
 
-    <div class="mb-3">
-      <label for="nutricion" class="form-label">Nutrición</label>
-      <select class="form-control" id="nutricion" formControlName="nutricion">
-        <option value="Equilibrada">Equilibrada</option>
-        <option value="Alta en proteínas">Alta en proteínas</option>
-        <option value="Baja en carbohidratos">Baja en carbohidratos</option>
-        <option value="Vegetariana">Vegetariana</option>
-      </select>
-      @if(registerForm.controls['nutricion'].getError('required') && registerForm.controls['nutricion'].touched) {
-        <small>Nutrición is required.</small>
-      }
-    </div>
+        <div class="mb-3">
+          <label for="proceso" class="form-label">Proceso</label>
+          <select class="form-control" id="proceso" formControlName="proceso">
+            <option value="Ganancia de masa">Ganancia de masa</option>
+            <option value="Pérdida de peso">Pérdida de peso</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+          </select>
+          @if(registerForm.controls['proceso'].getError('required') && registerForm.controls['proceso'].touched) {
+            <small>Proceso is required.</small>
+          }
+        </div>
 
-    <button type="submit" class="btn btn-primary">Registrarme</button>
+        <div class="mb-3">
+          <label for="nutricion" class="form-label">Nutrición</label>
+          <select class="form-control" id="nutricion" formControlName="nutricion">
+            <option value="Equilibrada">Equilibrada</option>
+            <option value="Alta en proteínas">Alta en proteínas</option>
+            <option value="Baja en carbohidratos">Baja en carbohidratos</option>
+            <option value="Vegetariana">Vegetariana</option>
+          </select>
+          @if(registerForm.controls['nutricion'].getError('required') && registerForm.controls['nutricion'].touched) {
+            <small>Nutrición is required.</small>
+          }
+        </div>
+
+        <div class="buttons-container">
+          <button type="button" class="btn btn-secondary me-2" (click)="previousStep()">
+            Anterior
+          </button>
+          <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">
+            Registrarme
+          </button>
+        </div>
+      </div>
+    }
   </form>
-
 </div>
