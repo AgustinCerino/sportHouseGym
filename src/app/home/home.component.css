@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(to bottom, #e63946, #000000); /* Gradiente suave */
+  background: radial-gradient(circle, #e63946, #000000);  /* Gradiente suave */
   color: #fff;
   text-align: center;
   font-family: 'Roboto', sans-serif; /* Fuente moderna */
@@ -102,6 +102,9 @@
   width: 100%;
   max-width: 900px;
 }
+.featured-routines h2{
+  color: #fff;
+}
 
 .routine-card {
   background-color: rgba(0, 0, 0, 0.7);
@@ -191,6 +194,10 @@ h1, h2, h3 {
   
   
 }
+.health-tips h2{
+  color: #fff;
+}
+
 
 .health-tips li strong {
   font-weight: bold;

@@ -37,6 +37,9 @@ export class UsuarioService {
     return this.http.put<Usuario>(`${this.apiUrl}/${id}`, usuario);
   }
 
+  deleteUser(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
   private checkLocalStorage() {
     const usuarioData = localStorage.getItem('usuarioActual');
     if (usuarioData) {
