@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": "12345678",
-      "username": "JuanPérez",
+      "username": "JuanPerez",
       "password": "adminPass123",
       "role": "admin",
       "nombre": "Juan Perez",
