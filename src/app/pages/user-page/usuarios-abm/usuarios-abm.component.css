@@ -1,0 +1,173 @@
+.usuarios-lista {
+    background-color: #000000; /* Negro */
+    padding: 20px; /* Espacio adicional */
+    border-radius: 10px; /* Bordes redondeados */
+    color: #f1faee; /* Blanco */
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.usuario-item {
+    border-bottom: 1px solid #e63946; /* Rojo */
+    padding: 12px; /* Espacio adicional */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.usuario-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el mouse */
+}
+
+.usuario-nombre {
+    font-weight: bold;
+    color: #e63946; /* Rojo */
+    font-size: 18px; /* Tamaño de fuente */
+}
+
+.flecha {
+    font-size: 0.8em; /* Tamaño de flecha más pequeño */
+    color: #666; /* Gris para la flecha */
+}
+
+.usuario-detalles {
+    font-size: 14px;
+    color: #f1faee;
+    margin-top: 5px;
+    padding-left: 10px; /* Indentación para los detalles */
+}
+.input-busqueda {
+    width: 1000px;                /* Anchura más larga */
+    padding: 10px 35px 10px 15px; /* Espaciado interno */
+    border-radius: 5px;           /* Bordes redondeados */
+    border: 1px solid #ccc;       /* Borde ligero */
+    background-color: #f0f0f02f;    /* Fondo gris claro */
+    color: #aaa;                  /* Texto gris claro */
+    font-size: 16px;              /* Tamaño de fuente */
+    outline: none;
+  }
+
+  .botones-acciones {
+    position: absolute; 
+    right: 0; 
+    display: flex;
+    gap: 5px; 
+}
+
+  .btn-modificar, .btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e63946;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+  
+  .btn-modificar:hover {
+    color: #c98f94; /* Color al pasar el mouse */
+}
+
+.btn-eliminar:hover .icono-basura {
+    color: #e63946; /* Cambia el color del ícono al pasar el mouse */
+}
+
+.icono-basura {
+    font-size: 18px;
+}
+.usuario-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Espacio entre nombre y botones */
+    position: relative;
+}
+
+
+.editar-usuario-form {
+  max-width: 400px; /* Reducir el ancho del formulario */
+  margin: 20px auto; /* Centrar el formulario horizontalmente */
+  padding: 15px;
+  border-radius: 8px;
+  background: linear-gradient(#e63946, #000000 95%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: center; /* Centrar los elementos dentro del formulario */
+}
+.editar-usuario-form h3 {
+  color: #ffffff;
+  font-size: 20px; /* Reducir tamaño del título */
+  margin-bottom: 15px; /* Menor espacio debajo del título */
+}
+.editar-usuario-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinear todos los elementos al centro */
+}
+.editar-usuario-form label {
+  margin: 5px 0;  /* Reducir el margen entre las etiquetas y los campos */
+  font-weight: bold;
+  color: #f7efef;
+  font-size: 14px; /* Reducir el tamaño de la fuente de las etiquetas */
+}
+.editar-usuario-form input,
+.editar-usuario-form select {
+  background-color: #2e0e0e;
+  padding: 6px;  /* Reducir padding */
+  margin-bottom: 10px;  /* Reducir margen entre los campos */
+  border: 1px solid #f7efef;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 14px;  /* Reducir el tamaño de la fuente de los campos */
+  width: 90%;  /* Reducir el ancho de los campos */
+  box-sizing: border-box;
+}
+.editar-usuario-form .role-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Centrar los checkboxes */
+  gap: 10px;  /* Reducir espacio entre los checkboxes */
+  margin-bottom: 10px; /* Reducir margen */
+}
+.editar-usuario-form .role-group input {
+  margin-right: 5px; /* Reducir margen entre checkbox y label */
+}
+.editar-usuario-form button {
+  padding: 6px 12px;  /* Reducir el padding de los botones */
+  margin-top: 10px;
+  background-color: #2f2d2d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.editar-usuario-form button[type="submit"] {
+  background-color: #e63946;
+}
+.editar-usuario-form button:hover {
+  background-color: #48535f;
+}
+.editar-usuario-form button[type="submit"]:hover {
+  background-color: #ff4c5b;
+}
+.role-group {
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 15px; /* Espacio entre los radio buttons */
+  margin-top: 10px;
+}
+/* Estilo de los labels dentro del role-group */
+.role-group label {
+  font-weight: normal;
+  color: #f7efef;
+  font-size: 16px;
+}
+/* Asegura que los radio buttons estén alineados correctamente */
+.role-group input[type="radio"] {
+  margin-right: 5px;
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño del radio button */
+  accent-color: #e63946; /* Cambia el color del radio button */
+}
+/* Estilo al pasar el mouse sobre los radio buttons */
+.role-group input[type="radio"]:hover {
+  cursor: pointer;
+}

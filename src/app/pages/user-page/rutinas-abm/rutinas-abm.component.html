@@ -1,0 +1,43 @@
+   <!-- Barra de búsqueda para rutinas -->
+   <input type="text" [(ngModel)]="filtroRutina" placeholder="Buscar rutinas..."
+   class="busqueda input-busqueda" (input)="filtrarRutinas()" />
+
+ <!-- Lista de rutinas -->
+ <div class="usuarios-lista">
+   <h2>Lista de Rutinas</h2>
+   <div *ngFor="let rutina of rutinasFiltradas; let i = index" class="usuario-item">
+     <div class="usuario-header">
+       <p (click)="toggleDetallesRutina(i)" class="usuario-nombre">
+         {{ rutina.nombre }}
+         <span class="flecha">{{ detallesRutinaVisible === i ? '▲' : '▼' }}</span>
+       </p>
+       <div class="botones-acciones">
+         <button class="btn-modificar" (click)="modificarRutina(rutina)">✏️</button>
+         <button class="btn-eliminar" (click)="eliminarRutina(rutina)">🗑️</button>
+       </div>
+     </div>
+
+     <div *ngIf="detallesRutinaVisible === i" class="usuario-detalles">
+       <p>Descripción: {{ rutina.descripcion }}</p>
+       <p>URL del video: <a [href]="rutina.url" target="_blank">Ver Video</a></p>
+     </div>
+   </div>
+ </div>
+
+ <!-- Formulario de edición de rutinas -->
+ <div *ngIf="editModeRutina" class="editar-usuario-form">
+   <h3>Editar Rutina</h3>
+   <form [formGroup]="editFormRutina" (ngSubmit)="actualizarRutina()">
+     <label>Nombre:
+       <input formControlName="nombre" type="text" />
+     </label>
+     <label>Descripción:
+       <input formControlName="descripcion" type="text" />
+     </label>
+     <label>URL del Video:
+       <input formControlName="url" type="url" />
+     </label>
+     <button type="submit">Guardar Cambios</button>
+     <button type="button" (click)="cancelarEdicionRutina()">Cancelar</button>
+   </form>
+ </div>

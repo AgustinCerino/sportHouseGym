@@ -1,0 +1,59 @@
+<!-- Barra de búsqueda -->
+<input type="text" [(ngModel)]="filtro" placeholder="Buscar usuarios..."
+class="busqueda input-busqueda" (input)="filtrarUsuarios()" />
+
+<!-- Lista de usuarios -->
+<div class="usuarios-lista">
+<h2>Lista de Usuarios</h2>
+<div *ngFor="let usuario of usuariosFiltrados; let i = index" class="usuario-item">
+  <div class="usuario-header">
+    <p (click)="toggleDetalles(i)" class="usuario-nombre">
+      {{ usuario.username }}
+      <span class="flecha">{{ detallesVisible === i ? '▲' : '▼' }}</span>
+    </p>
+    <div class="botones-acciones">
+      <button class="btn-modificar" (click)="modificarUsuario(usuario)">✏️</button>
+      <button class="btn-eliminar" (click)="eliminarUsuario(usuario)">🗑️</button>
+    </div>
+  </div>
+
+  <div *ngIf="detallesVisible === i" class="usuario-detalles">
+    <p>Email: {{ usuario.email }}</p>
+    <p>Peso: {{ usuario.peso }}</p>
+    <p>Altura: {{ usuario.altura }}</p>
+    <p>Rol: {{usuario.role}}</p>
+  </div>
+</div>
+</div>
+
+<!-- Formulario de edición -->
+<div *ngIf="editMode" class="editar-usuario-form">
+  <h3>Editar Usuario</h3>
+  <form [formGroup]="editForm" (ngSubmit)="actualizarUsuario()">
+    <!-- Campo para Email -->
+    <label>Email:
+      <input formControlName="email" type="email" />
+    </label>
+
+    <!-- Campo para Peso -->
+    <label>Peso:
+      <input formControlName="peso" type="number" />
+    </label>
+
+    <!-- Campo para Altura -->
+    <label>Altura:
+      <input formControlName="altura" type="number" />
+    </label>
+
+    <label>Rol:</label>
+    <select formControlName="role">
+      <option value="basic">Basic</option>
+      <option value="premium">Premium</option>
+    </select>
+
+
+    <!-- Botones -->
+    <button type="submit">Guardar Cambios</button>
+    <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+  </form>
+</div>
