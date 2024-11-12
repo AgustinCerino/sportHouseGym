@@ -1,7 +1,7 @@
 //protector de rutas
 import { AuthGuard } from './guard/authGuard';
 
-import { Routes } from '@angular/router';
+import { Routes, CanActivate } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 //imports perfil
@@ -24,6 +24,7 @@ import { PremiumPageComponent } from './pages/user-page/premium-user/premium-pag
 import { CalendarComponent } from './pages/user-page/calendar/calendar.component';
 
 import { ContactComponent } from './contact/contact.component';
+import { PaymentComponent } from './payment/payment.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -53,6 +54,7 @@ export const routes: Routes = [
 
   //otras rutas
   { path:'contact',component: ContactComponent},
+  {path:'payment', component:PaymentComponent, canActivate:[AuthGuard],data:{role:'basic'}},
   { path: '', redirectTo: 'home', pathMatch:'full' } // Redirecciona a la página de login si la ruta no se encuentra
 ];
 

@@ -1,17 +1,20 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { UsuarioService } from '../services/usuario.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
+  imports:[CommonModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnDestroy {
+export class HeaderComponent implements OnDestroy , OnInit{
   showDashboardNavbar: boolean = false;
   private authSubscription!: Subscription;
+  rol !:string
 
   constructor(private router: Router, private usuarioService: UsuarioService) {
     this.navBarSelector();
@@ -20,6 +23,11 @@ export class HeaderComponent implements OnDestroy {
     this.authSubscription = this.usuarioService.loggedIn$.subscribe(loggedIn => {
       this.updateNavBar(loggedIn);
     });
+  }
+  ngOnInit(): void {
+    this.usuarioService.getUsuarioActual().subscribe(data =>{
+      this.rol=data.role
+    })
   }
 
   ngOnDestroy() {
@@ -71,5 +79,8 @@ export class HeaderComponent implements OnDestroy {
   navigateToCerrarSesion() {
     this.usuarioService.cerrarSesion();
     this.router.navigate(['/home']);
+  }
+  navigateToPremiumPlan(){
+    this.router.navigate(['/payment'])
   }
 }
