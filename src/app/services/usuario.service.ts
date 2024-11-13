@@ -14,7 +14,7 @@ export class UsuarioService {
   private usuarioActual: Usuario | null = null;
   private loggedInSubject = new BehaviorSubject<boolean>(false);
   private actividadesSubject = new BehaviorSubject<{[key: string]: string}>({});
-  
+
   public loggedIn$ = this.loggedInSubject.asObservable();
   public actividades$ = this.actividadesSubject.asObservable();
 
@@ -51,6 +51,7 @@ export class UsuarioService {
       })
     );
   }
+
   deleteUser(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }

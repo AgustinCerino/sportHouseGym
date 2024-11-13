@@ -28,13 +28,15 @@ export class MercadoPagoService {
     const body = {
       items,
       back_urls: {
-        success: 'http://localhost:4200/pago-exitoso',/// aca debe redirigir a la page de user premium
-        failure: 'http://localhost:4200/pago-fallido',/// aca debe salir una alerta como la de el guard(osea snackbar)
-        pending: 'http://localhost:4200/pago-pendiente',// aca ni idea
+        success: 'http://localhost:4200/paymentControl/pago-exitoso', // Página de éxito
+        failure: 'http://localhost:4200/pago-fallido', // Página de error
+        pending: 'http://localhost:4200/pago-pendiente', // Página de pago pendiente
       },
-      auto_return: 'approved',
+      auto_return: 'approved', // Esto redirige automáticamente al success si el pago es aprobado
     };
 
     return this.http.post(this.apiUrl, body, { headers });
   }
+
+
 }

@@ -1,7 +1,7 @@
 //protector de rutas
 import { AuthGuard } from './guard/authGuard';
 
-import { Routes, CanActivate } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 //imports perfil
@@ -22,9 +22,13 @@ import { AdminPageComponent } from './pages/user-page/admin-user/admin-page.comp
 import { BasicPageComponent } from './pages/user-page/basic-user/basic-page.component';
 import { PremiumPageComponent } from './pages/user-page/premium-user/premium-page.component';
 import { CalendarComponent } from './pages/user-page/calendar/calendar.component';
+///import pagos
+import { PaymentComponent } from './pages/payment-control/payment/payment.component';
+import { PaymentControlComponent } from './pages/payment-control/payment-control.component';
+import { PagoExitosoComponent } from './pages/payment-control/pago-exitoso/pago-exitoso.component';
 
 import { ContactComponent } from './contact/contact.component';
-import { PaymentComponent } from './payment/payment.component';
+
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -50,6 +54,10 @@ export const routes: Routes = [
         { path: 'basic', component: BasicPageComponent, canActivate: [AuthGuard], data: { role: 'basic' } },
         { path: 'premium', component: PremiumPageComponent, canActivate: [AuthGuard], data: { role: 'premium' } },
         { path: 'calendar', component: CalendarComponent, canActivate: [AuthGuard] }
+      ]},
+  ///pagos
+      {path:'paymentControl',component:PaymentControlComponent, children:[
+        {path:'pago-exitoso',component:PagoExitosoComponent}
       ]},
 
   //otras rutas
