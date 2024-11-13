@@ -16,7 +16,9 @@ export interface Usuario {
         mantenimiento: boolean;
     };
     nutricion: string;
-    actividades: { [key: string]: string }|null;
+    actividades: {
+        [key: string]: string; // formato: "YYYY-MM-DD": "actividad"
+      };
 }
 
 

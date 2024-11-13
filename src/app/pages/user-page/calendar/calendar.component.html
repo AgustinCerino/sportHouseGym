@@ -1,31 +1,38 @@
 <div class="calendar-container">
-  <header>
-    <button (click)="prevMonth()">Anterior</button>
-    <h2>{{ monthName }} {{ year }}</h2>
-    <button (click)="nextMonth()">Siguiente</button>
-  </header>
-  <table id="calendar">
-    <tr>
-      <th *ngFor="let day of ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']">{{ day }}</th>
-    </tr>
-    <tr *ngFor="let week of calendarGrid">
-      <td *ngFor="let day of week"
-          (click)="day !== null ? onDayClick(day) : null"
-          [ngClass]="{'selected': day !== null && activities[getActivityKey(day)]}">
-        <div>
-          {{ day !== null ? day : '' }}
+  <div *ngIf="loading" class="loading">Cargando calendario...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
 
-          <!-- Aquí se mantiene el valor previamente seleccionado al recargar la página -->
-          <select *ngIf="day !== null" [(ngModel)]="activities[getActivityKey(day)]" (change)="updateSelectedActivity(day)">
-            <option value="">Act</option>
-            <option value="Piernas">Piernas</option>
-            <option value="Brazos">Brazos</option>
-            <option value="Espalda">Espalda</option>
-            <option value="Pecho">Pecho</option>
-            <option value="Cardio">Cardio</option>
-          </select>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <div *ngIf="!loading && !error">
+    <header>
+      <button (click)="prevMonth()">Anterior</button>
+      <h2>{{ monthName | titlecase }} {{ year }}</h2>
+      <button (click)="nextMonth()">Siguiente</button>
+    </header>
+    
+    <table id="calendar">
+      <tr>
+        <th *ngFor="let day of ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']">{{ day }}</th>
+      </tr>
+      <tr *ngFor="let week of calendarGrid">
+        <td *ngFor="let day of week"
+            (click)="day !== null ? onDayClick(day) : null"
+            [ngClass]="{'selected': day !== null && activities[getActivityKey(day)]}">
+          <div>
+            {{ day !== null ? day : '' }}
+            <select *ngIf="day !== null" 
+                    [(ngModel)]="activities[getActivityKey(day)]" 
+                    (change)="updateSelectedActivity(day)"
+                    [disabled]="loading">
+              <option value="">Act</option>
+              <option value="Piernas">Piernas</option>
+              <option value="Brazos">Brazos</option>
+              <option value="Espalda">Espalda</option>
+              <option value="Pecho">Pecho</option>
+              <option value="Cardio">Cardio</option>
+            </select>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

@@ -27,7 +27,7 @@ export class ModificarUsuarioComponent implements OnInit {
       mantenimiento: false
     },
     nutricion: 'alta-proteina',
-    actividades:null
+    actividades: {}
   };
 
   private userService = inject(UsuarioService);

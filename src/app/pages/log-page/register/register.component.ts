@@ -56,7 +56,7 @@ export class RegisterComponent {
         altura: formValues.altura,
         proceso: formValues.proceso,
         nutricion: formValues.nutricion,
-        actividades:null
+        actividades: {}
       };
 
       console.log(usuario);
