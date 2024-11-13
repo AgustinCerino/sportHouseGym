@@ -62,7 +62,12 @@
         "mantenimiento": true
       },
       "nutricion": "Alta en Carbohidratos",
-      "actividades": null
+      "actividades": {
+        "2024-11-03": "Piernas",
+        "2024-11-05": "Espalda",
+        "2024-11-06": "Brazos",
+        "2024-11-07": "Pecho"
+      }
     },
     {
       "id": "45678901",
@@ -79,7 +84,12 @@
         "mantenimiento": true
       },
       "nutricion": "Alta en Fibra",
-      "actividades": null
+      "actividades": {
+        "2024-11-03": "Piernas",
+        "2024-11-05": "Espalda",
+        "2024-11-06": "Brazos",
+        "2024-11-07": "Pecho"
+      }
     },
     {
       "id": "56789012",
@@ -118,7 +128,13 @@
         "mantenimiento": false
       },
       "nutricion": "Baja en Carbohidratos",
-      "actividades": null
+      "actividades": {
+        "2024-11-03": "Cardio",
+        "2024-11-05": "Espalda",
+        "2024-11-06": "Piernas",
+        "2024-11-07": "Pecho",
+        "2024-09-15": "Brazos"
+      }
     },
     {
       "id": "78901234",
@@ -135,7 +151,13 @@
         "mantenimiento": true
       },
       "nutricion": "Equilibrada",
-      "actividades": null
+      "actividades": {
+        "2024-11-03": "Cardio",
+        "2024-11-05": "Espalda",
+        "2024-11-06": "Piernas",
+        "2024-11-07": "Pecho",
+        "2024-09-15": "Brazos"
+      }
     },
     {
       "id": "89012345",
@@ -152,7 +174,13 @@
         "mantenimiento": true
       },
       "nutricion": "Alta en Fibra",
-      "actividades": null
+      "actividades": {
+        "2024-11-03": "Cardio",
+        "2024-11-05": "Espalda",
+        "2024-11-06": "Piernas",
+        "2024-11-07": "Pecho",
+        "2024-09-15": "Brazos"
+      }
     },
     {
       "id": "90123456",
@@ -169,7 +197,13 @@
         "mantenimiento": true
       },
       "nutricion": "Alta en Proteína",
-      "actividades": null
+      "actividades": {
+        "2024-11-03": "Cardio",
+        "2024-11-05": "Espalda",
+        "2024-11-06": "Piernas",
+        "2024-11-07": "Pecho",
+        "2024-09-15": "Brazos"
+      }
     },
     {
       "id": "01234567",
@@ -186,7 +220,12 @@
         "mantenimiento": true
       },
       "nutricion": "Equilibrada",
-      "actividades": null
+      "actividades": {
+        "2024-11-03": "Piernas",
+        "2024-11-05": "Espalda",
+        "2024-11-06": "Brazos",
+        "2024-11-07": "Pecho"
+      }
     },
     {
       "id": "777777",
@@ -204,9 +243,15 @@
       },
       "nutricion": "baja-carb",
       "actividades": {
-        "2024-11-01": "Piernas",
-        "2024-11-02": "Piernas",
-        "2024-11-08": "Brazos"
+        "2024-11-04": "Brazos",
+        "2024-11-05": "Pecho",
+        "2024-11-06": "Brazos",
+        "2024-11-07": "Pecho",
+        "2024-11-08": "Espalda",
+        "2024-11-09": "Piernas",
+        "2024-11-11": "Pecho",
+        "2024-11-13": "Pecho",
+        "2024-11-15": "Piernas"
       }
     }
   ],
