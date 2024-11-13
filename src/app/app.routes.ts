@@ -59,10 +59,10 @@ export const routes: Routes = [
       {path:'paymentControl',component:PaymentControlComponent, children:[
         {path:'pago-exitoso',component:PagoExitosoComponent}
       ]},
+      {path:'payment', component:PaymentComponent, canActivate:[AuthGuard],data:{role:'basic'}},
 
   //otras rutas
   { path:'contact',component: ContactComponent},
-  {path:'payment', component:PaymentComponent, canActivate:[AuthGuard],data:{role:'basic'}},
   { path: '', redirectTo: 'home', pathMatch:'full' } // Redirecciona a la página de login si la ruta no se encuentra
 ];
 

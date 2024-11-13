@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UsuarioService } from '../../../services/usuario.service';
-import { Usuario } from '../../../interfaces/users.interface';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -27,7 +26,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loading = true;
     this.loadCalendarData();
-    
+
     this.subscriptions.push(
       this.usuarioService.actividades$.subscribe(
         actividades => {
@@ -62,10 +61,10 @@ export class CalendarComponent implements OnInit, OnDestroy {
   renderCalendar(date: Date): void {
     const year = date.getFullYear();
     const month = date.getMonth();
-    
+
     this.year = year;
     this.monthName = date.toLocaleString('es-ES', { month: 'long' });
-    
+
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
     const startDay = firstDay.getDay();
@@ -90,11 +89,11 @@ export class CalendarComponent implements OnInit, OnDestroy {
 
   updateSelectedActivity(day: number): void {
     const key = this.getActivityKey(day);
-    
+
     if (this.activities[key] === '') {
       delete this.activities[key];
     }
-    
+
     this.usuarioService.getUsuarioActual().subscribe({
       next: (usuario) => {
         this.usuarioService.updateActividadesUsuario(usuario.id, this.activities)
@@ -130,7 +129,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   }
 
   onDayClick(day: number): void {
-    if (day !== null) {  // Asegúrate de que day no sea null
+    if (day !== null) {
       const key = this.getActivityKey(day);
       if (!this.activities[key]) {
         this.activities[key] = '';

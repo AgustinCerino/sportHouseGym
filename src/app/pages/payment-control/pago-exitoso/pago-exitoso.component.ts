@@ -17,14 +17,9 @@ export class PagoExitosoComponent implements OnInit {
   ) {}
   private snackBar = inject(MatSnackBar);
   ngOnInit(): void {
-    // Aquí obtendrás el ID del pago o cualquier otro dato necesario para verificar el pago.
-    // Este ejemplo asume que el ID de usuario se pasa como parámetro en la URL.
     this.activatedRoute.queryParams.subscribe((params) => {
       const paymentId = params['payment_id'];
       if (paymentId) {
-        // Aquí puedes verificar el pago con Mercado Pago usando el payment_id (si lo tienes).
-        // Si el pago es correcto, actualizas el rol del usuario.
-
         this.usuarioService.getUsuarioActual().subscribe((data) => {
           const usuario = { ...data, role: 'premium' };
 
@@ -36,7 +31,7 @@ export class PagoExitosoComponent implements OnInit {
                 verticalPosition: 'top',
                 horizontalPosition: 'center'
               });
-              this.router.navigate(['/user/premium']); // Redirige a la página premium
+              this.router.navigate(['/user/premium']);
             },
             error: (error) => {
               console.error('Error al actualizar el rol del usuario:', error);

@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { UsuarioService } from '../../../services/usuario.service';
 import { Usuario } from '../../../interfaces/users.interface';
@@ -37,14 +37,14 @@ export class ModificarUsuarioComponent implements OnInit {
     this.userService.getUsuarioActual().subscribe({
       next: (fetchedUsuario) => {
         if (fetchedUsuario) {
-          this.usuario = fetchedUsuario; // Asigna el usuario si se recibe correctamente
+          this.usuario = fetchedUsuario;
         } else {
-          this.router.navigate(['/log']); // Redirige si no se encuentra el usuario
+          this.router.navigate(['/log']);
         }
       },
       error: (err) => {
         console.error('Error al obtener el usuario:', err);
-        this.router.navigate(['/log']); // Redirige en caso de error
+        this.router.navigate(['/log']);
       }
     });
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UsuarioService } from '../../../services/usuario.service';
 import { Usuario } from '../../../interfaces/users.interface';
@@ -22,14 +22,14 @@ export class VerPerfilComponent implements OnInit {
     this.userService.getUsuarioActual().subscribe({
       next: (usuario) => {
         if (!usuario) {
-          this.router.navigate(['/log']); // Redirige si no hay usuario
+          this.router.navigate(['/log']);
         } else {
-          this.usuario = usuario; // Asigna el usuario si es encontrado
+          this.usuario = usuario;
         }
       },
       error: (err) => {
         console.error('Error al obtener el usuario:', err);
-        this.router.navigate(['/log']); // Redirige en caso de error
+        this.router.navigate(['/log']);
       }
     });
   }

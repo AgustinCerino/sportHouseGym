@@ -45,7 +45,7 @@ export class RegisterComponent {
     else if (this.registerForm.valid) {
       const formValues = this.registerForm.value;
 
-      // Crea el objeto usuario incluyendo el rol "------ERROR EN LA CARGA DEL ID------"
+
       const usuario: Omit<Usuario, 'id'> = {
         username: formValues.username,
         password: formValues.password,
@@ -60,13 +60,11 @@ export class RegisterComponent {
       };
 
       console.log(usuario);
-      // Llama a postUsuarios para agregar el usuario
+
       this.usuarioService.postUsuarios(usuario).subscribe({
         next: (response) => {
           console.log('Usuario agregado:', response);
           alert('Usuario registrado con éxito');
-
-          // Redirección según el rol del usuario
           if (response.role === 'basic') {
             this.router.navigate(['/user/basic']);
           } else if (response.role === 'premium') {
@@ -94,7 +92,7 @@ export class RegisterComponent {
 
   isStep1Valid(): boolean {
     const step1Controls = ['email', 'username', 'password', 'confirmPassword', 'role', 'nombre'];
-    return step1Controls.every(control => 
+    return step1Controls.every(control =>
       this.registerForm.get(control)?.valid && !this.registerForm.hasError('errorConfirmPassword')
     );
   }
@@ -113,73 +111,4 @@ export class RegisterComponent {
 
 
 
-
-
-/*
-
-import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-@Component({
-  selector: 'app-register',
-  standalone: true,
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-  imports: [ReactiveFormsModule]
-})
-
-
-export class RegisterComponent {
-
-  registerForm: FormGroup;
-
-  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
-    this.registerForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
-
-  });
-
-
-}
-
-onSubmit(): void {
-  if (this.registerForm.valid) {
-    const formValues = this.registerForm.value;
-    // Crea el objeto usuario que se enviará al json-server
-    const usuario: Usuario = {
-      email: formValues.email,
-      username: formValues.username,
-      password: formValues.password,
-    };
-
-    // Llama a postUsuarios para agregar el usuario al json-server
-    this.usuarioService.postUsuarios(usuario).subscribe({
-      next: (response) => {
-        console.log('Usuario agregado:', response);
-        alert('Usuario registrado con éxito');
-      },
-      error: (error) => {
-        console.error('Error al agregar el usuario:', error);
-        alert('Hubo un error al registrar el usuario');
-      }
-    });
-  } else {
-    console.error('Formulario inválido');
-  }
-}
-
-
-onSubmit(): void {
-  if (this.registerForm.valid) {
-      const formValues = this.registerForm.value;
-      console.log('Form Values:', formValues);
-      // Aquí puedes manejar el envío del formulario
-  } else {
-      console.error('Formulario inválido');
-  }
-}
-*/
 

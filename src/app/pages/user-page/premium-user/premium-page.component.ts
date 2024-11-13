@@ -21,7 +21,7 @@ export class PremiumPageComponent {
   ngOnInit(): void {
     this.usuarioService.getUsuarioActual().subscribe({
       next: (usuario) => {
-        this.nombreUsuario = usuario ? usuario.nombre : 'Usuario'; // Asignar nombre del usuario
+        this.nombreUsuario = usuario ? usuario.nombre : 'Usuario';
       },
       error: (err) => {
         console.error('Error al obtener el usuario:', err);

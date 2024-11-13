@@ -1,14 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
+    background-color: #000;
+    color: #fff;
     margin: 0;
     padding: 0;
   }
 
   h1, h2, h3 {
-    color: #e63946; /* Rojo vibrante */
+    color: #e63946;
   }
 
   button {
@@ -24,7 +24,7 @@ body {
     background-color: #b80d30;
   }
 
-  /* Links */
+
   a {
     color: #e63946;
     text-decoration: none;

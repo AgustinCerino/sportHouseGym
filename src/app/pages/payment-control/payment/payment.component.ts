@@ -16,7 +16,7 @@ export class PaymentComponent implements OnInit {
   constructor(
     private mercadoPagoService: MercadoPagoService,
     private usuarioservice: UsuarioService,
-    private router: Router  // Inyección del router
+    private router: Router
   ) {}
 
   actual!: Usuario;
@@ -37,12 +37,12 @@ export class PaymentComponent implements OnInit {
           },
           callbacks: {
             onSuccess: () => {
-              // Aquí actualizamos el rol a 'premium'
+
               this.usuarioservice.updateUser(this.actual.id, { ...this.actual, role: 'premium' })
                 .subscribe({
                   next: () => {
                     alert('Suscrito a premium correctamente');
-                    // Redirigimos a la página premium solo después de actualizar el rol
+
                     this.router.navigate(['/user/premium']);
                   },
                   error: (error) => {

@@ -9,7 +9,7 @@ import { UsuarioService } from '../../../services/usuario.service';
   standalone: true,
   imports: [CalendarComponent, RoutineListComponent],
   templateUrl: './basic-page.component.html',
-  styleUrls: ['./basic-page.component.css'] // Cambié 'styleUrl' a 'styleUrls'
+  styleUrls: ['./basic-page.component.css']
 })
 export class BasicPageComponent implements OnInit {
   nombreUsuario: string | null = null;
@@ -19,7 +19,7 @@ export class BasicPageComponent implements OnInit {
   ngOnInit(): void {
     this.usuarioService.getUsuarioActual().subscribe({
       next: (usuario) => {
-        this.nombreUsuario = usuario ? usuario.nombre : 'Usuario'; // Asignar nombre del usuario
+        this.nombreUsuario = usuario ? usuario.nombre : 'Usuario';
       },
       error: (err) => {
         console.error('Error al obtener el usuario:', err);
