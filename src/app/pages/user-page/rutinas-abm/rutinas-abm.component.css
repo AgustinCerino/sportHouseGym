@@ -119,6 +119,11 @@
     color: #ffffff;
     font-size: 16px;
   }
+
+  .cargar-url-input{
+    width: 100%; /* Puedes ajustarlo a un valor específico como 80%, 400px, etc. */
+    max-width: 500px;
+  }
   
   .editar-usuario-form button {
     padding: 10px;

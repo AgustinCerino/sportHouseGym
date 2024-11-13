@@ -19,6 +19,8 @@ export class RutinasAbmComponent implements OnInit {
   detallesRutinaVisible: number | null = null;
   editModeRutina: boolean = false;
   editFormRutina: FormGroup;
+  createFormRutina: FormGroup;
+  createModeRutina: boolean = false;
   rutinaSeleccionada: Rutina | null = null;
 
   constructor(
@@ -30,12 +32,47 @@ export class RutinasAbmComponent implements OnInit {
       descripcion: [''],
       url: ['']
     });
+
+    this.createFormRutina = this.fb.group({
+      nombre: [''],
+      descripcion: [''],
+      url: ['https://www.youtube.com/embed/']
+    });
+
   }
 
   ngOnInit(): void {
     this.cargarRutinas();
   }
 
+
+  crearRutina(): void {
+    if (this.createFormRutina.valid) {
+      const nuevaRutina: Rutina = this.createFormRutina.value;
+      this.rutinaService.createRutina(nuevaRutina).subscribe(
+        (rutina) => {
+          this.rutinas.push(rutina);
+          this.filtrarRutinas();
+          this.createModeRutina = false;
+          this.createFormRutina.reset();
+        },
+        (error) => {
+          console.error('Error al crear la rutina', error);
+        }
+      );
+    }
+  }
+
+  buttonCrearRutina(): void{
+  this.createModeRutina = true;
+  }
+
+  cancelarCreacionRutina(): void {
+    this.createFormRutina.reset();
+    this.createModeRutina = false;
+  }
+
+  
   cargarRutinas(): void {
     this.rutinaService.getRutinas().subscribe(
       (rutinas: Rutina[]) => {

@@ -22,6 +22,7 @@
        <p>URL del video: <a [href]="rutina.url" target="_blank">Ver Video</a></p>
      </div>
    </div>
+   <button (click)="buttonCrearRutina()">crear rutina</button>
  </div>
 
  <!-- Formulario de edición de rutinas -->
@@ -35,9 +36,27 @@
        <input formControlName="descripcion" type="text" />
      </label>
      <label>URL del Video:
-       <input formControlName="url" type="url" />
+       <input class="cargar-url-input" formControlName="url" type="url" />
      </label>
      <button type="submit">Guardar Cambios</button>
      <button type="button" (click)="cancelarEdicionRutina()">Cancelar</button>
    </form>
  </div>
+
+  <!-- Formulario de carga de rutinas -->
+  <div *ngIf="createModeRutina" class="editar-usuario-form">
+    <h3>Crear Rutina</h3>
+    <form [formGroup]="createFormRutina" (ngSubmit)="crearRutina()">
+      <label>Nombre:
+        <input formControlName="nombre" type="text" />
+      </label>
+      <label>Descripción:
+        <input formControlName="descripcion" type="text" />
+      </label>
+      <label>URL del Video:
+        <input formControlName="url" type="url" />
+      </label>
+      <button type="submit">Guardar Nueva Rutina</button>
+      <button type="button" (click)="cancelarCreacionRutina()">Cancelar</button>
+    </form>
+  </div>
