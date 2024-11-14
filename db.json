@@ -25,7 +25,7 @@
       "nombre": "María González",
       "email": "maria@example.com",
       "peso": 68,
-      "altura":165 ,
+      "altura": 165,
       "proceso": {
         "volumen": false,
         "perdida": false,
@@ -76,8 +76,8 @@
       "role": "premium",
       "nombre": "Laura Martínez",
       "email": "laura@example.com",
-      "peso": 60 ,
-      "altura": 170 ,
+      "peso": 60,
+      "altura": 170,
       "proceso": {
         "volumen": false,
         "perdida": false,
@@ -99,7 +99,7 @@
       "nombre": "Pedro Sánchez",
       "email": "pablo@example.com",
       "peso": 90,
-      "altura":185 ,
+      "altura": 185,
       "proceso": {
         "volumen": false,
         "perdida": false,
@@ -121,7 +121,7 @@
       "nombre": "Ana García",
       "email": "ana@example.com",
       "peso": 55,
-      "altura": 160 ,
+      "altura": 160,
       "proceso": {
         "volumen": false,
         "perdida": true,
@@ -212,8 +212,8 @@
       "role": "premium",
       "nombre": "Gabriela Cruz",
       "email": "gabriela@example.com",
-      "peso": 70 ,
-      "altura": 168 ,
+      "peso": 70,
+      "altura": 168,
       "proceso": {
         "volumen": false,
         "perdida": false,

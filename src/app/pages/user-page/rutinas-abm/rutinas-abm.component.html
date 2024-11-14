@@ -25,26 +25,28 @@
    <button (click)="buttonCrearRutina()">crear rutina</button>
  </div>
 
- <!-- Formulario de edición de rutinas -->
- <div *ngIf="editModeRutina" class="editar-usuario-form">
-   <h3>Editar Rutina</h3>
-   <form [formGroup]="editFormRutina" (ngSubmit)="actualizarRutina()">
-     <label>Nombre:
-       <input formControlName="nombre" type="text" />
-     </label>
-     <label>Descripción:
-       <input formControlName="descripcion" type="text" />
-     </label>
-     <label>URL del Video:
-       <input class="cargar-url-input" formControlName="url" type="url" />
-     </label>
-     <button type="submit">Guardar Cambios</button>
-     <button type="button" (click)="cancelarEdicionRutina()">Cancelar</button>
-   </form>
- </div>
+ <div *ngIf="editModeRutina" class="overlay">
+  <div class="editar-usuario-form">
+    <h3>Editar Rutina</h3>
+    <form [formGroup]="editFormRutina" (ngSubmit)="actualizarRutina()">
+      <label>Nombre:
+        <input formControlName="nombre" type="text" />
+      </label>
+      <label>Descripción:
+        <input formControlName="descripcion" type="text" />
+      </label>
+      <label>URL del Video:
+        <input class="cargar-url-input" formControlName="url" type="url" />
+      </label>
+      <button type="submit">Guardar Cambios</button>
+      <button type="button" (click)="cancelarEdicionRutina()">Cancelar</button>
+    </form>
+  </div>
+</div>
 
-  <!-- Formulario de carga de rutinas -->
-  <div *ngIf="createModeRutina" class="editar-usuario-form">
+<!-- Overlay para el formulario de creación de rutina -->
+<div *ngIf="createModeRutina" class="overlay">
+  <div class="editar-usuario-form">
     <h3>Crear Rutina</h3>
     <form [formGroup]="createFormRutina" (ngSubmit)="crearRutina()">
       <label>Nombre:
@@ -60,3 +62,4 @@
       <button type="button" (click)="cancelarCreacionRutina()">Cancelar</button>
     </form>
   </div>
+</div>

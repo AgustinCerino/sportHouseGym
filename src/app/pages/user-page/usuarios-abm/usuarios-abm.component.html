@@ -26,34 +26,36 @@ class="busqueda input-busqueda" (input)="filtrarUsuarios()" />
 </div>
 </div>
 
-<!-- Formulario de edición -->
-<div *ngIf="editMode" class="editar-usuario-form">
-  <h3>Editar Usuario</h3>
-  <form [formGroup]="editForm" (ngSubmit)="actualizarUsuario()">
-    <!-- Campo para Email -->
-    <label>Email:
-      <input formControlName="email" type="email" />
-    </label>
+<!-- Overlay para el formulario de edición -->
+<div *ngIf="editMode" class="overlay">
+  <div class="editar-usuario-form">
+    <h3>Editar Usuario</h3>
+    <form [formGroup]="editForm" (ngSubmit)="actualizarUsuario()">
+      <!-- Campo para Email -->
+      <label>Email:
+        <input formControlName="email" type="email" />
+      </label>
 
-    <!-- Campo para Peso -->
-    <label>Peso:
-      <input formControlName="peso" type="number" />
-    </label>
+      <!-- Campo para Peso -->
+      <label>Peso:
+        <input formControlName="peso" type="number" />
+      </label>
 
-    <!-- Campo para Altura -->
-    <label>Altura:
-      <input formControlName="altura" type="number" />
-    </label>
+      <!-- Campo para Altura -->
+      <label>Altura:
+        <input formControlName="altura" type="number" />
+      </label>
 
-    <label>Rol:</label>
-    <select formControlName="role">
-      <option value="basic">Basic</option>
-      <option value="premium">Premium</option>
-    </select>
+      <label>Rol:</label>
+      <select formControlName="role">
+        <option value="basic">Basic</option>
+        <option value="premium">Premium</option>
+      </select>
 
-
-    <!-- Botones -->
-    <button type="submit">Guardar Cambios</button>
-    <button type="button" (click)="cancelarEdicion()">Cancelar</button>
-  </form>
+      <!-- Botones -->
+      <button type="submit">Guardar Cambios</button>
+      <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+    </form>
+  </div>
 </div>
+
