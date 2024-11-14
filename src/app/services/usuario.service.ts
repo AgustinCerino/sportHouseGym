@@ -52,10 +52,9 @@ export class UsuarioService {
     );
   }
 
-  deleteUser(id: string): Observable<any> {
+  deleteUser(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
-
 
   private checkLocalStorage() {
     const usuarioData = localStorage.getItem('usuarioActual');

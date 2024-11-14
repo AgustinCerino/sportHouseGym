@@ -53,7 +53,8 @@ export const routes: Routes = [
         { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
         { path: 'basic', component: BasicPageComponent, canActivate: [AuthGuard], data: { role: 'basic' } },
         { path: 'premium', component: PremiumPageComponent, canActivate: [AuthGuard], data: { role: 'premium' } },
-        { path: 'calendar', component: CalendarComponent, canActivate: [AuthGuard] }
+        { path: 'calendar', component: CalendarComponent, canActivate: [AuthGuard] },
+      {path: 'user/admin', component: AdminPageComponent}
       ]},
   ///pagos
       {path:'paymentControl',component:PaymentControlComponent, children:[
