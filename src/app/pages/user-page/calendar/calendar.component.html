@@ -4,35 +4,39 @@
 
   <div *ngIf="!loading && !error">
     <header>
-      <button (click)="prevMonth()">Anterior</button>
+      <button class="nav-button" (click)="prevMonth()">Anterior</button>
       <h2>{{ monthName | titlecase }} {{ year }}</h2>
-      <button (click)="nextMonth()">Siguiente</button>
+      <button class="nav-button" (click)="nextMonth()">Siguiente</button>
     </header>
     
     <table id="calendar">
-      <tr>
-        <th *ngFor="let day of ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']">{{ day }}</th>
-      </tr>
-      <tr *ngFor="let week of calendarGrid">
-        <td *ngFor="let day of week"
-            (click)="day !== null ? onDayClick(day) : null"
-            [ngClass]="{'selected': day !== null && activities[getActivityKey(day)]}">
-          <div>
-            {{ day !== null ? day : '' }}
-            <select *ngIf="day !== null" 
-                    [(ngModel)]="activities[getActivityKey(day)]" 
-                    (change)="updateSelectedActivity(day)"
-                    [disabled]="loading">
-              <option value="">Act</option>
-              <option value="Piernas">Piernas</option>
-              <option value="Brazos">Brazos</option>
-              <option value="Espalda">Espalda</option>
-              <option value="Pecho">Pecho</option>
-              <option value="Cardio">Cardio</option>
-            </select>
-          </div>
-        </td>
-      </tr>
+      <thead>
+        <tr>
+          <th *ngFor="let day of ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']">{{ day }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let week of calendarGrid">
+          <td *ngFor="let day of week"
+              (click)="day !== null ? onDayClick(day) : null"
+              [ngClass]="{'selected': day !== null && activities[getActivityKey(day)]}">
+            <div class="day-content">
+              {{ day !== null ? day : '' }}
+              <select *ngIf="day !== null" 
+                      [(ngModel)]="activities[getActivityKey(day)]" 
+                      (change)="updateSelectedActivity(day)"
+                      [disabled]="loading">
+                <option value="">Act</option>
+                <option value="Piernas">Piernas</option>
+                <option value="Brazos">Brazos</option>
+                <option value="Espalda">Espalda</option>
+                <option value="Pecho">Pecho</option>
+                <option value="Cardio">Cardio</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>

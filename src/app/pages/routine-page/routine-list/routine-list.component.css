@@ -9,6 +9,7 @@
 
 .routine-list li {
   background-color: #333;
+  background: linear-gradient(to bottom, #333, #000000); 
   padding: 1.25rem;
   margin: 0.625rem;
   border-radius: 0.5rem;
@@ -22,6 +23,7 @@
   height: auto;
   border-radius: 0.5rem;
   margin-bottom: 0.938rem;
+
 }
 h2 {
   display: block;
@@ -35,4 +37,8 @@ h2 {
   text-align: left;
   padding: 0.625rem 0;
   border-bottom: 0.125rem solid #ffffff;
+}
+
+button{
+  border-radius: 15px;
 }

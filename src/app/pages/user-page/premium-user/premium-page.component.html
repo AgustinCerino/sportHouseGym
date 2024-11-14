@@ -3,13 +3,32 @@
     <h1>Bienvenido {{ nombreUsuario }} a Tu Página de Entrenamiento</h1>
   </header>
 
+  <section class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-images" [ngStyle]="{ 'transform': 'translateX(' + translateValue + 'px)' }">
+        <img *ngFor="let image of images; let i = index" [src]="image" [alt]="'Imagen ' + i">
+      </div>
+      
+      <!-- Botones de navegación -->
+      <button class="carousel-button prev" (click)="prevImage()">&#10094;</button>
+      <button class="carousel-button next" (click)="nextImage()">&#10095;</button>
+    </div>
+  </section>
+  
+
   <section class="page-content">
     <div class="calendar-section">
       <h2>Selecciona tu Día de Actividad</h2>
       <app-calendar></app-calendar>
     </div>
 
-    <div class="inputWhatsapp">
+
+
+    <div class="routine-list-section">
+      <app-routine-list></app-routine-list>
+
+
+  <div class="inputWhatsapp">
       <input
         type="text"
         #messageInput
@@ -21,8 +40,18 @@
       </button>
     </div>
 
-    <div class="routine-list-section">
-      <app-routine-list></app-routine-list>
+
+
+
+
+
+
+      
     </div>
-  </section>
+  </section>    
+  
+
+
+
+
 </div>

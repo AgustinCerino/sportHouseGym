@@ -1,21 +1,55 @@
+/* Agregar fuente personalizada (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+/* Estilos del contenedor de calendario */
 .calendar-container {
   padding: 1.25rem;
   border-radius: 0.5rem;
   background: linear-gradient(to bottom, #4e4b4b, #000);
   color: #fff;
-  max-width: 43.75rem; /* Ajustar el ancho máximo */
-  width: 100%; /* Asegurar que ocupe el 100% de su contenedor padre */
+  max-width: 43.75rem;
+  width: 100%;
   margin: auto;
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif; /* Usar fuente Poppins */
 }
 
+/* Cabecera con botones de navegación */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.25rem;
+  font-size: 1.2rem;
 }
 
+.nav-button {
+  background-color: #e74c3c; /* Color rojo */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif; /* Fuente más bonita */
+  font-weight: 600;
+  border-radius: 0.3rem; /* Bordes redondeados */
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s ease; /* Transiciones suaves */
+}
+
+.nav-button:hover {
+  background-color: #c0392b; /* Rojo más oscuro para el hover */
+  transform: scale(1.05); /* Efecto de agrandado */
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+/* Estilos de la tabla de calendario */
 #calendar {
   width: 100%;
   border-collapse: collapse;
@@ -25,36 +59,91 @@ th {
   background-color: #333;
   padding: 0.625rem;
   border: 0.063rem solid #444;
+  font-size: 0.9rem;
 }
 
 td {
-  width: 14.28%; /* Mantener el ancho para 7 días */
-  height: 3.75rem; /* Ajustar altura de las celdas */
+  width: 14.28%; 
+  height: 3.75rem; 
   border: 0.063rem solid #444;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 td:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Efecto hover */
+  background-color: rgba(255, 255, 255, 0.1); 
+  transform: scale(1.05); 
 }
 
 td:empty {
-  background-color: transparent; /* Celdas vacías sin fondo */
+  background-color: transparent; 
 }
 
+/* Celda seleccionada */
 td.selected {
-  background-color: #a82525; /* Color que desees para el día seleccionado */
-  color: white; /* Cambia el color del texto si es necesario */
+  background-color: #a82525;
+  color: white;
 }
 
+/* Día seleccionado */
 .selected {
-  background-color: lightblue; /* Cambia el color de fondo cuando se selecciona */
+  background-color: lightblue;
+  color: #333;
 }
 
-.activity {
-  font-weight: bold; /* Destaca el texto si hay una actividad */
-  color: green; /* Cambia el color del texto */
+/* Estilo para el select (actividades) */
+select {
+  margin-top: 0.5rem;
+  padding: 0.3rem;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 100%; /* Hacer que el select ocupe todo el ancho del contenedor */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px; /* Limitar el ancho máximo si es necesario */
+}
+
+select:disabled {
+  background-color: #666;
+}
+
+
+/* Cargando y error */
+.loading, .error {
+  font-size: 1rem;
+  text-align: center;
+  color: #ff4444;
+  margin: 1rem 0;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+/* Responsividad para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .calendar-container {
+    padding: 0.75rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #calendar {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
 }

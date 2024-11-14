@@ -1,16 +1,29 @@
 <div class="basic-page">
-    <header class="page-header">
-      <h1>Bienvenido {{ nombreUsuario }} a Tu Página de Entrenamiento</h1>
-    </header>
+  <header class="page-header">
+    <h1>Bienvenido {{ nombreUsuario }} a Tu Página de Entrenamiento</h1>
+  </header>
 
-    <section class="page-content">
-      <div class="calendar-section">
-        <h2>Selecciona tu Día de Actividad</h2>
-        <app-calendar></app-calendar>
+  <section class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-images" [ngStyle]="{ 'transform': 'translateX(' + translateValue + 'px)' }">
+        <img *ngFor="let image of images; let i = index" [src]="image" [alt]="'Imagen ' + i">
       </div>
+      
+      <!-- Botones de navegación -->
+      <button class="carousel-button prev" (click)="prevImage()">&#10094;</button>
+      <button class="carousel-button next" (click)="nextImage()">&#10095;</button>
+    </div>
+  </section>
+  
 
-      <div class="routine-list-section">
-        <app-routine-list></app-routine-list>
-      </div>
-    </section>
-  </div>
+  <section class="page-content">
+    <div class="calendar-section">
+      <h2>Selecciona tu Día de Actividad</h2>
+      <app-calendar></app-calendar>
+    </div>
+
+    <div class="routine-list-section">
+      <app-routine-list></app-routine-list>
+    </div>
+  </section>
+</div>
