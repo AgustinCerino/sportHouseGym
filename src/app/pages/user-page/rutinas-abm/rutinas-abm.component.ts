@@ -103,6 +103,8 @@ export class RutinasAbmComponent implements OnInit {
   }
 
   eliminarRutina(rutina: Rutina): void {
+    const confirmar = confirm(`¿Estás seguro de que quieres eliminar  ${rutina.nombre}?`);
+    if (confirmar) {
     this.rutinaService.deleteRutina(rutina.id).subscribe(
       () => {
         this.rutinas = this.rutinas.filter(r => r.id !== rutina.id);
@@ -113,6 +115,7 @@ export class RutinasAbmComponent implements OnInit {
       }
     );
   }
+}
 
   actualizarRutina(): void {
     if (this.rutinaSeleccionada && this.editFormRutina.valid) {
