@@ -25,7 +25,7 @@
       "nombre": "María González",
       "email": "maria@example.com",
       "peso": 68,
-      "altura": "165 cm",
+      "altura":165 ,
       "proceso": {
         "volumen": false,
         "perdida": false,
@@ -55,7 +55,7 @@
       "nombre": "Carlos López",
       "email": "carlos@example.com",
       "peso": 89,
-      "altura": "175 cm",
+      "altura": 177,
       "proceso": {
         "volumen": false,
         "perdida": false,
@@ -72,12 +72,12 @@
     {
       "id": "45678901",
       "username": "LauraMartínez",
-      "password": "basicPass012",
-      "role": "basic",
+      "password": "laura",
+      "role": "premium",
       "nombre": "Laura Martínez",
       "email": "laura@example.com",
-      "peso": "60 kg",
-      "altura": "170 cm",
+      "peso": 60 ,
+      "altura": 170 ,
       "proceso": {
         "volumen": false,
         "perdida": false,
@@ -98,8 +98,8 @@
       "role": "premium",
       "nombre": "Pedro Sánchez",
       "email": "pablo@example.com",
-      "peso": "90 kg",
-      "altura": "185 cm",
+      "peso": 90,
+      "altura":185 ,
       "proceso": {
         "volumen": false,
         "perdida": false,
@@ -120,8 +120,8 @@
       "role": "basic",
       "nombre": "Ana García",
       "email": "ana@example.com",
-      "peso": "55 kg",
-      "altura": "160 cm",
+      "peso": 55,
+      "altura": 160 ,
       "proceso": {
         "volumen": false,
         "perdida": true,
@@ -212,8 +212,8 @@
       "role": "premium",
       "nombre": "Gabriela Cruz",
       "email": "gabriela@example.com",
-      "peso": "70 kg",
-      "altura": "168 cm",
+      "peso": 70 ,
+      "altura": 168 ,
       "proceso": {
         "volumen": false,
         "perdida": false,

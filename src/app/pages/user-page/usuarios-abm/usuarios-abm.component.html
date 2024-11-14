@@ -19,8 +19,8 @@ class="busqueda input-busqueda" (input)="filtrarUsuarios()" />
 
   <div *ngIf="detallesVisible === i" class="usuario-detalles">
     <p>Email: {{ usuario.email }}</p>
-    <p>Peso: {{ usuario.peso }}</p>
-    <p>Altura: {{ usuario.altura }}</p>
+    <p>Peso: {{ usuario.peso }} kg</p>
+    <p>Altura: {{ usuario.altura }} cm</p>
     <p>Rol: {{usuario.role}}</p>
   </div>
 </div>
