@@ -1,9 +1,9 @@
 .container {
   border: none;
-  width: 500px;
-  padding: 40px;
-  margin-top: 30px;
-  margin-bottom: 220px;
+  width: 31.25rem;
+  padding: 2.5rem;
+  margin-top: 1.875rem;
+  margin-bottom: 13.75rem;
   top: 60%;
   left: 50%;
   border-radius: 3%;
@@ -19,29 +19,26 @@
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.313rem;
   color: rgb(255, 255, 255);
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 0.625rem;
+  border: 0.063rem solid #ccc;
+  border-radius: 0.5rem;
   box-shadow: none;
-  margin-bottom: 15px;
+  margin-bottom: 0.938rem;
 }
 
 small {
   color: #ffcc00;
 }
 
-button
-{
-  border-radius: 10px;
-
-
+button {
+  border-radius: 0.625rem;
 }
-.aRegs{
-  margin-top: 20px;
+.aRegs {
+  margin-top: 1.25rem;
 }

@@ -1,9 +1,9 @@
 footer {
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-  }
-.gmail-link{
-  margin-right: 10px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1.25rem;
+}
+.gmail-link {
+  margin-right: 0.625rem;
 }

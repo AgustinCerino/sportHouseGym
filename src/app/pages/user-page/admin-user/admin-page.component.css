@@ -1,178 +1,181 @@
 .home {
-    text-align: center;
-    padding: 50px 20px;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+  text-align: center;
+  padding: 3.125rem 1.25rem;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
 }
 
 .home img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    margin-top: 20px;
+  width: 100%;
+  max-width: 31.25rem;
+  border-radius: 0.625rem;
+  margin-top: 1.25rem;
 }
 
 .background {
-    background-image: url('/assets/images/home.png');
-    height: 100vh; /* Altura completa de la ventana */
-    background-size: cover; /* Ajustar la imagen para cubrir el div */
-    background-position: center; /* Centrar la imagen */
-    display: flex; /* Para centrar el contenido */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    color: white; /* Color del texto */
+  background-image: url("/assets/images/home.png");
+  height: 100vh; /* Altura completa de la ventana */
+  background-size: cover; /* Ajustar la imagen para cubrir el div */
+  background-position: center; /* Centrar la imagen */
+  display: flex; /* Para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  color: white; /* Color del texto */
 }
 
 /* Estilos para el desplegable */
 .dropdown {
-    position: absolute; /* Cambiado a absolute para posicionar en el margen izquierdo */
-    left: 20px; /* Espacio desde el margen izquierdo */
-    top: 100px; /* Espacio desde la parte superior */
+  position: absolute; /* Cambiado a absolute para posicionar en el margen izquierdo */
+  left: 1.25rem; /* Espacio desde el margen izquierdo */
+  top: 6.25rem; /* Espacio desde la parte superior */
 }
 
 .dropbtn {
-    background-color: #e63946; /* Rojo */
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s; /* Transición suave */
+  background-color: #e63946; /* Rojo */
+  color: white;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.313rem;
+  transition: background-color 0.3s; /* Transición suave */
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff; /* Fondo blanco */
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px; /* Bordes redondeados */
+  display: none;
+  position: absolute;
+  background-color: #fff; /* Fondo blanco */
+  min-width: 160px;
+  box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 0.313rem; /* Bordes redondeados */
 }
 
 .dropdown-content a {
-    color: #1d3557; /* Negro */
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s; /* Transición suave */
+  color: #1d3557; /* Negro */
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s; /* Transición suave */
 }
 
 .dropdown-content a:hover {
-    background-color: #e63946; /* Color de fondo al pasar el mouse */
-    color: #fff; /* Texto blanco al pasar el mouse */
+  background-color: #e63946; /* Color de fondo al pasar el mouse */
+  color: #fff; /* Texto blanco al pasar el mouse */
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #c98f94; /* Negro al pasar el mouse */
+  background-color: #c98f94; /* Negro al pasar el mouse */
 }
 
 .usuarios-lista {
-    background-color: #000000; /* Negro */
-    padding: 20px; /* Espacio adicional */
-    border-radius: 10px; /* Bordes redondeados */
-    color: #f1faee; /* Blanco */
-    margin-top: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  background-color: #000000; /* Negro */
+  padding: 1.25rem; /* Espacio adicional */
+  border-radius: 0.625rem; /* Bordes redondeados */
+  color: #f1faee; /* Blanco */
+  margin-top: 1.25rem;
+  box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
 .usuario-item {
-    border-bottom: 1px solid #e63946; /* Rojo */
-    padding: 12px; /* Espacio adicional */
-    transition: background-color 0.3s; /* Transición suave */
+  border-bottom: 0.063rem solid #e63946; /* Rojo */
+  padding: 0.75rem; /* Espacio adicional */
+  transition: background-color 0.3s; /* Transición suave */
 }
 
 .usuario-item:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el mouse */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fondo claro al pasar el mouse */
 }
 
 .usuario-nombre {
-    font-weight: bold;
-    color: #e63946; /* Rojo */
-    font-size: 18px; /* Tamaño de fuente */
+  font-weight: bold;
+  color: #e63946; /* Rojo */
+  font-size: 1.125rem; /* Tamaño de fuente */
 }
 
 .flecha {
-    font-size: 0.8em; /* Tamaño de flecha más pequeño */
-    color: #666; /* Gris para la flecha */
+  font-size: 0.8em; /* Tamaño de flecha más pequeño */
+  color: #666; /* Gris para la flecha */
 }
 
 .usuario-detalles {
-    font-size: 14px;
-    color: #f1faee;
-    margin-top: 5px;
-    padding-left: 10px; /* Indentación para los detalles */
+  font-size: 0.875rem;
+  color: #f1faee;
+  margin-top: 0.313rem;
+  padding-left: 0.625rem; /* Indentación para los detalles */
 }
 .input-busqueda {
-    width: 1000px;                /* Anchura más larga */
-    padding: 10px 35px 10px 15px; /* Espaciado interno */
-    border-radius: 5px;           /* Bordes redondeados */
-    border: 1px solid #ccc;       /* Borde ligero */
-    background-color: #f0f0f02f;    /* Fondo gris claro */
-    color: #aaa;                  /* Texto gris claro */
-    font-size: 16px;              /* Tamaño de fuente */
-    outline: none;
-  }
-
-  .botones-acciones {
-    position: absolute; 
-    right: 0; 
-    display: flex;
-    gap: 5px; 
+  width: 62.5rem; /* Anchura más larga */
+  padding: 0.625rem 2.188rem 0.625rem 0.938rem; /* Espaciado interno */
+  border-radius: 0.313rem; /* Bordes redondeados */
+  border: 0.063rem solid #ccc; /* Borde ligero */
+  background-color: #f0f0f02f; /* Fondo gris claro */
+  color: #aaa; /* Texto gris claro */
+  font-size: 1rem; /* Tamaño de fuente */
+  outline: none;
 }
 
-  .btn-modificar, .btn-eliminar {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #e63946;
-    font-size: 14px;
-    margin-left: 10px;
-    transition: color 0.3s;
+.botones-acciones {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 0.313rem;
 }
 
-  
-  .btn-modificar:hover {
-    color: #c98f94; /* Color al pasar el mouse */
+.btn-modificar,
+.btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e63946;
+  font-size: 0.875rem;
+  margin-left: 0.625rem;
+  transition: color 0.3s;
+}
+
+.btn-modificar:hover {
+  color: #c98f94; /* Color al pasar el mouse */
 }
 
 .btn-eliminar:hover .icono-basura {
-    color: #e63946; /* Cambia el color del ícono al pasar el mouse */
+  color: #e63946; /* Cambia el color del ícono al pasar el mouse */
 }
 
 .icono-basura {
-    font-size: 18px;
+  font-size: 1.125rem;
 }
 .usuario-header {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Espacio entre nombre y botones */
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Espacio entre nombre y botones */
+  position: relative;
 }
 
-
-
 .editar-usuario-form {
-  max-width: 400px; /* Reducir el ancho del formulario */
-  margin: 20px auto; /* Centrar el formulario horizontalmente */
-  padding: 15px;
-  border-radius: 8px;
+  max-width: 25rem; /* Reducir el ancho del formulario */
+  margin: 1.25rem auto; /* Centrar el formulario horizontalmente */
+  padding: 0.938rem;
+  border-radius: 0.5rem;
   background: linear-gradient(#e63946, #000000 95%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
   color: #ffffff;
   text-align: center; /* Centrar los elementos dentro del formulario */
 }
 
 .editar-usuario-form h3 {
   color: #ffffff;
-  font-size: 20px; /* Reducir tamaño del título */
-  margin-bottom: 15px; /* Menor espacio debajo del título */
+  font-size: 1.25rem; /* Reducir tamaño del título */
+  margin-bottom: 0.938rem; /* Menor espacio debajo del título */
 }
 
 .editar-usuario-form form {
@@ -182,22 +185,22 @@
 }
 
 .editar-usuario-form label {
-  margin: 5px 0;  /* Reducir el margen entre las etiquetas y los campos */
+  margin: 0.313rem 0; /* Reducir el margen entre las etiquetas y los campos */
   font-weight: bold;
   color: #f7efef;
-  font-size: 14px; /* Reducir el tamaño de la fuente de las etiquetas */
+  font-size: 0.875rem; /* Reducir el tamaño de la fuente de las etiquetas */
 }
 
 .editar-usuario-form input,
 .editar-usuario-form select {
   background-color: #2e0e0e;
-  padding: 6px;  /* Reducir padding */
-  margin-bottom: 10px;  /* Reducir margen entre los campos */
-  border: 1px solid #f7efef;
-  border-radius: 4px;
+  padding: 0.375rem; /* Reducir padding */
+  margin-bottom: 0.625rem; /* Reducir margen entre los campos */
+  border: 0.063rem solid #f7efef;
+  border-radius: 0.25rem;
   color: #ffffff;
-  font-size: 14px;  /* Reducir el tamaño de la fuente de los campos */
-  width: 90%;  /* Reducir el ancho de los campos */
+  font-size: 0.875rem; /* Reducir el tamaño de la fuente de los campos */
+  width: 90%; /* Reducir el ancho de los campos */
   box-sizing: border-box;
 }
 
@@ -205,8 +208,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center; /* Centrar los checkboxes */
-  gap: 10px;  /* Reducir espacio entre los checkboxes */
-  margin-bottom: 10px; /* Reducir margen */
+  gap: 0.625rem; /* Reducir espacio entre los checkboxes */
+  margin-bottom: 0.625rem; /* Reducir margen */
 }
 
 .editar-usuario-form .role-group input {
@@ -214,12 +217,12 @@
 }
 
 .editar-usuario-form button {
-  padding: 6px 12px;  /* Reducir el padding de los botones */
-  margin-top: 10px;
+  padding: 0.375rem 0.75rem; /* Reducir el padding de los botones */
+  margin-top: 0.625rem;
   background-color: #2f2d2d;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -239,20 +242,20 @@
 .role-group {
   display: flex;
   align-items: center; /* Centra los elementos verticalmente */
-  gap: 15px; /* Espacio entre los radio buttons */
-  margin-top: 10px;
+  gap: 0.938rem; /* Espacio entre los radio buttons */
+  margin-top: 0.625rem;
 }
 
 /* Estilo de los labels dentro del role-group */
 .role-group label {
   font-weight: normal;
   color: #f7efef;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /* Asegura que los radio buttons estén alineados correctamente */
 .role-group input[type="radio"] {
-  margin-right: 5px;
+  margin-right: 0.313rem;
   transform: scale(1.1); /* Aumenta ligeramente el tamaño del radio button */
   accent-color: #e63946; /* Cambia el color del radio button */
 }

@@ -1,19 +1,19 @@
 .calendar-container {
-  padding: 20px;
-  border-radius: 8px;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
   background: linear-gradient(to bottom, #4e4b4b, #000);
   color: #fff;
-  max-width: 700px; /* Ajustar el ancho máximo */
+  max-width: 43.75rem; /* Ajustar el ancho máximo */
   width: 100%; /* Asegurar que ocupe el 100% de su contenedor padre */
   margin: auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #calendar {
@@ -23,14 +23,14 @@ header {
 
 th {
   background-color: #333;
-  padding: 10px;
-  border: 1px solid #444;
+  padding: 0.625rem;
+  border: 0.063rem solid #444;
 }
 
 td {
   width: 14.28%; /* Mantener el ancho para 7 días */
-  height: 60px; /* Ajustar altura de las celdas */
-  border: 1px solid #444;
+  height: 3.75rem; /* Ajustar altura de las celdas */
+  border: 0.063rem solid #444;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;

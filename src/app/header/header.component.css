@@ -1,8 +1,11 @@
 header {
-  background: linear-gradient(135deg,#e63946, #000000); /* Gradiente suave, similar al del home */
-  padding: 20px 40px; /* Ajuste de padding */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
- 
+  background: linear-gradient(
+    135deg,
+    #e63946,
+    #000000
+  ); /* Gradiente suave, similar al del home */
+  padding: 1.25rem 2.5rem; /* Ajuste de padding */
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 /* Estilo para la navegación */
@@ -10,16 +13,16 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'Roboto', sans-serif; /* Fuente moderna */
+  font-family: "Roboto", sans-serif; /* Fuente moderna */
 }
 
 /* Estilo para el logo */
 .logo {
   cursor: pointer;
-  width: 60px;
+  width: 3.75rem;
   height: auto;
-  max-height: 40px;
-  border-radius: 8px;
+  max-height: 2.5rem;
+  border-radius: 0.5rem;
   transition: transform 0.3s ease; /* Efecto de hover */
 }
 
@@ -38,7 +41,7 @@ nav ul {
 
 /* Estilo para cada elemento de la lista */
 nav li {
-  margin: 0 20px;
+  margin: 0 1.25rem;
   cursor: pointer;
   transition: color 0.3s ease; /* Transición suave para el color */
 }

@@ -1,38 +1,38 @@
 .routine-list ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    gap: 15px; 
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.938rem;
 }
 
 .routine-list li {
-    background-color: #333;
-    padding: 20px;
-    margin: 10px; 
-    border-radius: 8px;
-    width: calc(30% - 20px);
-    text-align: center;
-    box-sizing: border-box; 
+  background-color: #333;
+  padding: 1.25rem;
+  margin: 0.625rem;
+  border-radius: 0.5rem;
+  width: calc(30% - 1.25rem);
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .routine-list img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.938rem;
 }
 h2 {
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 20px;
-    margin-inline-end: 20px;
-    font-weight: bold;
-    color:#e63946;
-    text-align: left;
-    padding: 10px 0;
-    border-bottom: 2px solid #ffffff;
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 1.25rem;
+  margin-inline-end: 1.25rem;
+  font-weight: bold;
+  color: #e63946;
+  text-align: left;
+  padding: 0.625rem 0;
+  border-bottom: 0.125rem solid #ffffff;
 }

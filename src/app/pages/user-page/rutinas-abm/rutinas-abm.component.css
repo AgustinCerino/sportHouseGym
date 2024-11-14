@@ -1,149 +1,153 @@
 .usuarios-lista {
-    background-color: #000000; /* Negro */
-    padding: 20px; /* Espacio adicional */
-    border-radius: 10px; /* Bordes redondeados */
-    color: #f1faee; /* Blanco */
-    margin-top: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  background-color: #000000; /* Negro */
+  padding: 1.25rem; /* Espacio adicional */
+  border-radius: 0.625rem; /* Bordes redondeados */
+  color: #f1faee; /* Blanco */
+  margin-top: 1.25rem;
+  box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
 .usuario-item {
-    border-bottom: 1px solid #e63946; /* Rojo */
-    padding: 12px; /* Espacio adicional */
-    transition: background-color 0.3s; /* Transición suave */
+  border-bottom: 1px solid #e63946; /* Rojo */
+  padding: 0.75rem; /* Espacio adicional */
+  transition: background-color 0.3s; /* Transición suave */
 }
 
 .usuario-item:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el mouse */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fondo claro al pasar el mouse */
 }
 
 .usuario-nombre {
-    font-weight: bold;
-    color: #e63946; /* Rojo */
-    font-size: 18px; /* Tamaño de fuente */
+  font-weight: bold;
+  color: #e63946; /* Rojo */
+  font-size: 1.125rem; /* Tamaño de fuente */
 }
 
 .flecha {
-    font-size: 0.8em; /* Tamaño de flecha más pequeño */
-    color: #666; /* Gris para la flecha */
+  font-size: 0.8em; /* Tamaño de flecha más pequeño */
+  color: #666; /* Gris para la flecha */
 }
 
 .usuario-detalles {
-    font-size: 14px;
-    color: #f1faee;
-    margin-top: 5px;
-    padding-left: 10px; /* Indentación para los detalles */
+  font-size: 0.875rem;
+  color: #f1faee;
+  margin-top: 0.313rem;
+  padding-left: 0.625rem; /* Indentación para los detalles */
 }
 .input-busqueda {
-    width: 1000px;                /* Anchura más larga */
-    padding: 10px 35px 10px 15px; /* Espaciado interno */
-    border-radius: 5px;           /* Bordes redondeados */
-    border: 1px solid #ccc;       /* Borde ligero */
-    background-color: #f0f0f02f;    /* Fondo gris claro */
-    color: #aaa;                  /* Texto gris claro */
-    font-size: 16px;              /* Tamaño de fuente */
-    outline: none;
-  }
-
-  .botones-acciones {
-    position: absolute; 
-    right: 0; 
-    display: flex;
-    gap: 5px; 
+  width: 62.5rem; /* Anchura más larga */
+  padding: 0.625rem 2.188rem 0.625rem 0.938rem; /* Espaciado interno */
+  border-radius: 0.313rem; /* Bordes redondeados */
+  border: 0.063rem solid #ccc; /* Borde ligero */
+  background-color: #f0f0f02f; /* Fondo gris claro */
+  color: #aaa; /* Texto gris claro */
+  font-size: 1rem; /* Tamaño de fuente */
+  outline: none;
 }
 
-  .btn-modificar, .btn-eliminar {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #e63946;
-    font-size: 14px;
-    margin-left: 10px;
-    transition: color 0.3s;
+.botones-acciones {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 0.313rem;
 }
 
-  
-  .btn-modificar:hover {
-    color: #c98f94; /* Color al pasar el mouse */
+.btn-modificar,
+.btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e63946;
+  font-size: 0.875rem;
+  margin-left: 0.625rem;
+  transition: color 0.3s;
+}
+
+.btn-modificar:hover {
+  color: #c98f94; /* Color al pasar el mouse */
 }
 
 .btn-eliminar:hover .icono-basura {
-    color: #e63946; /* Cambia el color del ícono al pasar el mouse */
+  color: #e63946; /* Cambia el color del ícono al pasar el mouse */
 }
 
 .icono-basura {
-    font-size: 18px;
+  font-size: 1.125rem;
 }
 .usuario-header {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Espacio entre nombre y botones */
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Espacio entre nombre y botones */
+  position: relative;
 }
 
-
 .editar-usuario-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 8px;
-    background: linear-gradient(#e63946, #000000 95%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-  }
-  
-  .editar-usuario-form h3 {
-    color: #ffffff;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .editar-usuario-form form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .editar-usuario-form label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-    color: #f7efef;
-  }
-  
-  .editar-usuario-form input {
-    background-color: #2e0e0e;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #f7efef;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 16px;
-  }
+  max-width: 37.5rem;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(#e63946, #000000 95%);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
 
-  .cargar-url-input{
-    width: 100%; /* Puedes ajustarlo a un valor específico como 80%, 400px, etc. */
-    max-width: 500px;
-  }
-  
-  .editar-usuario-form button {
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #2f2d2d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .editar-usuario-form button[type="submit"] {
-    background-color: #e63946;
-  }
-  
-  .editar-usuario-form button:hover {
-    background-color: #48535f;
-  }
-  
-  .editar-usuario-form button[type="submit"]:hover {
-    background-color: #ff4c5b;
-  }
+.editar-usuario-form h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.editar-usuario-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.editar-usuario-form label {
+  margin: 0.625rem 0 0.313rem;
+  font-weight: bold;
+  color: #f7efef;
+}
+
+.editar-usuario-form input {
+  background-color: #2e0e0e;
+  padding: 0.625rem;
+  margin-bottom: 0.938rem;
+  border: 0.063rem solid #f7efef;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.cargar-url-input {
+  width: 100%; /* Puedes ajustarlo a un valor específico como 80%, 400px, etc. */
+  max-width: 31.25rem;
+}
+
+.editar-usuario-form button {
+  padding: 0.625rem;
+  margin-top: 0.625rem;
+  background-color: #2f2d2d;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editar-usuario-form button[type="submit"] {
+  background-color: #e63946;
+}
+
+.editar-usuario-form button:hover {
+  background-color: #48535f;
+}
+
+.editar-usuario-form button[type="submit"]:hover {
+  background-color: #ff4c5b;
+}

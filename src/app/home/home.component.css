@@ -3,43 +3,43 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px;
-  background: radial-gradient(circle, #e63946, #000000);  /* Gradiente suave */
+  padding: 1.25rem;
+  background: radial-gradient(circle, #e63946, #000000); /* Gradiente suave */
   color: #fff;
   text-align: center;
-  font-family: 'Roboto', sans-serif; /* Fuente moderna */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  font-family: "Roboto", sans-serif; /* Fuente moderna */
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2); /* Sombra suave */
   min-height: 100vh; /* Asegura que el contenido ocupe al menos la altura de la pantalla */
-  padding-bottom: 80px; /* Deja espacio para el footer */
+  padding-bottom: 5rem; /* Deja espacio para el footer */
 }
 
 .home h1 {
   font-size: 3em;
   font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra en el texto */
+  margin-bottom: 1.25rem;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.4); /* Sombra en el texto */
   color: rgb(255, 255, 255);
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 .home p {
   font-size: 1.2em;
   line-height: 1.6;
-  margin-bottom: 40px;
-  font-family: 'Lora', serif;
+  margin-bottom: 2.5rem;
+  font-family: "Lora", serif;
 }
 
 /* Galería de imágenes con bordes redondeados y sombra */
 .image-gallery {
   display: flex;
   width: 100%;
-  max-width: 900px;
-  height: 300px;
-  margin-top: 20px;
+  max-width: 56.25rem;
+  height: 18.75rem;
+  margin-top: 1.25rem;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra de la galería */
+  box-shadow: 0 0.25rem 0.938rem rgba(0, 0, 0, 0.3); /* Sombra de la galería */
 }
 
 .image-gallery img {
@@ -52,7 +52,7 @@
 
 .image-gallery img:hover {
   cursor: crosshair;
-  width: 300px;
+  width: 18.75rem;
   opacity: 1;
   filter: contrast(120%);
   transform: scale(1.05); /* Efecto de aumento */
@@ -62,35 +62,39 @@
 .mision-vision {
   display: flex;
   justify-content: space-around;
-  margin-top: 60px;
+  margin-top: 3.75rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 56.25rem;
   text-align: center;
-  font-family: 'Lora', serif; /* Fuente con más carácter */
+  font-family: "Lora", serif; /* Fuente con más carácter */
 }
 
-.mision, .vision {
+.mision,
+.vision {
   background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
-  padding: 30px;
-  border-radius: 15px;
+  padding: 1.875rem;
+  border-radius: 0.938rem;
   width: 45%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
   transition: transform 0.3s ease; /* Transición para el hover */
 }
 
-.mision h2, .vision h2 {
+.mision h2,
+.vision h2 {
   font-size: 2em;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
-.mision p, .vision p {
+.mision p,
+.vision p {
   font-size: 1.1em;
   line-height: 1.6;
 }
 
 /* Efecto hover para misión y visión */
-.mision:hover, .vision:hover {
+.mision:hover,
+.vision:hover {
   transform: scale(1.05); /* Escala al hacer hover */
 }
 
@@ -98,32 +102,32 @@
 
 /* Rutinas destacadas */
 .featured-routines {
-  margin-top: 60px;
+  margin-top: 3.75rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 56.25rem;
 }
-.featured-routines h2{
+.featured-routines h2 {
   color: #fff;
 }
 
 .routine-card {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 15px;
-  margin: 10px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 1.25rem;
+  border-radius: 0.938rem;
+  margin: 0.625rem 0;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
 .routine-card h3 {
   font-size: 1.8em;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .routine-card p {
   font-size: 1.1em;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .routine-card:hover {
@@ -132,32 +136,31 @@
 
 /* Consejos de salud */
 .health-tips {
-  margin-top: 60px;
+  margin-top: 3.75rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 56.25rem;
   text-align: left;
-  
 }
 
 /* Preguntas frecuentes */
 .faq {
-  margin-top: 60px;
+  margin-top: 3.75rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 56.25rem;
 }
 
 .faq-item {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 15px;
-  margin: 10px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 1.25rem;
+  border-radius: 0.938rem;
+  margin: 0.625rem 0;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
 }
 
 .faq-item h3 {
   font-size: 1.5em;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .faq-item p {
@@ -165,17 +168,17 @@
   line-height: 1.6;
 }
 
-
-h1, h2, h3 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra en los títulos */
-
+h1,
+h2,
+h3 {
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.4); /* Sombra en los títulos */
 }
 
 /* Estilo específico para el h2 de "Rutinas Destacadas" */
 .featured-routines h2 {
   font-size: 2.5em; /* Hacerlo un poco más grande */
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Sombra más fuerte para destacar */
+  margin-bottom: 1.875rem;
+  text-shadow: 0.125rem 0.125rem 0.375rem rgba(0, 0, 0, 0.5); /* Sombra más fuerte para destacar */
 }
 
 .health-tips ul {
@@ -185,19 +188,16 @@ h1, h2, h3 {
 
 .health-tips li {
   background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 0.625rem;
+  padding: 0.938rem;
   font-size: 1.2em;
   color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra en los elementos */
-  margin-bottom: 20px; /* Espacio entre los ítems */
-  
-  
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3); /* Sombra en los elementos */
+  margin-bottom: 1.25rem; /* Espacio entre los ítems */
 }
-.health-tips h2{
+.health-tips h2 {
   color: #fff;
 }
-
 
 .health-tips li strong {
   font-weight: bold;
@@ -209,15 +209,13 @@ h1, h2, h3 {
   transition: transform 0.3s ease; /* Transición suave */
 }
 
-
-
 /*/////////////////*/
 
 /* home.component.css */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(3.125rem);
   }
   100% {
     opacity: 1;
@@ -232,14 +230,14 @@ h1, h2, h3 {
   }
   100% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(3.125rem);
   }
 }
 
 /* Clases para aplicar animaciones de aparición/desaparición */
 section {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(3.125rem);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 

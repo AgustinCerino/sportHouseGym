@@ -1,11 +1,11 @@
 .editar-boton {
-  padding: 10px;
+  padding: 0.625rem;
   background-color: #3d3d3d;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .editar-boton:hover {
@@ -13,44 +13,43 @@
 }
 
 .modificar-usuario {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 8px;
+  max-width: 37.5rem;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
   background-color: #e63946;
-  background: linear-gradient(#e63946, rgb(0, 0, 0)95%);
-
+  background: linear-gradient(#e63946, rgb(0, 0, 0) 95%);
 }
 
 .perfil {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .foto-perfil {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   border-radius: 50%;
-  margin-right: 20px;
-  border: 1px solid #000000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 1.25rem;
+  border: 0.063rem solid #000000;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
-h2, h3 {
+h2,
+h3 {
   color: #000000;
 }
 
 button {
-  padding: 10px;
+  padding: 0.625rem;
   background-color: #000000;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #48535f;
 }
-
