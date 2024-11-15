@@ -54,7 +54,6 @@ export const routes: Routes = [
         { path: 'basic', component: BasicPageComponent, canActivate: [AuthGuard], data: { role: 'basic' } },
         { path: 'premium', component: PremiumPageComponent, canActivate: [AuthGuard], data: { role: 'premium' } },
         { path: 'calendar', component: CalendarComponent, canActivate: [AuthGuard] },
-      {path: 'user/admin', component: AdminPageComponent}
       ]},
   ///pagos
       {path:'paymentControl',component:PaymentControlComponent, children:[
@@ -64,7 +63,7 @@ export const routes: Routes = [
 
   //otras rutas
   { path:'contact',component: ContactComponent},
-  { path: '', redirectTo: 'home', pathMatch:'full' } // Redirecciona a la página de login si la ruta no se encuentra
+  { path: '', redirectTo: 'home', pathMatch:'full' }
 ];
 
 export class AppRoutingModule {}

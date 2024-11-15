@@ -87,5 +87,11 @@ export class HeaderComponent implements OnDestroy , OnInit{
 navigateToAdmin(){
   this.router.navigate(['/user/admin'])
 }
+navigateToBasic(){
+  this.router.navigate(['/user/basic'])
+}
+navigateToPremium(){
+  this.router.navigate(['/user/premium'])
+}
 
 }

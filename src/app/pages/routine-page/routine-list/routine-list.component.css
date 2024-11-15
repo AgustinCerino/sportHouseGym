@@ -9,7 +9,7 @@
 
 .routine-list li {
   background-color: #333;
-  background: linear-gradient(to bottom, #333, #000000); 
+  background: linear-gradient(to bottom, #333, #000000);
   padding: 1.25rem;
   margin: 0.625rem;
   border-radius: 0.5rem;
@@ -41,4 +41,9 @@ h2 {
 
 button{
   border-radius: 15px;
+}
+
+
+.routine-list ul :hover{
+  transform: scale(1.05);
 }

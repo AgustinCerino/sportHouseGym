@@ -248,7 +248,7 @@
         "2024-11-06": "Brazos",
         "2024-11-07": "Pecho",
         "2024-11-08": "Espalda",
-        "2024-11-09": "Piernas",
+        "2024-11-09": "Pecho",
         "2024-11-11": "Pecho",
         "2024-11-13": "Pecho",
         "2024-11-15": "Piernas"
@@ -272,19 +272,19 @@
       "id": "3",
       "nombre": "Rutina de Pecho",
       "descripcion": "Serie de ejercicios para desarrollar los músculos pectorales.",
-      "url": "https://mi-servidor.com/videos/rutina_pecho.mp4"
+      "url": "https://www.youtube.com/embed/LBDqQA8AVD4"
     },
     {
       "id": "4",
       "nombre": "Rutina de Glúteos",
       "descripcion": "Rutina para tonificar y fortalecer los glúteos.",
-      "url": "https://mi-servidor.com/videos/rutina_gluteos.mp4"
+      "url": "https://www.youtube.com/embed/wL87zJ6wgxw"
     },
     {
       "id": "5",
       "nombre": "Rutina de Espalda",
       "descripcion": "Ejercicios para fortalecer la espalda y mejorar la postura.",
-      "url": "https://mi-servidor.com/videos/rutina_espalda.mp4"
+      "url": "https://www.youtube.com/embed/BcbmsDQM_aI"
     }
   ]
 }
