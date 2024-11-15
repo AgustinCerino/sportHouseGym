@@ -60,18 +60,13 @@ export class RegisterComponent {
       };
 
       console.log(usuario);
-
+/*
       this.usuarioService.postUsuarios(usuario).subscribe({
         next: (response) => {
           console.log('Usuario agregado:', response);
           alert('Usuario registrado con éxito');
-          if (response.role === 'basic') {
-            this.router.navigate(['/user/basic']);
-          } else if (response.role === 'premium') {
-            this.router.navigate(['/user/premium']);
-          } else if (response.role === 'admin') {
-            this.router.navigate(['/user/admin']);
-          }
+
+          this.router.navigate(['/user/basic'])
         },
         error: (error) => {
           console.error('Error al agregar el usuario:', error);
@@ -81,6 +76,32 @@ export class RegisterComponent {
     } else {
       console.error('Formulario inválido');
     }
+
+    */
+
+    this.usuarioService.postUsuarios(usuario).subscribe({
+      next: (response) => {
+        console.log('Usuario agregado:', response);
+        alert('Usuario registrado con éxito');
+
+        // Actualiza el estado de autenticación si es necesario
+        this.usuarioService.authenticate(formValues.username, formValues.password).subscribe({
+          next: () => {
+            this.router.navigate(['/user/basic']);
+          },
+          error: (error) => {
+            console.error('Error al autenticar:', error);
+          }
+        });
+      },
+      error: (error) => {
+        console.error('Error al agregar el usuario:', error);
+        alert('Hubo un error al registrar el usuario');
+      }
+    });
+  } else {
+    console.error('Formulario inválido');
+  }
   }
 
 
@@ -108,7 +129,6 @@ export class RegisterComponent {
   }
 
 }
-
 
 
 

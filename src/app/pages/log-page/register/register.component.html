@@ -42,9 +42,7 @@
         <div class="mb-3">
           <label for="role" class="form-label">Role</label>
           <select class="form-control" id="role" formControlName="role">
-            <option value="admin">Admin</option>
             <option value="basic">Basic</option>
-            <option value="premium">Premium</option>
           </select>
           @if(registerForm.controls['role'].getError('required')&&registerForm.controls['role'].touched){
             <small>Role is required.</small>

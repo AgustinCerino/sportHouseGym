@@ -11,7 +11,9 @@ import { Usuario } from '../interfaces/users.interface';
 
 export class UsuarioService {
   private apiUrl = 'http://localhost:3000/usuarios';
+
   private usuarioActual: Usuario | null = null;
+
   private loggedInSubject = new BehaviorSubject<boolean>(false);
   private actividadesSubject = new BehaviorSubject<{[key: string]: string}>({});
 
@@ -34,7 +36,6 @@ export class UsuarioService {
   }
 
   postUsuarios(usuario: Omit<Usuario, 'id'>): Observable<Usuario> {
-    // Inicializar actividades vacías para nuevo usuario
     const nuevoUsuario = {
       ...usuario,
       actividades: {}
@@ -84,6 +85,7 @@ export class UsuarioService {
     }
     return of(this.usuarioActual);
   }
+
 
   cerrarSesion(): void {
     this.usuarioActual = null;
