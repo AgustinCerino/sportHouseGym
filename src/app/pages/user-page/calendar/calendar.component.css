@@ -127,6 +127,11 @@ select:disabled {
   color: #e74c3c;
 }
 
+.disabled-date {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Responsividad para dispositivos móviles */
 @media screen and (max-width: 768px) {
   .calendar-container {
