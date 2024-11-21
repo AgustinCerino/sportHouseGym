@@ -4,7 +4,7 @@
       "id": "12345678",
       "username": "JuanPerez",
       "password": "adminPass123",
-      "role": "basic",
+      "role": "admin",
       "nombre": "Juan Perez",
       "email": "juan@gmail.com",
       "peso": 90,
