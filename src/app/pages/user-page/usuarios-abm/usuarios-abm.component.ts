@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from '../../../interfaces/users.interface';
 import { UsuarioService } from '../../../services/usuario.service';
 
@@ -27,10 +27,21 @@ export class UsuariosAbmComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.editForm = this.fb.group({
-      email: [''],
-      peso: [''],
-      altura: [''],
-     role:['']
+      email: ['', [
+        Validators.required, 
+        Validators.email
+      ]],
+      peso: ['', [
+        Validators.required, 
+        Validators.min(20), 
+        Validators.max(300)
+      ]],
+      altura: ['', [
+        Validators.required, 
+        Validators.min(100), 
+        Validators.max(250)
+      ]],
+     role: ['', Validators.required]
     });
   }
 
@@ -93,15 +104,48 @@ export class UsuariosAbmComponent implements OnInit {
     console.log(this.editForm.value); 
   }
   
+
+  // Método para obtener mensajes de error de validación
+  getErrorMessage(controlName: string): string {
+    const control = this.editForm.get(controlName);
+    if (control?.hasError('required')) {
+      return 'Este campo es obligatorio';
+    }
+    if (controlName === 'email' && control?.hasError('email')) {
+      return 'Ingrese un email válido';
+    }
+    if (controlName === 'peso') {
+      if (control?.hasError('min')) {
+        return 'El peso mínimo es 20 kg';
+      }
+      if (control?.hasError('max')) {
+        return 'El peso máximo es 300 kg';
+      }
+    }
+    if (controlName === 'altura') {
+      if (control?.hasError('min')) {
+        return 'La altura mínima es 100 cm';
+      }
+      if (control?.hasError('max')) {
+        return 'La altura máxima es 250 cm';
+      }
+    }
+    return '';
+  }
+
   actualizarUsuario(): void {
+    // Marcar todos los campos como tocados para mostrar errores
+    Object.keys(this.editForm.controls).forEach(key => {
+      const control = this.editForm.get(key);
+      control?.markAsTouched();
+    });
+
     if (this.usuarioSeleccionado && this.editForm.valid) {
-   
       const updatedData = { ...this.usuarioSeleccionado, ...this.editForm.value };
       console.log('Datos actualizados:', updatedData);  
   
       this.userService.updateUser(this.usuarioSeleccionado.id, updatedData).subscribe(
         (updatedUser) => {
-         
           const index = this.usuarios.findIndex(u => u.id === updatedUser.id);
           if (index !== -1) {
             this.usuarios[index] = updatedUser;
@@ -119,6 +163,7 @@ export class UsuariosAbmComponent implements OnInit {
       console.log('Formulario inválido o usuario no seleccionado');
     }
   }
+
 
   cancelarEdicion(): void {
     this.editMode = false;

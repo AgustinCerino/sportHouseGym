@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Rutina } from '../../../interfaces/routine.interface';
 import { RoutineService } from '../../../services/rutine.service';
 
@@ -28,14 +28,14 @@ export class RutinasAbmComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.editFormRutina = this.fb.group({
-      nombre: [''],
-      descripcion: [''],
+      nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      descripcion: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
       url: ['']
     });
 
     this.createFormRutina = this.fb.group({
-      nombre: [''],
-      descripcion: [''],
+      nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      descripcion: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
       url: ['https://www.youtube.com/embed/']
     });
 
@@ -47,6 +47,11 @@ export class RutinasAbmComponent implements OnInit {
 
 
   crearRutina(): void {
+    Object.keys(this.createFormRutina.controls).forEach(key => {
+      const control = this.createFormRutina.get(key);
+      control?.markAsTouched();
+    });
+
     if (this.createFormRutina.valid) {
       const nuevaRutina: Rutina = this.createFormRutina.value;
       this.rutinaService.createRutina(nuevaRutina).subscribe(
@@ -60,6 +65,10 @@ export class RutinasAbmComponent implements OnInit {
           console.error('Error al crear la rutina', error);
         }
       );
+    } else {
+      // Opcional: mostrar un mensaje general de error
+      console.log('El formulario contiene errores. Por favor, corrígelos.');
+      return;
     }
   }
 
@@ -118,25 +127,34 @@ export class RutinasAbmComponent implements OnInit {
 }
 
   actualizarRutina(): void {
-    if (this.rutinaSeleccionada && this.editFormRutina.valid) {
-      const updatedData = { ...this.rutinaSeleccionada, ...this.editFormRutina.value };
-      this.rutinaService.updateRutina(this.rutinaSeleccionada.id, updatedData).subscribe(
-        (updatedRutina) => {
-          const index = this.rutinas.findIndex(r => r.id === updatedRutina.id);
-          if (index !== -1) {
-            this.rutinas[index] = updatedRutina;
-            this.rutinasFiltradas[index] = updatedRutina;
-          }
-          this.editModeRutina = false;
-          this.rutinaSeleccionada = null;
-          this.editFormRutina.reset();
-        },
-        (error) => {
-          console.error('Error al actualizar rutina', error);
+  Object.keys(this.editFormRutina.controls).forEach(key => {
+    const control = this.editFormRutina.get(key);
+    control?.markAsTouched();
+  });
+
+  if (this.rutinaSeleccionada && this.editFormRutina.valid) {
+    const updatedData = { ...this.rutinaSeleccionada, ...this.editFormRutina.value };
+    this.rutinaService.updateRutina(this.rutinaSeleccionada.id, updatedData).subscribe(
+      (updatedRutina) => {
+        const index = this.rutinas.findIndex(r => r.id === updatedRutina.id);
+        if (index !== -1) {
+          this.rutinas[index] = updatedRutina;
+          this.rutinasFiltradas[index] = updatedRutina;
         }
-      );
-    }
+        this.editModeRutina = false;
+        this.rutinaSeleccionada = null;
+        this.editFormRutina.reset();
+      },
+      (error) => {
+        console.error('Error al actualizar rutina', error);
+      }
+    );
+  } else {
+    // Opcional: mostrar un mensaje general de error
+    console.log('El formulario contiene errores. Por favor, corrígelos.');
+    return;
   }
+}
 
   cancelarEdicionRutina(): void {
     this.editModeRutina = false;
