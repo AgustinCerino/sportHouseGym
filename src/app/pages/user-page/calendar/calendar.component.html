@@ -8,7 +8,7 @@
       <h2>{{ monthName | titlecase }} {{ year }}</h2>
       <button class="nav-button" (click)="nextMonth()">Siguiente</button>
     </header>
-
+    
     <table id="calendar">
       <thead>
         <tr>
@@ -17,13 +17,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let week of calendarGrid">
-          <td *ngFor="let day of week" (click)="day !== null ? onDayClick(day) : null"
-            [ngClass]="{'selected': day !== null && activities[getActivityKey(day)]}">
+          <td *ngFor="let day of week"
+              (click)="day !== null ? onDayClick(day) : null"
+              [ngClass]="{'selected': day !== null && activities[getActivityKey(day)]}">
             <div class="day-content">
               {{ day !== null ? day : '' }}
-              <select *ngIf="day !== null" [(ngModel)]="activities[getActivityKey(day)]"
-                (change)="updateSelectedActivity(day)" [disabled]="loading || isDateBeforeToday(day)"
-                [ngClass]="{'disabled-date': isDateBeforeToday(day)}">
+              <select *ngIf="day !== null" 
+                      [(ngModel)]="activities[getActivityKey(day)]" 
+                      (change)="updateSelectedActivity(day)"
+                      [disabled]="loading">
                 <option value="">Act</option>
                 <option value="Piernas">Piernas</option>
                 <option value="Brazos">Brazos</option>

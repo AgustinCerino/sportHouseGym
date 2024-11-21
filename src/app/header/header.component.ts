@@ -14,30 +14,20 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent implements OnDestroy , OnInit{
   showDashboardNavbar: boolean = false;
   private authSubscription!: Subscription;
-  private rolSubscription!: Subscription;
   rol !:string
 
   constructor(private router: Router, private usuarioService: UsuarioService) {
     this.navBarSelector();
 
+
     this.authSubscription = this.usuarioService.loggedIn$.subscribe(loggedIn => {
       this.updateNavBar(loggedIn);
-      
-      if (loggedIn) {
-        this.updateUserRole();
-      }
     });
-
   }
   ngOnInit(): void {
-
-      this.updateUserRole();
-  }
-
-  private updateUserRole() {
-    this.rolSubscription = this.usuarioService.getUsuarioActual().subscribe(data => {
-      this.rol = data.role;
-    });
+    this.usuarioService.getUsuarioActual().subscribe(data =>{
+      this.rol=data.role
+    })
   }
 
   ngOnDestroy() {
@@ -45,16 +35,12 @@ export class HeaderComponent implements OnDestroy , OnInit{
     if (this.authSubscription) {
       this.authSubscription.unsubscribe();
     }
-    if (this.rolSubscription) {
-      this.rolSubscription.unsubscribe();
-    }
   }
 
   private navBarSelector() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.showDashboardNavbar = 
       this.router.url === '/home' ||
       this.router.url === '/register' ||
       this.router.url === '/login';

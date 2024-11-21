@@ -34,25 +34,16 @@ class="busqueda input-busqueda" (input)="filtrarUsuarios()" />
       <!-- Campo para Email -->
       <label>Email:
         <input formControlName="email" type="email" />
-        <div *ngIf="editForm.get('email')?.invalid && editForm.get('email')?.touched" class="error-message">
-          {{ getErrorMessage('email') }}
-        </div>
       </label>
 
       <!-- Campo para Peso -->
       <label>Peso:
         <input formControlName="peso" type="number" />
-        <div *ngIf="editForm.get('peso')?.invalid && editForm.get('peso')?.touched" class="error-message">
-          {{ getErrorMessage('peso') }}
-        </div>
       </label>
 
       <!-- Campo para Altura -->
       <label>Altura:
         <input formControlName="altura" type="number" />
-        <div *ngIf="editForm.get('altura')?.invalid && editForm.get('altura')?.touched" class="error-message">
-          {{ getErrorMessage('altura') }}
-        </div>
       </label>
 
       <label>Rol:</label>
@@ -60,9 +51,6 @@ class="busqueda input-busqueda" (input)="filtrarUsuarios()" />
         <option value="basic">Basic</option>
         <option value="premium">Premium</option>
       </select>
-      <div *ngIf="editForm.get('role')?.invalid && editForm.get('role')?.touched" class="error-message">
-        {{ getErrorMessage('role') }}
-      </div>
 
       <!-- Botones -->
       <button type="submit">Guardar Cambios</button>

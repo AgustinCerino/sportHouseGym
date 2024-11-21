@@ -1,65 +1,39 @@
-<!-- Barra de búsqueda para rutinas -->
-<input type="text" [(ngModel)]="filtroRutina" placeholder="Buscar rutinas..." class="busqueda input-busqueda"
-  (input)="filtrarRutinas()" />
+   <!-- Barra de búsqueda para rutinas -->
+   <input type="text" [(ngModel)]="filtroRutina" placeholder="Buscar rutinas..."
+   class="busqueda input-busqueda" (input)="filtrarRutinas()" />
 
-<!-- Lista de rutinas -->
-<div class="usuarios-lista">
-  <h2>Lista de Rutinas</h2>
-  <div *ngFor="let rutina of rutinasFiltradas; let i = index" class="usuario-item">
-    <div class="usuario-header">
-      <p (click)="toggleDetallesRutina(i)" class="usuario-nombre">
-        {{ rutina.nombre }}
-        <span class="flecha">{{ detallesRutinaVisible === i ? '▲' : '▼' }}</span>
-      </p>
-      <div class="botones-acciones">
-        <button class="btn-modificar" (click)="modificarRutina(rutina)">✏️</button>
-        <button class="btn-eliminar" (click)="eliminarRutina(rutina)">🗑️</button>
-      </div>
-    </div>
+ <!-- Lista de rutinas -->
+ <div class="usuarios-lista">
+   <h2>Lista de Rutinas</h2>
+   <div *ngFor="let rutina of rutinasFiltradas; let i = index" class="usuario-item">
+     <div class="usuario-header">
+       <p (click)="toggleDetallesRutina(i)" class="usuario-nombre">
+         {{ rutina.nombre }}
+         <span class="flecha">{{ detallesRutinaVisible === i ? '▲' : '▼' }}</span>
+       </p>
+       <div class="botones-acciones">
+         <button class="btn-modificar" (click)="modificarRutina(rutina)">✏️</button>
+         <button class="btn-eliminar" (click)="eliminarRutina(rutina)">🗑️</button>
+       </div>
+     </div>
 
-    <div *ngIf="detallesRutinaVisible === i" class="usuario-detalles">
-      <p>Descripción: {{ rutina.descripcion }}</p>
-      <p>URL del video: <a [href]="rutina.url" target="_blank">Ver Video</a></p>
-    </div>
-  </div>
-  <button (click)="buttonCrearRutina()">crear rutina</button>
-</div>
+     <div *ngIf="detallesRutinaVisible === i" class="usuario-detalles">
+       <p>Descripción: {{ rutina.descripcion }}</p>
+       <p>URL del video: <a [href]="rutina.url" target="_blank">Ver Video</a></p>
+     </div>
+   </div>
+   <button (click)="buttonCrearRutina()">crear rutina</button>
+ </div>
 
-<div *ngIf="editModeRutina" class="overlay">
+ <div *ngIf="editModeRutina" class="overlay">
   <div class="editar-usuario-form">
     <h3>Editar Rutina</h3>
     <form [formGroup]="editFormRutina" (ngSubmit)="actualizarRutina()">
       <label>Nombre:
         <input formControlName="nombre" type="text" />
-        <div
-          *ngIf="editFormRutina.get('nombre')?.invalid && (editFormRutina.get('nombre')?.dirty || editFormRutina.get('nombre')?.touched)"
-          class="error-messages">
-          <small *ngIf="editFormRutina.get('nombre')?.hasError('required')">
-            El nombre es obligatorio.
-          </small>
-          <small *ngIf="editFormRutina.get('nombre')?.hasError('minlength')">
-            El nombre debe tener al menos 3 caracteres.
-          </small>
-          <small *ngIf="editFormRutina.get('nombre')?.hasError('maxlength')">
-            El nombre no puede superar los 50 caracteres.
-          </small>
-        </div>
       </label>
       <label>Descripción:
         <input formControlName="descripcion" type="text" />
-        <div
-          *ngIf="editFormRutina.get('descripcion')?.invalid && (editFormRutina.get('descripcion')?.dirty || editFormRutina.get('descripcion')?.touched)"
-          class="error-messages">
-          <small *ngIf="editFormRutina.get('descripcion')?.hasError('required')">
-            La descripción es obligatoria.
-          </small>
-          <small *ngIf="editFormRutina.get('descripcion')?.hasError('minlength')">
-            La descripción debe tener al menos 10 caracteres.
-          </small>
-          <small *ngIf="editFormRutina.get('descripcion')?.hasError('maxlength')">
-            La descripción no puede superar los 200 caracteres.
-          </small>
-        </div>
       </label>
       <label>URL del Video:
         <input class="cargar-url-input" formControlName="url" type="url" />
@@ -77,35 +51,9 @@
     <form [formGroup]="createFormRutina" (ngSubmit)="crearRutina()">
       <label>Nombre:
         <input formControlName="nombre" type="text" />
-        <div
-          *ngIf="createFormRutina.get('nombre')?.invalid && (createFormRutina.get('nombre')?.dirty || createFormRutina.get('nombre')?.touched)"
-          class="error-messages">
-          <small *ngIf="createFormRutina.get('nombre')?.hasError('required')">
-            El nombre es obligatorio.
-          </small>
-          <small *ngIf="createFormRutina.get('nombre')?.hasError('minlength')">
-            El nombre debe tener al menos 3 caracteres.
-          </small>
-          <small *ngIf="createFormRutina.get('nombre')?.hasError('maxlength')">
-            El nombre no puede superar los 50 caracteres.
-          </small>
-        </div>
       </label>
       <label>Descripción:
         <input formControlName="descripcion" type="text" />
-        <div
-          *ngIf="createFormRutina.get('descripcion')?.invalid && (createFormRutina.get('descripcion')?.dirty || createFormRutina.get('descripcion')?.touched)"
-          class="error-messages">
-          <small *ngIf="createFormRutina.get('descripcion')?.hasError('required')">
-            La descripción es obligatoria.
-          </small>
-          <small *ngIf="createFormRutina.get('descripcion')?.hasError('minlength')">
-            La descripción debe tener al menos 10 caracteres.
-          </small>
-          <small *ngIf="createFormRutina.get('descripcion')?.hasError('maxlength')">
-            La descripción no puede superar los 200 caracteres.
-          </small>
-        </div>
       </label>
       <label>URL del Video:
         <input formControlName="url" type="url" />

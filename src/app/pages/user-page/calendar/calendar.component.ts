@@ -21,7 +21,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   error: string | null = null;
   private subscriptions: Subscription[] = [];
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -112,12 +112,10 @@ export class CalendarComponent implements OnInit, OnDestroy {
     });
   }
 
-  getActivityKey(day: number | Date): string {
-    const dateToUse = day instanceof Date ? day : new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), day);
-    const year = dateToUse.getFullYear();
-    const month = dateToUse.getMonth() + 1;
-    const dayOfMonth = day instanceof Date ? day.getDate() : day;
-    return `${year}-${month.toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}`;
+  getActivityKey(day: number): string {
+    const year = this.currentDate.getFullYear();
+    const month = this.currentDate.getMonth() + 1;
+    return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
   }
 
   prevMonth(): void {
@@ -132,36 +130,10 @@ export class CalendarComponent implements OnInit, OnDestroy {
 
   onDayClick(day: number): void {
     if (day !== null) {
-      const clickedDate = new Date(
-        this.currentDate.getFullYear(), 
-        this.currentDate.getMonth(), 
-        day
-      );
-      
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-  
-      // Use getTime() to compare dates numerically
-      if (clickedDate.getTime() >= today.getTime()) {
-        const key = this.getActivityKey(day);
-        if (!this.activities[key]) {
-          this.activities[key] = '';
-        }
+      const key = this.getActivityKey(day);
+      if (!this.activities[key]) {
+        this.activities[key] = '';
       }
     }
   }
-
-  isDateBeforeToday(day: number): boolean {
-    const today = new Date();
-    const comparisonDate = new Date(
-      this.currentDate.getFullYear(), 
-      this.currentDate.getMonth(), 
-      day
-    );
-    
-    today.setHours(0, 0, 0, 0);
-    comparisonDate.setHours(0, 0, 0, 0);
-    
-    return comparisonDate.getTime() < today.getTime();
-  }
-} 
+}
