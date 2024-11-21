@@ -4,11 +4,11 @@
       "id": "12345678",
       "username": "JuanPerez",
       "password": "adminPass123",
-      "role": "admin",
+      "role": "basic",
       "nombre": "Juan Perez",
-      "email": "juan@example.com",
-      "peso": 75,
-      "altura": 160,
+      "email": "juan@gmail.com",
+      "peso": 90,
+      "altura": 170,
       "proceso": {
         "volumen": false,
         "perdida": false,
@@ -21,7 +21,7 @@
       "id": "23456789",
       "username": "MaríaGonzález",
       "password": "basicPass456",
-      "role": "basic",
+      "role": "premium",
       "nombre": "María González",
       "email": "maria@example.com",
       "peso": 68,
@@ -63,7 +63,8 @@
         "2024-11-03": "Piernas",
         "2024-11-05": "Espalda",
         "2024-11-06": "Brazos",
-        "2024-11-07": "Pecho"
+        "2024-11-07": "Pecho",
+        "2024-10-08": "Piernas"
       }
     },
     {
@@ -221,14 +222,15 @@
         "2024-11-03": "Piernas",
         "2024-11-05": "Espalda",
         "2024-11-06": "Brazos",
-        "2024-11-07": "Pecho"
+        "2024-11-07": "Pecho",
+        "2024-11-20": "Brazos"
       }
     },
     {
       "id": "777777",
       "username": "LucasSette",
       "password": "botete",
-      "role": "basic",
+      "role": "premium",
       "nombre": "Lucas Sette",
       "email": "tetete@example.com",
       "peso": 77,
@@ -248,7 +250,20 @@
         "2024-11-09": "Pecho",
         "2024-11-11": "Pecho",
         "2024-11-13": "Pecho",
-        "2024-11-15": "Piernas"
+        "2024-11-15": "Piernas",
+        "2024-10-10": "Brazos",
+        "2024-12-06": "Cardio",
+        "2024-11-19": "Piernas",
+        "2024-11-20": "Brazos",
+        "2024-11-29": "Brazos",
+        "2024-11-22": "Espalda",
+        "2024-11-23": "Espalda",
+        "2024-11-30": "Cardio",
+        "2024-12-18": "Pecho",
+        "2024-12-25": "Espalda",
+        "2024-11-21": "Piernas",
+        "2024-11-26": "Piernas",
+        "2024-12-19": "Piernas"
       }
     }
   ],
