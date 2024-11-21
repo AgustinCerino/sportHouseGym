@@ -222,14 +222,15 @@
         "2024-11-03": "Piernas",
         "2024-11-05": "Espalda",
         "2024-11-06": "Brazos",
-        "2024-11-07": "Pecho"
+        "2024-11-07": "Pecho",
+        "2024-11-20": "Brazos"
       }
     },
     {
       "id": "777777",
       "username": "LucasSette",
       "password": "botete",
-      "role": "basic",
+      "role": "premium",
       "nombre": "Lucas Sette",
       "email": "tetete@example.com",
       "peso": 77,
@@ -257,10 +258,12 @@
         "2024-11-29": "Brazos",
         "2024-11-22": "Espalda",
         "2024-11-23": "Espalda",
-        "2024-11-30": "Espalda",
+        "2024-11-30": "Cardio",
         "2024-12-18": "Pecho",
         "2024-12-25": "Espalda",
-        "2024-11-21": ""
+        "2024-11-21": "Piernas",
+        "2024-11-26": "Piernas",
+        "2024-12-19": "Piernas"
       }
     }
   ],
