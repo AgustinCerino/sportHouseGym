@@ -3,16 +3,42 @@
     <h2>{{ rutina.nombre }}</h2>
     <p>{{ rutina.descripcion }}</p>
     <iframe
+      width="600"
+      height="400"
+      [src]="sanitizer.bypassSecurityTrustResourceUrl(rutina.url)"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
 
-    width="600"
-    height="400"
-    [src]="sanitizer.bypassSecurityTrustResourceUrl(rutina.url)"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
+    <!-- Lista de comentarios -->
+    <div class="comments-section">
+      <h3>Comentarios</h3>
+      <div *ngIf="rutina.comments && rutina.comments.length > 0; else noComments">
+        <div *ngFor="let comment of rutina.comments" class="comment">
+          <p><strong>{{ comment.username }}</strong>: {{ comment.text }}</p>
+          <p><em>{{ comment.date | date: 'short' }}</em></p>
+        </div>
+      </div>
+      <ng-template #noComments>
+        <p>No hay comentarios aún. ¡Sé el primero en comentar!</p>
+      </ng-template>
+    </div>
+
+    <!-- Formulario para agregar comentarios -->
+    <form (submit)="addComment($event)" class="comment-form">
+  <label for="comment">Escribe tu comentario:</label>
+  <textarea
+    id="comment"
+    name="comment"
+    rows="3"
+    placeholder="Escribe tu comentario aquí..."
+    [(ngModel)]="newComment"
+    required>
+  </textarea>
+  <button type="submit">Agregar Comentario</button>
+</form>
   </div>
 </fieldset>
-
 
 <div *ngIf="!rutina">
   <p>Cargando detalles de la rutina...</p>

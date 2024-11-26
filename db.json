@@ -272,31 +272,64 @@
       "id": "1",
       "nombre": "Rutina de Brazos",
       "descripcion": "Ejercicios centrados en fortalecer bíceps, tríceps y antebrazos.",
-      "url": "https://www.youtube.com/embed/8I463L8UaTI"
+      "url": "https://www.youtube.com/embed/8I463L8UaTI",
+      "comentarios": [],
+      "comments": [
+        {
+          "userId": "777777",
+          "username": "LucasSette",
+          "text": "aca funciona",
+          "date": "2024-11-26T18:45:35.515Z"
+        },
+        {
+          "userId": "777777",
+          "username": "LucasSette",
+          "text": "bien",
+          "date": "2024-11-26T18:57:06.156Z"
+        },
+        {
+          "userId": "777777",
+          "username": "LucasSette",
+          "text": "tu vieja\n",
+          "date": "2024-11-26T19:04:54.461Z"
+        }
+      ]
     },
     {
       "id": "2",
       "nombre": "Rutina de Piernas",
       "descripcion": "Entrenamiento para tonificar y fortalecer cuádriceps, femorales y gemelos.",
-      "url": "https://www.youtube.com/embed/In58AKwTero"
+      "url": "https://www.youtube.com/embed/In58AKwTero",
+      "comentarios": [
+        {}
+      ]
     },
     {
       "id": "3",
       "nombre": "Rutina de Pecho",
       "descripcion": "Serie de ejercicios para desarrollar los músculos pectorales.",
-      "url": "https://www.youtube.com/embed/LBDqQA8AVD4"
+      "url": "https://www.youtube.com/embed/LBDqQA8AVD4",
+      "comentarios": [
+        {}
+      ]
     },
     {
       "id": "4",
       "nombre": "Rutina de Glúteos",
       "descripcion": "Rutina para tonificar y fortalecer los glúteos.",
-      "url": "https://www.youtube.com/embed/wL87zJ6wgxw"
+      "url": "https://www.youtube.com/embed/wL87zJ6wgxw",
+      "comentarios": [
+        {}
+      ]
     },
     {
       "id": "5",
       "nombre": "Rutina de Espalda",
       "descripcion": "Ejercicios para fortalecer la espalda y mejorar la postura.",
-      "url": "https://www.youtube.com/embed/BcbmsDQM_aI"
+      "url": "https://www.youtube.com/embed/BcbmsDQM_aI",
+      "comentarios": [
+        {}
+      ]
     }
   ]
 }

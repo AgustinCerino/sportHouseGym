@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from '../../../interfaces/users.interface';
 import { UsuarioService } from '../../../services/usuario.service';
+import { MatSnackBar } from '@angular/material/snack-bar'; // Importar MatSnackBar
 
 @Component({
   selector: 'app-usuarios-abm',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './usuarios-abm.component.html',
-  styleUrl: './usuarios-abm.component.css'
+  styleUrls: ['./usuarios-abm.component.css']
 })
 export class UsuariosAbmComponent implements OnInit {
   usuarios: Usuario[] = [];
@@ -20,28 +21,16 @@ export class UsuariosAbmComponent implements OnInit {
   editForm: FormGroup;
   usuarioSeleccionado: Usuario | null = null;
 
-  
-
   constructor(
     private userService: UsuarioService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar // Inyectar MatSnackBar
   ) {
     this.editForm = this.fb.group({
-      email: ['', [
-        Validators.required, 
-        Validators.email
-      ]],
-      peso: ['', [
-        Validators.required, 
-        Validators.min(20), 
-        Validators.max(300)
-      ]],
-      altura: ['', [
-        Validators.required, 
-        Validators.min(100), 
-        Validators.max(250)
-      ]],
-     role: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      peso: ['', [Validators.required, Validators.min(20), Validators.max(300)]],
+      altura: ['', [Validators.required, Validators.min(100), Validators.max(250)]],
+      role: ['', Validators.required]
     });
   }
 
@@ -68,44 +57,60 @@ export class UsuariosAbmComponent implements OnInit {
     this.detallesVisible = this.detallesVisible === index ? null : index;
   }
 
-
   eliminarUsuario(usuario: Usuario): void {
-    const confirmar = confirm(`¿Estás seguro de que quieres eliminar al usuario ${usuario.username}?`);
-    if (confirmar) {
-      // Llamar al servicio de eliminación
+
+    const snackBarRef = this.snackBar.open(
+      `¿Estás seguro de que quieres eliminar al usuario ${usuario.username}?`,
+      'Eliminar',
+      {
+        duration: 5000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      }
+    );
+
+    snackBarRef.onAction().subscribe(() => {
+
       this.userService.deleteUser(usuario.id).subscribe(
         () => {
-          this.cargarUsuarios()
-          console.log('Usuario eliminado con éxito');
+          this.cargarUsuarios();
           this.usuarios = this.usuarios.filter(u => u.id !== usuario.id);
+          this.mostrarSnackBar('Usuario eliminado con éxito', 'Cerrar');
         },
         error => {
-          // Manejo de errores si la eliminación falla
           console.error('Error al eliminar el usuario', error);
-          alert('Hubo un error al intentar eliminar al usuario.');
+          this.mostrarSnackBar('Hubo un error al intentar eliminar el usuario.', 'Cerrar');
         }
       );
-    }
-  } 
-  
-  
+    });
+  }
+
+
   modificarUsuario(usuario: Usuario): void {
     this.editMode = true;
     this.usuarioSeleccionado = usuario;
-    
- 
+
     this.editForm.patchValue({
       email: usuario.email,
       peso: usuario.peso,
       altura: usuario.altura,
-      role: usuario.role  
+      role: usuario.role
     });
-    
-    console.log(this.editForm.value); 
-  }
-  
 
-  // Método para obtener mensajes de error de validación
+    console.log(this.editForm.value);
+    this.mostrarSnackBar('Modo edición activado', 'Cerrar');
+  }
+
+
+  mostrarSnackBar(mensaje: string, accion: string): void {
+    this.snackBar.open(mensaje, accion, {
+      duration: 3000,
+      verticalPosition:'top',
+      horizontalPosition:'center'
+    });
+  }
+
+
   getErrorMessage(controlName: string): string {
     const control = this.editForm.get(controlName);
     if (control?.hasError('required')) {
@@ -134,7 +139,6 @@ export class UsuariosAbmComponent implements OnInit {
   }
 
   actualizarUsuario(): void {
-    // Marcar todos los campos como tocados para mostrar errores
     Object.keys(this.editForm.controls).forEach(key => {
       const control = this.editForm.get(key);
       control?.markAsTouched();
@@ -142,8 +146,8 @@ export class UsuariosAbmComponent implements OnInit {
 
     if (this.usuarioSeleccionado && this.editForm.valid) {
       const updatedData = { ...this.usuarioSeleccionado, ...this.editForm.value };
-      console.log('Datos actualizados:', updatedData);  
-  
+      console.log('Datos actualizados:', updatedData);
+
       this.userService.updateUser(this.usuarioSeleccionado.id, updatedData).subscribe(
         (updatedUser) => {
           const index = this.usuarios.findIndex(u => u.id === updatedUser.id);
@@ -164,10 +168,8 @@ export class UsuariosAbmComponent implements OnInit {
     }
   }
 
-
   cancelarEdicion(): void {
     this.editMode = false;
     this.usuarioSeleccionado = null;
   }
 }
-

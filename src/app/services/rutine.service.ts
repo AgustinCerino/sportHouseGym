@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -34,4 +35,16 @@ export class RoutineService {
   deleteRutina(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  addCommentToRoutine(routineId: string, comment: any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${routineId}`).pipe(
+      map(rutina => {
+        const updatedComments = [...(rutina.comments || []), comment];
+        return this.http.patch(`${this.apiUrl}/${routineId}`, { comments: updatedComments });
+      }),
+      switchMap(obs => obs)
+    );
+  }
+
+
 }
