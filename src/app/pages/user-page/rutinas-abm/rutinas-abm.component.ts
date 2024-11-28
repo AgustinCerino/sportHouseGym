@@ -32,13 +32,15 @@ export class RutinasAbmComponent implements OnInit {
     this.editFormRutina = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       descripcion: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
-      url: ['']
+      url: ['', [Validators.required]],
+      tipo: ['', [Validators.required]]
     });
 
     this.createFormRutina = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       descripcion: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
-      url: ['https://www.youtube.com/embed/']
+      url: ['https://www.youtube.com/embed/', [Validators.required]],
+      tipo: ['', [Validators.required]]
     });
   }
 
@@ -47,6 +49,7 @@ export class RutinasAbmComponent implements OnInit {
   }
 
   crearRutina(): void {
+
     Object.keys(this.createFormRutina.controls).forEach(key => {
       const control = this.createFormRutina.get(key);
       control?.markAsTouched();
@@ -93,9 +96,11 @@ export class RutinasAbmComponent implements OnInit {
 
   filtrarRutinas(): void {
     this.rutinasFiltradas = this.rutinas.filter(rutina =>
-      rutina.nombre.toLowerCase().includes(this.filtroRutina.toLowerCase())
+      rutina.nombre.toLowerCase().includes(this.filtroRutina.toLowerCase()) ||
+      rutina.tipo.toLowerCase().includes(this.filtroRutina.toLowerCase())
     );
   }
+
 
   toggleDetallesRutina(index: number): void {
     this.detallesRutinaVisible = this.detallesRutinaVisible === index ? null : index;
@@ -107,7 +112,8 @@ export class RutinasAbmComponent implements OnInit {
     this.editFormRutina.patchValue({
       nombre: rutina.nombre,
       descripcion: rutina.descripcion,
-      url: rutina.url
+      url: rutina.url,
+      tipo: rutina.tipo
     });
   }
 
@@ -116,13 +122,12 @@ export class RutinasAbmComponent implements OnInit {
       `¿Estás seguro de que quieres eliminar ${rutina.nombre}?`,
       'Eliminar',
       { duration: 5000,
-        verticalPosition:'top',
-        horizontalPosition:'center'
-       }
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      }
     );
 
     snackBarRef.onAction().subscribe(() => {
-
       this.rutinaService.deleteRutina(rutina.id).subscribe(
         () => {
           this.rutinas = this.rutinas.filter(r => r.id !== rutina.id);
@@ -138,6 +143,7 @@ export class RutinasAbmComponent implements OnInit {
   }
 
   actualizarRutina(): void {
+
     Object.keys(this.editFormRutina.controls).forEach(key => {
       const control = this.editFormRutina.get(key);
       control?.markAsTouched();

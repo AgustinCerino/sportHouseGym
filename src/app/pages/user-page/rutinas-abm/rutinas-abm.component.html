@@ -61,6 +61,14 @@
           </small>
         </div>
       </label>
+
+      <label>Tipo:
+        <select formControlName="tipo">
+          <option value="normal">Normal</option>
+          <option value="premium">Premium</option>
+        </select>
+      </label>
+
       <label>URL del Video:
         <input class="cargar-url-input" formControlName="url" type="url" />
       </label>
@@ -106,6 +114,12 @@
             La descripción no puede superar los 200 caracteres.
           </small>
         </div>
+      </label>
+      <label>Tipo:
+        <select formControlName="tipo">
+          <option value="normal">Normal</option>
+          <option value="premium">Premium</option>
+        </select>
       </label>
       <label>URL del Video:
         <input formControlName="url" type="url" />

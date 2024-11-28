@@ -1,12 +1,16 @@
 <section class="routine-list">
   <h2>Rutinas de Entrenamiento</h2>
   <ul>
-    <li *ngFor="let routine of routines">
-      <div class="routine-card">
-        <h3>{{ routine.nombre }}</h3>
-        <p>{{ routine.descripcion }}</p>
-        <button (click)="verDetalles(routine.id)" class="btn-detalles">Ver Detalles</button>
-      </div>
-    </li>
+    <ng-container *ngFor="let routine of routines">
+      <li
+        *ngIf="rol === 'premium' || routine.tipo === 'normal'"
+        [ngClass]="{'premium-routine': routine.tipo === 'premium'}">
+        <div class="routine-card">
+          <h3>{{ routine.nombre }}</h3>
+          <p>{{ routine.descripcion }}</p>
+          <button (click)="verDetalles(routine.id)" class="btn-detalles">Ver Detalles</button>
+        </div>
+      </li>
+    </ng-container>
   </ul>
 </section>

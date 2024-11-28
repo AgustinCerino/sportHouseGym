@@ -11,4 +11,5 @@ export interface Rutina {
   descripcion: string;
   url: string;
   comentarios?: Comentario[];
+  tipo: 'normal' | 'premium';
 }
