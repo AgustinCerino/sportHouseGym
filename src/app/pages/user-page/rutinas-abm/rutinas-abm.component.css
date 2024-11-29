@@ -29,8 +29,8 @@
 }
 
 .flecha {
-  font-size: 0.8em; /* Tamaño de flecha más pequeño */
-  color: #666; /* Gris para la flecha */
+  font-size: 0.8em;
+  color: #666;
 }
 
 .usuario-detalles {
@@ -87,14 +87,14 @@
 }
 
 .editar-usuario-form {
-  max-width: 45rem; 
-  width: 100%; 
-  margin: 1.25rem auto; 
-  padding: 1.25rem; 
-  border-radius: 0.5rem; 
-  background: linear-gradient(#e63946, #000000 95%); 
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); 
-  color: #ffffff; 
+  max-width: 45rem;
+  width: 100%;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(#e63946, #000000 95%);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  color: #ffffff;
 }
 
 .editar-usuario-form h3 {
@@ -126,7 +126,7 @@
 }
 
 .cargar-url-input {
-  width: 100%; /* Puedes ajustarlo a un valor específico como 80%, 400px, etc. */
+  width: 100%;
   max-width: 31.25rem;
 }
 
@@ -158,15 +158,48 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Asegura que el overlay esté encima de todo */
-  backdrop-filter: blur(5px); /* Efecto de desenfoque */
+  z-index: 1000;
+  backdrop-filter: blur(5px);
 }
 
 button {
   border-radius: 15px;
   margin: 20px;
+}
+.editar-usuario-form select {
+  background-color: #2e0e0e;
+  color: #ffffff;
+  padding: 0.625rem;
+  margin-bottom: 0.938rem;
+  border: 0.063rem solid #f7efef;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+  appearance: none;
+
+  background-image: url('/icons/flecha-hacia-abajo.png');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+.editar-usuario-form select:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 0.25rem rgba(230, 57, 70, 0.5);
+}
+
+
+.editar-usuario-form select::-ms-expand {
+  display: none;
+}
+
+.editar-usuario-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }

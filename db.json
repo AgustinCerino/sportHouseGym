@@ -294,7 +294,7 @@
           "date": "2024-11-26T19:04:54.461Z"
         }
       ],
-       "tipo": "normal"
+      "tipo": "normal"
     },
     {
       "id": "2",
@@ -304,7 +304,7 @@
       "comentarios": [
         {}
       ],
-       "tipo": "premium"
+      "tipo": "premium"
     },
     {
       "id": "3",
@@ -314,7 +314,7 @@
       "comentarios": [
         {}
       ],
-       "tipo": "normal"
+      "tipo": "normal"
     },
     {
       "id": "4",
@@ -324,7 +324,7 @@
       "comentarios": [
         {}
       ],
-       "tipo": "premium"
+      "tipo": "premium"
     },
     {
       "id": "5",
@@ -334,7 +334,7 @@
       "comentarios": [
         {}
       ],
-       "tipo": "normal"
+      "tipo": "normal"
     }
   ]
 }
