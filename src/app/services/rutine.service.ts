@@ -45,6 +45,31 @@ export class RoutineService {
       switchMap(obs => obs)
     );
   }
+  addResponseToComment(routineId: string, commentId: string, response: any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${routineId}`).pipe(
+      map(rutina => {
+        const updatedComments = rutina.comments.map((comment: any) => {
+          if (comment.id === commentId) {
+            comment.responses = [...(comment.responses || []), response];
+          }
+          return comment;
+        });
+        return this.http.patch(`${this.apiUrl}/${routineId}`, { comments: updatedComments });
+      }),
+      switchMap(obs => obs)
+    );
+  }
+  eliminarComentario(rutinaId: string, commentId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${rutinaId}`).pipe(
+      map(rutina => {
+        // Filtra el comentario que no es el que se quiere eliminar
+        const updatedComments = rutina.comments.filter((comment: any) => comment.id !== commentId);
 
+        // Actualiza la rutina con la lista de comentarios modificada
+        return this.http.put(`${this.apiUrl}/${rutinaId}`, { ...rutina, comments: updatedComments });
+      }),
+      switchMap(obs => obs)
+    );
+  }
 
 }

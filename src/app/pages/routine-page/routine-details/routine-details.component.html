@@ -15,29 +15,67 @@
       <h3>Comentarios</h3>
       <div *ngIf="rutina.comments && rutina.comments.length > 0; else noComments">
         <div *ngFor="let comment of rutina.comments" class="comment">
-          <p><strong>{{ comment.username }}</strong>: {{ comment.text }}</p>
-          <p><em>{{ comment.date | date: 'short' }}</em></p>
+          <div class="comment-content">
+            <p><strong>{{ comment.username }}</strong>: {{ comment.text }}</p>
+            <p><em>{{ comment.date | date: 'short' }}</em></p>
+          </div>
+
+          <!-- Botón de eliminación del comentario (solo si es admin) -->
+          <div *ngIf="isAdmin" class="delete-btn-container">
+            <button (click)="eliminarComentario(comment.id)" class="delete-btn">Eliminar Comentario</button>
+          </div>
+
+          <!-- Sección de respuestas -->
+          <div *ngIf="comment.responses?.length" class="responses-section">
+            <h4>Respuestas:</h4>
+            <ul>
+              <li *ngFor="let response of comment.responses" class="response-comment">
+                <p><strong>{{ response.username }}</strong>: {{ response.text }}</p>
+                <p><em>{{ response.date | date: 'short' }}</em></p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Botón para mostrar el formulario de respuesta -->
+          <button *ngIf="isAdmin" (click)="toggleResponseForm(comment.id)" class="respButt">Responder</button>
+
+          <!-- Formulario de respuesta -->
+          <div *ngIf="showResponseForm[comment.id]" class="response-form">
+            <form (submit)="respondToComment(comment.id, $event)" class="comment-form">
+              <label for="response-{{ comment.id }}">Responder:</label>
+              <textarea
+                id="response-{{ comment.id }}"
+                rows="2"
+                placeholder="Escribe tu respuesta aquí..."
+                [(ngModel)]="responseText[comment.id]"
+                name="response-{{ comment.id }}"
+                required>
+              </textarea>
+              <button type="submit">Responder</button>
+            </form>
+          </div>
         </div>
       </div>
-      <ng-template #noComments>
-        <p>No hay comentarios aún. ¡Sé el primero en comentar!</p>
-      </ng-template>
     </div>
 
-    <!-- Formulario para agregar comentarios -->
-    <form (submit)="addComment($event)" class="comment-form">
-  <label for="comment">Escribe tu comentario:</label>
-  <textarea
-    id="comment"
-    name="comment"
-    rows="3"
-    placeholder="Escribe tu comentario aquí..."
-    [(ngModel)]="newComment"
-    required>
-  </textarea>
-  <button type="submit">Agregar Comentario</button>
-</form>
+    <ng-template #noComments>
+      <p>No hay comentarios aún. ¡Sé el primero en comentar!</p>
+    </ng-template>
   </div>
+
+  <!-- Formulario para agregar comentarios -->
+  <form (submit)="addComment($event)" class="comment-form">
+    <label for="comment">Escribe tu comentario:</label>
+    <textarea
+      id="comment"
+      name="comment"
+      rows="3"
+      placeholder="Escribe tu comentario aquí..."
+      [(ngModel)]="newComment"
+      required>
+    </textarea>
+    <button type="submit">Agregar Comentario</button>
+  </form>
 </fieldset>
 
 <div *ngIf="!rutina">

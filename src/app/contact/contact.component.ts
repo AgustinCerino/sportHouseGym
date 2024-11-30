@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  private phoneNumber: string = '542235999999';
+  private phoneNumber: string = '542235805737';
   public whatsappLink: string = '';
   private instaUser: string ='sporthousegym.mdp';
   public instagramLink: string = '';
@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit {
     this.srv.getUsuarioActual().subscribe({
       next: (fetchedUsuario) => {
         if (fetchedUsuario) {
-          this.usuario = fetchedUsuario; // Asigna el usuario si se recibe correctamente
+          this.usuario = fetchedUsuario;
         }
      }
      });
