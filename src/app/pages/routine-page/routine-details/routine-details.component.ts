@@ -14,11 +14,12 @@ import { Comentario } from '../../../interfaces/routine.interface';
   styleUrls: ['./routine-details.component.css']
 })
 export class RoutineDetailsComponent implements OnInit {
-  rutina: any = null; // Define la rutina como opcional inicialmente
+  rutina: any = null;
   newComment: string = '';
-  responseText: { [key: string]: string } = {}; // Para almacenar las respuestas de los comentarios
+  responseText: { [key: string]: string } = {};
   isAdmin: boolean = false;
   showResponseForm: { [key: string]: boolean } = {};
+  nutricionalInfo?: string ;
 
   private rutinaService = inject(RoutineService);
   private route = inject(ActivatedRoute);
@@ -38,6 +39,10 @@ export class RoutineDetailsComponent implements OnInit {
         next: (data) => {
           this.rutina = data;
 
+
+          this.nutricionalInfo = data.infoNutricional ||
+            'Recuerda complementar esta rutina con una dieta equilibrada rica en proteínas, carbohidratos saludables y grasas buenas. Mantente hidratado y ajusta tus calorías a tus objetivos de entrenamiento.';
+
           if (this.rutina.comments && this.rutina.comments.length > 0) {
             this.rutina.comments.sort((a: Comentario, b: Comentario) => b.date.localeCompare(a.date));
           }
@@ -49,6 +54,7 @@ export class RoutineDetailsComponent implements OnInit {
       });
     }
   }
+
 
   addComment(event: Event) {
     event.preventDefault();

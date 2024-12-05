@@ -72,6 +72,23 @@
       <label>URL del Video:
         <input class="cargar-url-input" formControlName="url" type="url" />
       </label>
+
+      <div class="nutricional-info">
+        <label>Información Nutricional:
+        <textarea formControlName="infoNutricional"></textarea>
+        <div
+          *ngIf="editFormRutina.get('infoNutricional')?.invalid &&
+                 (editFormRutina.get('infoNutricional')?.dirty ||
+                 editFormRutina.get('infoNutricional')?.touched)"
+          class="error-messages">
+          <small *ngIf="editFormRutina.get('infoNutricional')?.hasError('maxlength')">
+            La información nutricional no puede superar los 300 caracteres.
+          </small>
+        </div>
+      </label>
+      </div>
+
+
       <button type="submit">Guardar Cambios</button>
       <button type="button" (click)="cancelarEdicionRutina()">Cancelar</button>
     </form>
@@ -124,6 +141,15 @@
       <label>URL del Video:
         <input formControlName="url" type="url" />
       </label>
+      <div class="nutricional-info">
+        <label for="infoNutricional">Información Nutricional:</label>
+        <textarea
+          id="infoNutricional"
+          formControlName="infoNutricional"
+          placeholder="Escribe información nutricional aquí..."
+          class="textarea-nutricional">
+        </textarea>
+      </div>
       <button type="submit">Guardar Nueva Rutina</button>
       <button type="button" (click)="cancelarCreacionRutina()">Cancelar</button>
     </form>

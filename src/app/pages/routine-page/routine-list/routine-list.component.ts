@@ -30,21 +30,27 @@ export class RoutineListComponent implements OnInit, OnDestroy {
   checkUserRole(): void {
     this.rolSubscription = this.usuarioService.getUsuarioActual().subscribe(data => {
       this.rol = data.role;
+      console.log('Rol del usuario:', this.rol); // Debug
       this.getRutinas();
     });
+  }
+
+  puedeVerPremium(): boolean {
+    return this.rol === 'premium' || this.rol === 'admin';
   }
 
   getRutinas(): void {
     this.rutserv.getRutinas().subscribe((data: Rutina[]) => {
       this.routines = data;
-      if (this.rol === 'premium') {
+      if (this.puedeVerPremium()) {
         this.premiumRoutines = this.getPremiumRoutines(data);
+      } else {
+        this.premiumRoutines = [];
       }
     });
   }
 
   getPremiumRoutines(routines: Rutina[]): Rutina[] {
-
     return routines.filter(routine => routine.tipo === 'premium');
   }
 
@@ -53,7 +59,6 @@ export class RoutineListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-
     if (this.rolSubscription) {
       this.rolSubscription.unsubscribe();
     }

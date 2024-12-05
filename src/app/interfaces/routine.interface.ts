@@ -22,4 +22,5 @@ export interface Rutina {
   url: string;
   comentarios?: Comentario[];
   tipo: 'normal' | 'premium';
+  infoNutricional?: string;
 }

@@ -3,7 +3,7 @@
   <ul>
     <ng-container *ngFor="let routine of routines">
       <li
-        *ngIf="rol === 'premium' || routine.tipo === 'normal'"
+        *ngIf="rol === 'admin' || rol === 'premium' || routine.tipo === 'normal'"
         [ngClass]="{'premium-routine': routine.tipo === 'premium'}">
         <div class="routine-card">
           <h3>{{ routine.nombre }}</h3>

@@ -33,7 +33,8 @@ export class RutinasAbmComponent implements OnInit {
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       descripcion: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
       url: ['', [Validators.required]],
-      tipo: ['', [Validators.required]]
+      tipo: ['', [Validators.required]],
+      infoNutricional: ['', [Validators.maxLength(300)]]
     });
 
     this.createFormRutina = this.fb.group({
@@ -49,12 +50,6 @@ export class RutinasAbmComponent implements OnInit {
   }
 
   crearRutina(): void {
-
-    Object.keys(this.createFormRutina.controls).forEach(key => {
-      const control = this.createFormRutina.get(key);
-      control?.markAsTouched();
-    });
-
     if (this.createFormRutina.valid) {
       const nuevaRutina: Rutina = this.createFormRutina.value;
       this.rutinaService.createRutina(nuevaRutina).subscribe(
@@ -72,9 +67,9 @@ export class RutinasAbmComponent implements OnInit {
       );
     } else {
       console.log('El formulario contiene errores. Por favor, corrígelos.');
-      return;
     }
   }
+
 
   buttonCrearRutina(): void {
     this.createModeRutina = true;
@@ -113,7 +108,8 @@ export class RutinasAbmComponent implements OnInit {
       nombre: rutina.nombre,
       descripcion: rutina.descripcion,
       url: rutina.url,
-      tipo: rutina.tipo
+      tipo: rutina.tipo,
+      infoNutricional: rutina.infoNutricional
     });
   }
 
@@ -143,7 +139,6 @@ export class RutinasAbmComponent implements OnInit {
   }
 
   actualizarRutina(): void {
-
     Object.keys(this.editFormRutina.controls).forEach(key => {
       const control = this.editFormRutina.get(key);
       control?.markAsTouched();

@@ -147,3 +147,21 @@
 .delete-btn:hover {
   background-color: rgb(179, 25, 25);
 }
+
+.nutricional-info {
+  margin: 20px 0;
+  padding: 15px;
+  border-left: 4px solid #4caf50;
+  background-color: #f9fbe7;
+}
+
+.nutricional-info h3 {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.nutricional-info p {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+}

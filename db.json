@@ -21,7 +21,7 @@
       "id": "23456789",
       "username": "MaríaGonzález",
       "password": "basicPass456",
-      "role": "premium",
+      "role": "basic",
       "nombre": "María González",
       "email": "maria@example.com",
       "peso": 68,
@@ -298,7 +298,8 @@
           ]
         }
       ],
-      "tipo": "normal"
+      "tipo": "normal",
+      "infoNutricional": "Para esta rutina se recomienda..."
     },
     {
       "id": "2",
