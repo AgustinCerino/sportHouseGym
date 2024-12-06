@@ -203,28 +203,28 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
-
-.nutricional-info {
-  background-color: #1a1a1a;
-  border-left: 0.25rem solid #e63946;
-  color: #383938;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin: 1.25rem 0;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+.nutricional-info label {
+  display: block; /* Asegura que la etiqueta ocupe toda la línea */
+  margin-bottom: 0.5rem; /* Espaciado entre el label y el input/textarea */
+  font-size: 0.9rem; /* Tamaño del texto del label */
+  font-weight: bold; /* Opcional, para enfatizar el título */
+  color: #f2f2f2; /* Rojo consistente con los títulos */
 }
 
-.nutricional-info h3 {
-  font-size: 1.25rem;
-  color: #e63946;
-  margin-bottom: 0.5rem;
-  border-bottom: 0.063rem solid #e63946;
-  padding-bottom: 0.25rem;
+.nutricional-info textarea {
+  width: 100%;
+  min-height: 4rem; /* Altura mínima del textarea */
+  padding: 0.625rem;
+  border: 0.063rem solid #ffffff; /* Borde rojo */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  background-color: #1a1a1a; /* Fondo oscuro */
+  color: #f1faee; /* Texto blanco */
+  font-size: 0.875rem; /* Tamaño de texto */
+  resize: vertical; /* Permite redimensionar verticalmente */
 }
 
-.nutricional-info p {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: #4a4b49;
-  margin: 0;
+.nutricional-info textarea:focus {
+  outline: none;
+  border-color: #ff4c5b; /* Cambia el borde al hacer foco */
+  box-shadow: 0 0 0.25rem rgba(255, 76, 91, 0.5); /* Efecto de sombra */
 }

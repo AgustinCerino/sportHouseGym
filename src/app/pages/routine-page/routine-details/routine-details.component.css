@@ -151,17 +151,17 @@
 .nutricional-info {
   margin: 20px 0;
   padding: 15px;
-  border-left: 4px solid #4caf50;
-  background-color: #f9fbe7;
+  border-left: 4px solid #ac3434;
+  background-color: #373434;
 }
 
 .nutricional-info h3 {
-  color: #4caf50;
+  color: #eb3d3d;
   font-weight: bold;
 }
 
 .nutricional-info p {
-  color: #333;
+  color: #ffffff;
   font-size: 14px;
   line-height: 1.5;
 }
