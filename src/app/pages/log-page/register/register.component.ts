@@ -21,7 +21,7 @@ export class RegisterComponent {
     private usuarioService: UsuarioService
   ) {
     this.registerForm = this.formBuilder.group({
-      email: ['', [ Validators.required, Validators.email]], 
+      email: ['', [ Validators.required, Validators.email]],
       username: ['', [Validators.required, Validators.minLength(3),
         Validators.maxLength(20)]],
       password: ['', [Validators.required,Validators.minLength(8)]],
@@ -63,24 +63,6 @@ export class RegisterComponent {
       };
 
       console.log(usuario);
-      /*
-            this.usuarioService.postUsuarios(usuario).subscribe({
-              next: (response) => {
-                console.log('Usuario agregado:', response);
-                alert('Usuario registrado con éxito');
-      
-                this.router.navigate(['/user/basic'])
-              },
-              error: (error) => {
-                console.error('Error al agregar el usuario:', error);
-                alert('Hubo un error al registrar el usuario');
-              }
-            });
-          } else {
-            console.error('Formulario inválido');
-          }
-      
-          */
 
       this.usuarioService.postUsuarios(usuario).subscribe({
         next: (response) => {

@@ -78,6 +78,10 @@ export class UsuarioService {
       })
     );
   }
+  isAuthenticated(): boolean {
+    return localStorage.getItem('usuarioActual') !== null;
+  }
+
 
   getUsuarioActual(): Observable<Usuario> {
     if (!this.usuarioActual) {

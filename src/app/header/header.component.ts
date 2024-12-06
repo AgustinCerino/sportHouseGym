@@ -22,7 +22,7 @@ export class HeaderComponent implements OnDestroy , OnInit{
 
     this.authSubscription = this.usuarioService.loggedIn$.subscribe(loggedIn => {
       this.updateNavBar(loggedIn);
-      
+
       if (loggedIn) {
         this.updateUserRole();
       }
@@ -54,12 +54,12 @@ export class HeaderComponent implements OnDestroy , OnInit{
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.showDashboardNavbar = 
-      this.router.url === '/home' ||
-      this.router.url === '/register' ||
-      this.router.url === '/login';
+      const isAuthRoute = this.router.url === '/login' || this.router.url === '/register';
+      const isLoggedIn = this.usuarioService.isAuthenticated();
+      this.showDashboardNavbar = isAuthRoute || !isLoggedIn;
     });
   }
+
 
   private updateNavBar(loggedIn: boolean) {
     this.showDashboardNavbar = !loggedIn;

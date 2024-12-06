@@ -1,55 +1,55 @@
 .usuarios-lista {
-    background-color: #000000; /* Negro */
-    padding: 20px; /* Espacio adicional */
-    border-radius: 10px; /* Bordes redondeados */
-    color: #f1faee; /* Blanco */
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    color: #f1faee;
     margin-top: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .usuario-item {
-    border-bottom: 1px solid #e63946; /* Rojo */
-    padding: 12px; /* Espacio adicional */
-    transition: background-color 0.3s; /* Transición suave */
+    border-bottom: 1px solid #e63946;
+    padding: 12px;
+    transition: background-color 0.3s;
 }
 
 .usuario-item:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .usuario-nombre {
     font-weight: bold;
-    color: #e63946; /* Rojo */
-    font-size: 18px; /* Tamaño de fuente */
+    color: #e63946;
+    font-size: 18px;
 }
 
 .flecha {
-    font-size: 0.8em; /* Tamaño de flecha más pequeño */
-    color: #666; /* Gris para la flecha */
+    font-size: 0.8em;
+    color: #666;
 }
 
 .usuario-detalles {
     font-size: 14px;
     color: #f1faee;
     margin-top: 5px;
-    padding-left: 10px; /* Indentación para los detalles */
+    padding-left: 10px;
 }
 .input-busqueda {
-    width: 1000px;                /* Anchura más larga */
-    padding: 10px 35px 10px 15px; /* Espaciado interno */
-    border-radius: 5px;           /* Bordes redondeados */
-    border: 1px solid #ccc;       /* Borde ligero */
-    background-color: #f0f0f02f;    /* Fondo gris claro */
-    color: #aaa;                  /* Texto gris claro */
-    font-size: 16px;              /* Tamaño de fuente */
+    width: 1000px;
+    padding: 10px 35px 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f02f;
+    color: #aaa;
+    font-size: 16px;
     outline: none;
   }
 
   .botones-acciones {
-    position: absolute; 
-    right: 0; 
+    position: absolute;
+    right: 0;
     display: flex;
-    gap: 5px; 
+    gap: 5px;
 }
 
   .btn-modificar, .btn-eliminar {
@@ -62,13 +62,13 @@
     transition: color 0.3s;
 }
 
-  
+
   .btn-modificar:hover {
-    color: #c98f94; /* Color al pasar el mouse */
+    color: #c98f94;
 }
 
 .btn-eliminar:hover .icono-basura {
-    color: #e63946; /* Cambia el color del ícono al pasar el mouse */
+    color: #e63946;
 }
 
 .icono-basura {
@@ -77,61 +77,61 @@
 .usuario-header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Espacio entre nombre y botones */
+    justify-content: center;
     position: relative;
 }
 
 
 .editar-usuario-form {
-  max-width: 400px; /* Reducir el ancho del formulario */
-  margin: 20px auto; /* Centrar el formulario horizontalmente */
+  max-width: 400px;
+  margin: 20px auto;
   padding: 15px;
   border-radius: 8px;
   background: linear-gradient(#e63946, #000000 95%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   color: #ffffff;
-  text-align: center; /* Centrar los elementos dentro del formulario */
+  text-align: center;
 }
 .editar-usuario-form h3 {
   color: #ffffff;
-  font-size: 20px; /* Reducir tamaño del título */
-  margin-bottom: 15px; /* Menor espacio debajo del título */
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 .editar-usuario-form form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Alinear todos los elementos al centro */
+  align-items: center;
 }
 .editar-usuario-form label {
-  margin: 5px 0;  /* Reducir el margen entre las etiquetas y los campos */
+  margin: 5px 0;
   font-weight: bold;
   color: #f7efef;
-  font-size: 14px; /* Reducir el tamaño de la fuente de las etiquetas */
+  font-size: 14px;
 }
 .editar-usuario-form input,
 .editar-usuario-form select {
   background-color: #2e0e0e;
-  padding: 6px;  /* Reducir padding */
-  margin-bottom: 10px;  /* Reducir margen entre los campos */
+  padding: 6px;
+  margin-bottom: 10px;
   border: 1px solid #f7efef;
   border-radius: 4px;
   color: #ffffff;
-  font-size: 14px;  /* Reducir el tamaño de la fuente de los campos */
-  width: 90%;  /* Reducir el ancho de los campos */
+  font-size: 14px;
+  width: 90%;
   box-sizing: border-box;
 }
 .editar-usuario-form .role-group {
   display: flex;
   flex-direction: row;
-  justify-content: center; /* Centrar los checkboxes */
-  gap: 10px;  /* Reducir espacio entre los checkboxes */
-  margin-bottom: 10px; /* Reducir margen */
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 .editar-usuario-form .role-group input {
-  margin-right: 5px; /* Reducir margen entre checkbox y label */
+  margin-right: 5px;
 }
 .editar-usuario-form button {
-  padding: 6px 12px;  /* Reducir el padding de los botones */
+  padding: 6px 12px;
   margin-top: 10px;
   background-color: #2f2d2d;
   color: white;
@@ -151,21 +151,21 @@
 }
 .role-group {
   display: flex;
-  align-items: center; /* Centra los elementos verticalmente */
-  gap: 15px; /* Espacio entre los radio buttons */
+  align-items: center;
+  gap: 15px;
   margin-top: 10px;
 }
-/* Estilo de los labels dentro del role-group */
+
 .role-group label {
   font-weight: normal;
   color: #f7efef;
   font-size: 16px;
 }
-/* Asegura que los radio buttons estén alineados correctamente */
+
 .role-group input[type="radio"] {
   margin-right: 5px;
   transform: scale(1.1); /* Aumenta ligeramente el tamaño del radio button */
-  accent-color: #e63946; /* Cambia el color del radio button */
+  accent-color: #e63946;
 }
 /* Estilo al pasar el mouse sobre los radio buttons */
 .role-group input[type="radio"]:hover {
@@ -178,10 +178,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000; /* Asegura que el overlay esté encima de todo */
-  backdrop-filter: blur(5px); /* Efecto de desenfoque */
+  backdrop-filter: blur(5px);
 }

@@ -137,12 +137,11 @@ export class RoutineDetailsComponent implements OnInit {
   }
 
 eliminarComentario(commentId: number) {
-  // Asegurarse de que la rutina y los comentarios existan antes de proceder
+
   if (this.rutina && this.rutina.comments) {
-    // Llamar al servicio para eliminar el comentario en el backend
+
     this.rutinaService.eliminarComentario(this.rutina.id, commentId).subscribe(
       (response) => {
-        // Actualizar la lista de comentarios eliminando el comentario con el id correspondiente
         this.rutina.comments = this.rutina.comments.filter((comment: { id: number }) => comment.id !== commentId);
         console.log('Comentario eliminado exitosamente:', response);
       },
