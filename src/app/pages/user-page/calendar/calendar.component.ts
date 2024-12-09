@@ -133,14 +133,14 @@ export class CalendarComponent implements OnInit, OnDestroy {
   onDayClick(day: number): void {
     if (day !== null) {
       const clickedDate = new Date(
-        this.currentDate.getFullYear(), 
-        this.currentDate.getMonth(), 
+        this.currentDate.getFullYear(),
+        this.currentDate.getMonth(),
         day
       );
-      
+
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-  
+
       // Use getTime() to compare dates numerically
       if (clickedDate.getTime() >= today.getTime()) {
         const key = this.getActivityKey(day);
@@ -154,14 +154,14 @@ export class CalendarComponent implements OnInit, OnDestroy {
   isDateBeforeToday(day: number): boolean {
     const today = new Date();
     const comparisonDate = new Date(
-      this.currentDate.getFullYear(), 
-      this.currentDate.getMonth(), 
+      this.currentDate.getFullYear(),
+      this.currentDate.getMonth(),
       day
     );
-    
+
     today.setHours(0, 0, 0, 0);
     comparisonDate.setHours(0, 0, 0, 0);
-    
+
     return comparisonDate.getTime() < today.getTime();
   }
-} 
+}

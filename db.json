@@ -263,7 +263,7 @@
         "2024-12-25": "Espalda",
         "2024-11-21": "Piernas",
         "2024-11-26": "Piernas",
-        "2024-12-19": "Piernas"
+        "2024-12-10": "Gluteos"
       }
     }
   ],
@@ -273,73 +273,160 @@
       "nombre": "Rutina de Brazos",
       "descripcion": "Ejercicios centrados en fortalecer bíceps, tríceps y antebrazos.",
       "url": "https://www.youtube.com/embed/8I463L8UaTI",
-      "comentarios": [],
       "comments": [
         {
-          "id": "c1",
-          "userId": "777777",
-          "username": "LucasSette",
-          "text": "aca funciona",
-          "date": "2024-11-26T18:45:35.515Z",
+          "id": "1",
+          "userId": 23456789,
+          "username": "MaríaGonzález",
+          "text": "Muy buena rutina para brazos, aunque me gustaría más variedad en los ejercicios para los tríceps.",
+          "date": "2024-12-09",
           "responses": [
             {
-              "userId": "12345678",
+              "userId": 12345678,
               "username": "JuanPerez",
-              "text": "Cuanta violencia",
-              "date": "2024-11-30T22:54:16.340Z"
-            },
-            {
-              "id": "41b063e5-7bdf-493b-9cab-8f37f29aac75",
-              "userId": "12345678",
-              "username": "JuanPerez",
-              "text": "y asi",
-              "date": "2024-11-30T23:07:53.819Z"
+              "text": "¡Gracias por tu comentario, Maria! Seguiremos mejorando la variedad de los ejercicios.",
+              "date": "2024-12-09"
             }
           ]
+        },
+        {
+          "id": "2",
+          "userId": 56789012,
+          "username": "PedroSánchez",
+          "text": "Excelente para mantener los brazos en forma. La explicación de cada ejercicio es clara.",
+          "date": "2024-12-09",
+          "responses": []
         }
       ],
       "tipo": "normal",
-      "infoNutricional": "Para esta rutina se recomienda..."
+      "infoNutricional": "Para obtener buenos resultados en tu rutina de brazos, es importante comer alimentos que ayuden a tus músculos a crecer y recuperarse. Debes incluir proteínas como pollo, pescado, huevos o legumbres, que ayudan a la reparación muscular; carbohidratos como arroz, avena y frutas, que te dan la energía necesaria para entrenar; grasas saludables como aguacate, frutos secos y aceite de oliva, que son esenciales para la recuperación; y vitaminas y minerales de verduras y frutas, que favorecen la recuperación. Comer bien te ayudará a fortalecer tus brazos y mejorar tu rendimiento."
     },
     {
       "id": "2",
       "nombre": "Rutina de Piernas",
       "descripcion": "Entrenamiento para tonificar y fortalecer cuádriceps, femorales y gemelos.",
       "url": "https://www.youtube.com/embed/In58AKwTero",
-      "comentarios": [
-        {}
+      "comments": [
+        {
+          "id": "4",
+          "userId": 34567890,
+          "username": "CarlosLopez",
+          "text": "Una rutina muy intensa, me ha ayudado a mejorar la fuerza en las piernas. El enfoque en cuádriceps y femorales está perfecto.",
+          "date": "2024-12-09",
+          "responses": []
+        },
+        {
+          "id": "5",
+          "userId": 78901234,
+          "username": "SofíaHernández",
+          "text": "Me cuesta un poco con los ejercicios de femorales, pero en general la rutina está muy bien estructurada.",
+          "date": "2024-12-09",
+          "responses": []
+        },
+        {
+          "id": "6",
+          "userId": 67890123,
+          "username": "AnaGarcía",
+          "text": "¡Me encantó! Los ejercicios son completos y me ayudan a tonificar muy bien las piernas.",
+          "date": "2024-12-09",
+          "responses": []
+        }
       ],
-      "tipo": "premium"
+      "tipo": "premium",
+      "infoNutricional": "Para una rutina de piernas efectiva, es clave una buena alimentación que apoye el rendimiento y la recuperación. Las proteínas (pollo, pescado, huevos, legumbres) ayudan a la reparación muscular. Los carbohidratos (arroz, batatas, avena) te dan la energía para entrenar, mientras que las grasas saludables (aguacate, frutos secos) favorecen la recuperación. No olvides las vitaminas y minerales de frutas y verduras, esenciales para la salud muscular. Comer bien te permitirá mejorar tu fuerza y resistencia en las piernas."
     },
     {
       "id": "3",
       "nombre": "Rutina de Pecho",
       "descripcion": "Serie de ejercicios para desarrollar los músculos pectorales.",
       "url": "https://www.youtube.com/embed/LBDqQA8AVD4",
-      "comentarios": [
-        {}
+      "comments": [
+        {
+          "id": "8",
+          "userId": 23456789,
+          "username": "MaríaGonzález",
+          "text": "Me parece muy completa, pero sería genial si añadieran más ejercicios para la parte superior del pecho.",
+          "date": "2024-12-09",
+          "responses": [
+            {
+              "userId": 12345678,
+              "username": "JuanPerez",
+              "text": "Gracias por tus sugerencias, estamos trabajando en agregar más ejercicios para la parte superior del pecho.",
+              "date": "2024-12-09"
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "userId": 90123456,
+          "username": "DiegoRamírez",
+          "text": "Me está ayudando mucho a aumentar mi volumen muscular en el pecho. ¡Recomendada!",
+          "date": "2024-12-09",
+          "responses": []
+        }
       ],
-      "tipo": "normal"
+      "tipo": "normal",
+      "infoNutricional": "Para una rutina de pecho efectiva, es importante consumir alimentos que favorezcan el desarrollo muscular y la recuperación. Las proteínas (pollo, carne magra, pescado, tofu) son clave para la reparación de los músculos. Los carbohidratos (arroz, pasta, patatas) te brindan la energía que necesitas para entrenar con fuerza. Las grasas saludables (aguacate, aceite de oliva, frutos secos) ayudan a la recuperación y al funcionamiento general del cuerpo. Además, las frutas y verduras te aportan vitaminas y minerales esenciales para optimizar los resultados."
     },
     {
       "id": "4",
       "nombre": "Rutina de Glúteos",
       "descripcion": "Rutina para tonificar y fortalecer los glúteos.",
       "url": "https://www.youtube.com/embed/wL87zJ6wgxw",
-      "comentarios": [
-        {}
+      "comments": [
+        {
+          "id": "10",
+          "userId": 56789012,
+          "username": "PedroSánchez",
+          "text": "Esta rutina me ha ayudado a tonificar mis glúteos rápidamente. Los ejercicios son muy efectivos.",
+          "date": "2024-12-09",
+          "responses": []
+        },
+        {
+          "id": "11",
+          "userId": 89012345,
+          "username": "SofíaHernández",
+          "text": "Los ejercicios son efectivos, pero me gustaría más variedad en los movimientos para los glúteos.",
+          "date": "2024-12-09",
+          "responses": []
+        },
+        {
+          "id": "12",
+          "userId": 777777,
+          "username": "LucasSette",
+          "text": "Una excelente rutina para aumentar volumen en los glúteos. Estoy viendo cambios positivos.",
+          "date": "2024-12-09",
+          "responses": []
+        }
       ],
-      "tipo": "premium"
+      "tipo": "premium",
+      "infoNutricional": "Para lograr un buen desarrollo de glúteos, es importante alimentar tu cuerpo con los nutrientes adecuados. Las proteínas (pollo, pescado, tofu, legumbres) ayudan a la construcción muscular. Los carbohidratos complejos (batatas, arroz integral, avena) te proporcionan la energía necesaria para entrenar con intensidad. Las grasas saludables (aguacate, frutos secos, aceite de oliva) son claves para la recuperación. Además, las frutas y verduras aportan vitaminas y minerales esenciales para optimizar el rendimiento y acelerar la regeneración muscular."
     },
     {
       "id": "5",
       "nombre": "Rutina de Espalda",
       "descripcion": "Ejercicios para fortalecer la espalda y mejorar la postura.",
       "url": "https://www.youtube.com/embed/BcbmsDQM_aI",
-      "comentarios": [
-        {}
+      "comments": [
+        {
+          "id": "13",
+          "userId": 34567890,
+          "username": "CarlosLopez",
+          "text": "Muy buena rutina para fortalecer la espalda, me ha ayudado a mejorar mi postura.",
+          "date": "2024-12-09",
+          "responses": []
+        },
+        {
+          "id": "15",
+          "userId": 78901234,
+          "username": "SofíaHernández",
+          "text": "Excelente rutina, me ha ayudado mucho con la resistencia en los ejercicios de espalda.",
+          "date": "2024-12-09",
+          "responses": []
+        }
       ],
-      "tipo": "normal"
+      "tipo": "normal",
+      "infoNutricional": "Para fortalecer la espalda, es importante tener una dieta que apoye el crecimiento y la recuperación muscular. Las proteínas (pollo, pescado, tofu, lentejas) son esenciales para reparar los músculos después del entrenamiento. Los carbohidratos (arroz, batatas, avena) te dan la energía necesaria para ejercicios intensos. Las grasas saludables (aguacate, frutos secos, aceite de oliva) ayudan a la regeneración muscular. También, las frutas y verduras proporcionan vitaminas y minerales que optimizan la recuperación y el rendimiento, favoreciendo un desarrollo más efectivo."
     }
   ]
 }

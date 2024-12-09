@@ -34,7 +34,7 @@ export class RutinasAbmComponent implements OnInit {
       descripcion: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
       url: ['', [Validators.required]],
       tipo: ['', [Validators.required]],
-      infoNutricional: ['', [Validators.maxLength(300)]]
+      infoNutricional: ['', [Validators.maxLength(700)]]
     });
 
     this.createFormRutina = this.fb.group({
