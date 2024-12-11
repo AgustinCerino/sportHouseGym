@@ -21,12 +21,8 @@ export class ModificarUsuarioComponent implements OnInit {
     email: '',
     peso: 0,
     altura: 0,
-    proceso: {
-      volumen: false,
-      perdida: false,
-      mantenimiento: false
-    },
-    nutricion: 'alta-proteina',
+    proceso: '',
+    nutricion: '',
     actividades: {}
   };
 

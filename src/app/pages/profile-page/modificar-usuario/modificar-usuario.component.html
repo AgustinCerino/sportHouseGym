@@ -15,26 +15,19 @@
     <label for="altura">Altura (cm):</label>
     <input type="number" id="altura" [(ngModel)]="usuario.altura" name="altura">
 
-    <label>Proceso:</label>
-    <div>
-      <label>
-        <input type="checkbox" [(ngModel)]="usuario.proceso.volumen" name="volumen"> Volumen
-      </label>
-      <label>
-        <input type="checkbox" [(ngModel)]="usuario.proceso.perdida" name="perdida"> Pérdida de Peso
-      </label>
-      <label>
-        <input type="checkbox" [(ngModel)]="usuario.proceso.mantenimiento" name="mantenimiento"> Mantenimiento
-      </label>
-    </div>
+    <label for="proceso">Proceso:</label>
+    <select id="proceso" [(ngModel)]="usuario.proceso" name="proceso">
+      <option value="Ganancia de masa">Ganancia de masa</option>
+      <option value="Pérdida de peso">Pérdida de peso</option>
+      <option value="Mantenimiento">Mantenimiento</option>
+    </select>
 
     <label for="nutricion">Opciones de Nutrición:</label>
     <select id="nutricion" [(ngModel)]="usuario.nutricion" name="nutricion">
-      <option value="alta-proteina">Alta en Proteína</option>
-      <option value="baja-carb">Baja en Carbohidratos</option>
-      <option value="dieta-mediterranea">Dieta Mediterránea</option>
-      <option value="dieta-equilibrada">Dieta Equilibrada</option>
-      <option value="vegan">Vegan</option>
+      <option value="Equilibrada">Equilibrada</option>
+      <option value="Alta en proteínas">Alta en proteínas</option>
+      <option value="Baja en carbohidratos">Baja en carbohidratos</option>
+      <option value="Vegetariana">Vegetariana</option>
     </select>
 
     <button type="submit">Guardar Cambios</button>

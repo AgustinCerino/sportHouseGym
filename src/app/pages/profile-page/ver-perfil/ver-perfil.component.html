@@ -8,11 +8,7 @@
       <p><strong>Email:</strong> {{ usuario.email }}</p>
       <p><strong>Peso:</strong> {{ usuario.peso }} </p>
       <p><strong>Altura:</strong> {{ usuario.altura }} </p>
-      <p><strong>Proceso:</strong>
-        <span *ngIf="usuario.proceso.volumen">Volumen </span>
-        <span *ngIf="usuario.proceso.perdida">Pérdida de Peso </span>
-        <span *ngIf="usuario.proceso.mantenimiento">Mantenimiento </span>
-      </p>
+      <p><strong>Proceso:</strong> {{ usuario.proceso }}</p>
       <p><strong>Nutrición:</strong> {{ usuario.nutricion }}</p>
     </div>
   </div>

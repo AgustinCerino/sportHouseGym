@@ -9,12 +9,8 @@
       "email": "juan@gmail.com",
       "peso": 90,
       "altura": 170,
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
-      "nutricion": "dieta-mediterranea",
+      "proceso": "Ganancia de masa",
+      "nutricion": "Baja en carbohidratos",
       "actividades": null
     },
     {
@@ -26,11 +22,7 @@
       "email": "maria@example.com",
       "peso": 68,
       "altura": 165,
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
+      "proceso": "Ganancia de masa",
       "nutricion": "Equilibrada",
       "actividades": {
         "2024-11-01": "Pecho",
@@ -53,12 +45,8 @@
       "email": "carlos@example.com",
       "peso": 89,
       "altura": 177,
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
-      "nutricion": "Alta en Carbohidratos",
+      "proceso": "Ganancia de masa",
+      "nutricion": "Vegetariana",
       "actividades": {
         "2024-11-03": "Piernas",
         "2024-11-05": "Espalda",
@@ -76,12 +64,8 @@
       "email": "laura@example.com",
       "peso": 60,
       "altura": 170,
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
-      "nutricion": "Alta en Fibra",
+      "proceso": "Ganancia de masa",
+      "nutricion": "Baja en carbohidratos",
       "actividades": {
         "2024-11-03": "Piernas",
         "2024-11-05": "Espalda",
@@ -98,11 +82,7 @@
       "email": "pablo@example.com",
       "peso": 90,
       "altura": 185,
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
+      "proceso": "Pérdida de peso",
       "nutricion": "Alta en Proteína",
       "actividades": {
         "2024-11-01": "Piernas",
@@ -120,11 +100,7 @@
       "email": "ana@example.com",
       "peso": 55,
       "altura": 160,
-      "proceso": {
-        "volumen": false,
-        "perdida": true,
-        "mantenimiento": false
-      },
+      "proceso": "Pérdida de peso",
       "nutricion": "Baja en Carbohidratos",
       "actividades": {
         "2024-11-03": "Cardio",
@@ -143,11 +119,7 @@
       "email": "luis@example.com",
       "peso": "80 kg",
       "altura": "177 cm",
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
+      "proceso": "Pérdida de peso",
       "nutricion": "Equilibrada",
       "actividades": {
         "2024-11-03": "Cardio",
@@ -166,12 +138,8 @@
       "email": "sofia@example.com",
       "peso": 66,
       "altura": 155,
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
-      "nutricion": "Alta en Fibra",
+      "proceso": "Pérdida de peso",
+      "nutricion": "Vegetariana",
       "actividades": {
         "2024-11-03": "Cardio",
         "2024-11-05": "Espalda",
@@ -189,11 +157,7 @@
       "email": "diego@example.com",
       "peso": 79,
       "altura": 173,
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
+      "proceso": "Pérdida de peso",
       "nutricion": "Alta en Proteína",
       "actividades": {
         "2024-11-03": "Cardio",
@@ -212,11 +176,7 @@
       "email": "gabriela@example.com",
       "peso": 70,
       "altura": 168,
-      "proceso": {
-        "volumen": false,
-        "perdida": false,
-        "mantenimiento": true
-      },
+      "proceso": "Pérdida de peso",
       "nutricion": "Equilibrada",
       "actividades": {
         "2024-11-03": "Piernas",
@@ -235,12 +195,8 @@
       "email": "tetete@example.com",
       "peso": 77,
       "altura": 177,
-      "proceso": {
-        "volumen": true,
-        "perdida": false,
-        "mantenimiento": false
-      },
-      "nutricion": "baja-carb",
+      "proceso": "Pérdida de peso",
+      "nutricion": "Equilibrada",
       "actividades": {
         "2024-11-04": "Brazos",
         "2024-11-05": "Pecho",
@@ -264,6 +220,24 @@
         "2024-11-21": "Piernas",
         "2024-11-26": "Piernas",
         "2024-12-10": "Gluteos"
+      }
+    },
+    {
+      "id": "0aa2",
+      "username": "agustin",
+      "password": "12345678",
+      "role": "basic",
+      "nombre": "agustin cerino ",
+      "email": "agustincerino15@gmail.com",
+      "peso": "70",
+      "altura": "177",
+      "proceso": "Ganancia de masa",
+      "nutricion": "Vegetariana",
+      "actividades": {
+        "2024-12-12": "Piernas",
+        "2024-12-14": "Espalda",
+        "2024-12-16": "Pecho",
+        "2024-12-17": "Brazos"
       }
     }
   ],
@@ -362,6 +336,14 @@
           "username": "DiegoRamírez",
           "text": "Me está ayudando mucho a aumentar mi volumen muscular en el pecho. ¡Recomendada!",
           "date": "2024-12-09",
+          "responses": []
+        },
+        {
+          "id": "7a8de5e0-7f6b-41d4-a468-0e18289f1751",
+          "userId": "23456789",
+          "username": "MaríaGonzález",
+          "text": "Ya voy dos meses con esta rutina y tuve resultados excelentes!",
+          "date": "2024-12-11T22:39:42.357Z",
           "responses": []
         }
       ],

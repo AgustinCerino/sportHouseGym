@@ -10,11 +10,7 @@ export interface Usuario {
     email: string;
     peso: number;
     altura: number;
-    proceso: {
-        volumen: boolean;
-        perdida: boolean;
-        mantenimiento: boolean;
-    };
+    proceso: string;
     nutricion: string;
     actividades: {
         [key: string]: string; // formato: "YYYY-MM-DD": "actividad"
