@@ -6,6 +6,9 @@
     <div>
       <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
       <p><strong>Email:</strong> {{ usuario.email }}</p>
+      @if (usuario.dateSubscripcion) {
+        <p><strong>Fecha de Pago:</strong> {{ usuario.dateSubscripcion | date:'dd/MM/yyyy' }}</p>
+      }
       <p><strong>Peso:</strong> {{ usuario.peso }} </p>
       <p><strong>Altura:</strong> {{ usuario.altura }} </p>
       <p><strong>Proceso:</strong> {{ usuario.proceso }}</p>

@@ -21,9 +21,9 @@ export class PagoExitosoComponent implements OnInit {
       const paymentId = params['payment_id'];
       if (paymentId) {
         this.usuarioService.getUsuarioActual().subscribe((data) => {
-          const usuario = { ...data, role: 'premium' };
+          const usuario = { ...data, dateSubscripcion: new Date(), role: 'premium' };
 
-          this.usuarioService.updateUser(usuario.id, { ...usuario, role: 'premium' }).subscribe({
+          this.usuarioService.updateUser(usuario.id, { ...usuario, dateSubscripcion: new Date(), role: 'premium' }).subscribe({
             next: () => {
               this.snackBar.open('Te has suscrito al plan Premium!', 'Cerrar', {
                 duration: 3000,

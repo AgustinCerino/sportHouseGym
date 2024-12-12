@@ -41,7 +41,7 @@ export class LoginComponent {
       next: (usuario) => {
         if (usuario) {
           console.log('Usuario autenticado:', usuario);
-          this.Redireccion(usuario); // Redirige según el rol
+          this.verificarEstadoSubscripcion(usuario); 
         } else {
           console.log("Credenciales incorrectas");
         }
@@ -50,6 +50,50 @@ export class LoginComponent {
         console.error('Error en la autenticación:', error);
       }
     });
+  }
+
+  verificarEstadoSubscripcion(usuario: Usuario) {
+    if (usuario.role !== 'premium' || !usuario.dateSubscripcion) {
+      this.Redireccion(usuario);
+      return;
+    }
+
+    const dateString = String(usuario.dateSubscripcion);
+    let fechaSubscripcion: Date;
+    
+    try {
+      fechaSubscripcion = new Date(dateString);
+      const [year, month, day] = dateString.split('-').map(part => parseInt(part, 10));
+      fechaSubscripcion = new Date(year, month - 1, day);
+
+      const fechaActual = new Date();
+      
+      const diferenciaEnMilisegundos = fechaActual.getTime() - fechaSubscripcion.getTime();
+      const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 3600 * 24));
+  
+      console.log('Días desde suscripción:', diferenciaEnDias);
+  
+      if (diferenciaEnDias > 30) {
+        this.usuarioService.updateUser(usuario.id, { ...usuario, dateSubscripcion: undefined, role: 'basic' }).subscribe({
+          next: (usuarioActualizado) => {
+            alert(`Hola ${usuario.nombre} tu subscripción PREMIUM ha expirado.
+                        Dias desde ultimo pago: ${diferenciaEnDias}
+                      Has sido cambiado al plan Basic`)
+            console.log(`Rol actualizado a básico para usuario ${usuario.id}`);
+            this.Redireccion(usuarioActualizado);
+          },
+          error: (error) => {
+            console.error('Error al actualizar el rol:', error);
+            this.Redireccion(usuario);
+          }
+        });
+      } else {
+        this.Redireccion(usuario);
+      }
+    } catch (error) {
+      console.error('Error procesando fecha de suscripción:', error);
+      this.Redireccion(usuario);
+    }
   }
 
   Redireccion(usuario: Usuario) {

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from '../../../interfaces/users.interface';
 import { UsuarioService } from '../../../services/usuario.service';
-import { MatSnackBar } from '@angular/material/snack-bar'; // Importar MatSnackBar
+import { MatSnackBar } from '@angular/material/snack-bar'; 
 
 @Component({
   selector: 'app-usuarios-abm',
@@ -24,7 +24,7 @@ export class UsuariosAbmComponent implements OnInit {
   constructor(
     private userService: UsuarioService,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar // Inyectar MatSnackBar
+    private snackBar: MatSnackBar 
   ) {
     this.editForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],

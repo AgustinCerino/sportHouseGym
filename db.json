@@ -33,7 +33,14 @@
         "2024-11-14": "Cardio",
         "2024-11-19": "Brazos",
         "2024-11-25": "Pecho",
-        "2024-11-15": "Cardio"
+        "2024-11-15": "Cardio",
+        "2024-12-12": "Brazos",
+        "2024-12-14": "Espalda",
+        "2024-12-16": "Pecho",
+        "2024-12-18": "Gluteos",
+        "2024-12-20": "Piernas",
+        "2024-12-25": "Espalda",
+        "2024-12-23": "Piernas"
       }
     },
     {
@@ -44,7 +51,7 @@
       "nombre": "Carlos López",
       "email": "carlos@example.com",
       "peso": 89,
-      "altura": 177,
+      "altura": 178,
       "proceso": "Ganancia de masa",
       "nutricion": "Vegetariana",
       "actividades": {
@@ -52,14 +59,20 @@
         "2024-11-05": "Espalda",
         "2024-11-06": "Brazos",
         "2024-11-07": "Pecho",
-        "2024-10-08": "Piernas"
-      }
+        "2024-10-08": "Piernas",
+        "2024-12-12": "Brazos",
+        "2024-12-13": "Espalda",
+        "2024-12-16": "Piernas",
+        "2024-12-18": "Pecho",
+        "2024-12-20": "Gluteos"
+      },
+      "dateSubscripcion": "2024-12-11T23:31:31.658Z"
     },
     {
       "id": "45678901",
       "username": "LauraMartínez",
       "password": "laura",
-      "role": "premium",
+      "role": "basic",
       "nombre": "Laura Martínez",
       "email": "laura@example.com",
       "peso": 60,
@@ -89,19 +102,20 @@
         "2024-11-07": "Espalda",
         "2024-11-13": "Brazos",
         "2024-11-19": "Brazos"
-      }
+      },
+      "dateSubscripcion": "2024-12-11T23:31:31.658Z"
     },
     {
       "id": "67890123",
       "username": "AnaGarcía",
-      "password": "adminPass678",
+      "password": "basicPass678",
       "role": "basic",
       "nombre": "Ana García",
       "email": "ana@example.com",
       "peso": 55,
       "altura": 160,
       "proceso": "Pérdida de peso",
-      "nutricion": "Baja en Carbohidratos",
+      "nutricion": "Alta en proteínas",
       "actividades": {
         "2024-11-03": "Cardio",
         "2024-11-05": "Espalda",
@@ -114,7 +128,7 @@
       "id": "78901234",
       "username": "LuisRodríguez",
       "password": "basicPass901",
-      "role": "basic",
+      "role": "premium",
       "nombre": "Luis Rodríguez",
       "email": "luis@example.com",
       "peso": "80 kg",
@@ -127,7 +141,8 @@
         "2024-11-06": "Piernas",
         "2024-11-07": "Pecho",
         "2024-09-15": "Brazos"
-      }
+      },
+      "dateSubscripcion": "2024-12-11T23:31:31.658Z"
     },
     {
       "id": "89012345",
@@ -146,7 +161,8 @@
         "2024-11-06": "Piernas",
         "2024-11-07": "Pecho",
         "2024-09-15": "Brazos"
-      }
+      },
+      "dateSubscripcion": "2024-12-11T23:31:31.658Z"
     },
     {
       "id": "90123456",
@@ -184,7 +200,8 @@
         "2024-11-06": "Brazos",
         "2024-11-07": "Pecho",
         "2024-11-20": "Brazos"
-      }
+      },
+      "dateSubscripcion": "2024-12-11T23:31:31.658Z"
     },
     {
       "id": "777777",
@@ -220,25 +237,8 @@
         "2024-11-21": "Piernas",
         "2024-11-26": "Piernas",
         "2024-12-10": "Gluteos"
-      }
-    },
-    {
-      "id": "0aa2",
-      "username": "agustin",
-      "password": "12345678",
-      "role": "basic",
-      "nombre": "agustin cerino ",
-      "email": "agustincerino15@gmail.com",
-      "peso": "70",
-      "altura": "177",
-      "proceso": "Ganancia de masa",
-      "nutricion": "Vegetariana",
-      "actividades": {
-        "2024-12-12": "Piernas",
-        "2024-12-14": "Espalda",
-        "2024-12-16": "Pecho",
-        "2024-12-17": "Brazos"
-      }
+      },
+      "dateSubscripcion": "2024-12-11T23:31:31.658Z"
     }
   ],
   "rutinas": [

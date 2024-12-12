@@ -6,6 +6,7 @@ export interface Usuario {
     username: string;
     password: string;
     role: 'admin' | 'basic' | 'premium'; // Enum para roles
+    dateSubscripcion?: Date;
     nombre: string;
     email: string;
     peso: number;
