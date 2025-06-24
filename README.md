@@ -1,9 +1,9 @@
 Materia: Laboratorio IV
 Comision 2
 Integrantes:
-Cerino Agustin
-Del Rio Abril
-Granone Santiago
+Cerino Agustin,
+Del Rio Abril,
+Granone Santiago,
 D'Agostino Quimey.
 
 gitHub: https://github.com/AgustinCerino/sportHouseGym
